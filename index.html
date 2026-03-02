@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mizoz | Developer · Builder · Automation</title>
+    <meta name="description" content="Developer building CLI tools, automation frameworks, and AI integrations in Calgary, AB">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg: #0f0f1a;
-            --text: #a9b1d6;
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #1a1b26;
+            --bg-tertiary: #16161e;
+            --text-primary: #a9b1d6;
+            --text-secondary: #565f89;
             --accent: #7aa2f7;
+            --accent-hover: #9aa5ce;
             --success: #9ece6a;
             --warning: #e0af68;
             --error: #f7768e;
-            --cursor: #c0caf5;
+            --purple: #bb9af7;
+            --cyan: #7dcfff;
+            --border: #2f334d;
+            --shadow: 0 10px 40px rgba(0,0,0,0.4);
         }
 
         * {
@@ -21,29 +35,375 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 900px;
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(122, 162, 247, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(187, 154, 247, 0.05) 0%, transparent 50%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 27, 38, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(122, 162, 247, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Tech Stack */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tech-category {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .tech-category h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            background: var(--bg-tertiary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Activity Feed */
+        .activity-feed {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             padding: 2rem;
         }
 
-        /* Terminal Header */
+        .activity-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .activity-icon.green { background: rgba(158, 206, 106, 0.1); }
+        .activity-icon.blue { background: rgba(122, 162, 247, 0.1); }
+        .activity-icon.purple { background: rgba(187, 154, 247, 0.1); }
+
+        .activity-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .activity-content p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+        }
+
+        /* Terminal Section */
+        .terminal-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 4rem 0;
+        }
+
         .terminal-header {
-            background: #1a1b26;
-            border-radius: 8px 8px 0 0;
+            background: #16161e;
             padding: 0.75rem 1rem;
             display: flex;
             align-items: center;
             gap: 8px;
-            border-bottom: 1px solid #2f334d;
+            border-bottom: 1px solid var(--border);
         }
 
         .terminal-dot {
@@ -56,270 +416,439 @@
         .terminal-dot.yellow { background: #e0af68; }
         .terminal-dot.green { background: #9ece6a; }
 
-        .terminal-title {
-            margin-left: auto;
-            color: #565f89;
-            font-size: 0.875rem;
-        }
-
-        /* Main Terminal */
-        .terminal {
-            background: #1a1b26;
-            border-radius: 0 0 8px 8px;
+        .terminal-body {
             padding: 1.5rem;
-            min-height: 80vh;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        .command {
+        .command-line {
+            margin-bottom: 1rem;
+        }
+
+        .command-line .prompt {
             color: var(--success);
-            margin-bottom: 0.5rem;
         }
 
-        .command::before {
-            content: "$ ";
-            color: var(--accent);
+        .command-line .command {
+            color: var(--text-primary);
         }
 
-        .output {
-            color: var(--text);
-            margin-bottom: 1.5rem;
+        .command-line .output {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
             white-space: pre-wrap;
         }
 
-        .highlight {
-            color: var(--accent);
-        }
-
-        .success { color: var(--success); }
-        .warning { color: var(--warning); }
-        .error { color: var(--error); }
-
-        /* Animated Cursor */
-        .cursor {
-            display: inline-block;
-            width: 8px;
-            height: 18px;
-            background: var(--cursor);
-            animation: blink 1s infinite;
-            vertical-align: middle;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-
-        /* Projects Grid */
-        .projects {
+        /* Contact */
+        .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
+            gap: 1.5rem;
         }
 
-        .project-card {
-            background: #16161e;
-            border: 1px solid #2f334d;
-            border-radius: 6px;
-            padding: 1rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .contact-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
         }
 
-        .project-card:hover {
+        .contact-card:hover {
             border-color: var(--accent);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(122, 162, 247, 0.2);
         }
 
-        .project-card h3 {
-            color: var(--accent);
+        .contact-card h3 {
             margin-bottom: 0.5rem;
         }
 
-        .project-card p {
-            font-size: 0.875rem;
-            color: #565f89;
-        }
-
-        /* Tech Stack */
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-
-        .tech-badge {
-            background: #16161e;
-            border: 1px solid var(--accent);
+        .contact-card a {
             color: var(--accent);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.875rem;
-        }
-
-        /* Links */
-        .links {
-            display: flex;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .link-btn {
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
         }
 
-        .link-btn:hover {
-            background: var(--accent);
-            color: var(--bg);
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
         }
 
-        /* ASCII Art */
-        .ascii-art {
-            font-size: 0.7rem;
-            line-height: 1.2;
-            color: var(--warning);
-            margin: 1.5rem 0;
-            white-space: pre;
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
         }
 
         /* Responsive */
-        @media (max-width: 600px) {
-            .container { padding: 1rem; }
-            .terminal { padding: 1rem; }
-            .ascii-art { font-size: 0.5rem; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="terminal-header">
-            <div class="terminal-dot red"></div>
-            <div class="terminal-dot yellow"></div>
-            <div class="terminal-dot green"></div>
-            <div class="terminal-title">az@mizoz:~</div>
+    <div class="bg-animation"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo mono">mizoz</a>
+            <ul class="nav-links mono">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#tech">Tech Stack</a></li>
+                <li><a href="#activity">Activity</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="terminal">
-            <div class="command">whoami</div>
-            <div class="output">
-Developer · Builder · Automation Enthusiast
-Based in Calgary, AB 🇨🇦
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge mono">
+                🟢 Available for collaborations
             </div>
-
-            <div class="command">cat about.txt</div>
-            <div class="output">
-I build tools that make developers faster.
-
-CLI utilities, automation scripts, AI integrations —
-if it saves time, I'm interested.
-
-Current focus:
-  • <span class="highlight">OpenClaw</span> — AI agent framework
-  • <span class="highlight">20+ CLI Tools</span> — Node.js/Python utilities
-  • <span class="highlight">Automation</span> — If I do it twice, I automate it
-            </div>
-
-            <div class="command">ls projects/</div>
-            <div class="projects">
-                <div class="project-card" onclick="window.open('https://github.com/mizoz', '_blank')">
-                    <h3>🛠️ CLI Tools</h3>
-                    <p>20+ developer utilities for everyday tasks</p>
-                </div>
-                <div class="project-card" onclick="window.open('https://github.com/mizoz/04-Scripts', '_blank')">
-                    <h3>🚀 GIT-UP</h3>
-                    <p>Automated GitHub portfolio activator</p>
-                </div>
-                <div class="project-card" onclick="window.open('https://github.com/mizoz', '_blank')">
-                    <h3>🤖 OpenClaw</h3>
-                    <p>AI agent skills & automation workflows</p>
-                </div>
-                <div class="project-card" onclick="window.open('https://github.com/mizoz', '_blank')">
-                    <h3>🎮 Neongrid</h3>
-                    <p>Cyberpunk terminal tycoon game</p>
-                </div>
-            </div>
-
-            <div class="command">cat tech-stack.json</div>
-            <div class="tech-stack">
-                <span class="tech-badge">Node.js</span>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Go</span>
-                <span class="tech-badge">Rust</span>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">TypeScript</span>
-                <span class="tech-badge">OpenClaw</span>
-                <span class="tech-badge">GitHub CLI</span>
-                <span class="tech-badge">Docker</span>
-                <span class="tech-badge">Linux</span>
-            </div>
-
-            <div class="command">./connect.sh</div>
-            <div class="links">
-                <a href="https://github.com/mizoz" class="link-btn" target="_blank">GitHub</a>
-                <a href="https://t.me/az" class="link-btn" target="_blank">Telegram</a>
-                <a href="mailto:dev@local" class="link-btn">Email</a>
-            </div>
-
-            <div class="ascii-art">
-           __
-          /  \
-         /    \
-        /      \
-       /________\
-      |          |
-      |  🦎      |
-      |  Mila    |
-      |__________|
-         |    |
-         |____|
-
-  "Your AI familiar in the machine"
-            </div>
-
-            <div class="command">
-                <span class="cursor"></span>
+            <h1>az</h1>
+            <p class="mono">Developer · Builder · Automation Enthusiast</p>
+            <p>Building CLI tools, automation frameworks, and AI integrations that save developers time.</p>
+            
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="https://github.com/mizoz" class="btn btn-secondary" target="_blank">GitHub Profile</a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <p>Tools and frameworks I've built to automate workflows and save time</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card" onclick="window.open('https://github.com/mizoz/04-Scripts', '_blank')">
+                <div class="project-icon">🚀</div>
+                <h3>GIT-UP System</h3>
+                <p>Automated GitHub portfolio activator — manages 50 repos with drip-feed commits, secret scanning, and CI/CD workflows.</p>
+                <div class="project-tags">
+                    <span class="tag mono">Python</span>
+                    <span class="tag mono">GitHub Actions</span>
+                    <span class="tag mono">Automation</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/mizoz/04-Scripts" class="project-link" target="_blank">
+                        View Repo →
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://github.com/mizoz', '_blank')">
+                <div class="project-icon">🤖</div>
+                <h3>OpenClaw Automation</h3>
+                <p>AI agent skills for X posting, multi-platform monitoring, overnight optimization, and voice briefs.</p>
+                <div class="project-tags">
+                    <span class="tag mono">OpenClaw</span>
+                    <span class="tag mono">AI</span>
+                    <span class="tag mono">Automation</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/mizoz" class="project-link" target="_blank">
+                        Explore Skills →
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://github.com/mizoz?tab=repositories', '_blank')">
+                <div class="project-icon">🛠️</div>
+                <h3>CLI Tools Collection</h3>
+                <p>20+ developer utilities including JSON prettifier, file watcher, password generator, and more.</p>
+                <div class="project-tags">
+                    <span class="tag mono">Node.js</span>
+                    <span class="tag mono">Python</span>
+                    <span class="tag mono">CLI</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/mizoz?tab=repositories" class="project-link" target="_blank">
+                        Browse All →
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.open('https://github.com/mizoz', '_blank')">
+                <div class="project-icon">🎮</div>
+                <h3>Neongrid</h3>
+                <p>Cyberpunk terminal tycoon game — build and manage a futuristic city from your command line.</p>
+                <div class="project-tags">
+                    <span class="tag mono">Node.js</span>
+                    <span class="tag mono">Game</span>
+                    <span class="tag mono">Terminal</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/mizoz" class="project-link" target="_blank">
+                        Learn More →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech">
+        <div class="section-header">
+            <h2>Tech Stack</h2>
+            <p>Tools and technologies I use to build products</p>
+        </div>
+
+        <div class="tech-grid">
+            <div class="tech-category">
+                <h3 class="mono">Languages</h3>
+                <div class="tech-list mono">
+                    <span class="tech-item">Node.js 25.6.1</span>
+                    <span class="tech-item">Python 3.12</span>
+                    <span class="tech-item">Go</span>
+                    <span class="tech-item">Rust</span>
+                    <span class="tech-item">JavaScript</span>
+                    <span class="tech-item">TypeScript</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="mono">AI & LLMs</h3>
+                <div class="tech-list mono">
+                    <span class="tech-item">Bailian/Qwen</span>
+                    <span class="tech-item">Ollama</span>
+                    <span class="tech-item">OpenClaw</span>
+                    <span class="tech-item">ElevenLabs</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="mono">Tools</h3>
+                <div class="tech-list mono">
+                    <span class="tech-item">GitHub CLI</span>
+                    <span class="tech-item">Docker</span>
+                    <span class="tech-item">n8n</span>
+                    <span class="tech-item">Tailscale</span>
+                    <span class="tech-item">Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity Feed -->
+    <section id="activity">
+        <div class="section-header">
+            <h2>Recent Activity</h2>
+            <p>What I've been working on lately</p>
+        </div>
+
+        <div class="activity-feed">
+            <div class="activity-item">
+                <div class="activity-icon green">🎉</div>
+                <div class="activity-content">
+                    <h4>First Open-Source PR</h4>
+                    <p class="mono">Contributed TypeScript type fixes to hiero-sdk-js #3809</p>
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <div class="activity-icon blue">🚀</div>
+                <div class="activity-content">
+                    <h4>GIT-UP System Launched</h4>
+                    <p class="mono">Automated deployment system for 50 GitHub repositories</p>
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <div class="activity-icon purple">🤖</div>
+                <div class="activity-content">
+                    <h4>OpenClaw Automation Stack</h4>
+                    <p class="mono">Built X posting, monitoring, and overnight optimization workflows</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number mono">20+</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number mono">50</div>
+                <div class="stat-label">Repos Deployed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number mono">6</div>
+                <div class="stat-label">Languages</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number mono">∞</div>
+                <div class="stat-label">Coffee Consumed</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal Demo -->
+    <section>
+        <div class="terminal-section">
+            <div class="terminal-header">
+                <div class="terminal-dot red"></div>
+                <div class="terminal-dot yellow"></div>
+                <div class="terminal-dot green"></div>
+                <span class="mono" style="margin-left: auto; color: var(--text-secondary); font-size: 0.875rem;">az@mizoz:~</span>
+            </div>
+            <div class="terminal-body">
+                <div class="command-line">
+                    <div class="mono">
+                        <span class="prompt">$ whoami</span>
+                    </div>
+                    <div class="output mono">
+> Developer · Builder · Automation Enthusiast
+> Based in Calgary, AB 🇨🇦
+> Building tools that make developers faster
+                    </div>
+                </div>
+                <div class="command-line">
+                    <div class="mono">
+                        <span class="prompt">$ cat current-focus.txt</span>
+                    </div>
+                    <div class="output mono">
+• OpenClaw automation stack
+• CLI tools collection (20+ utilities)
+• GIT-UP system (50 repos automated)
+• Neongrid game (WIP)
+                    </div>
+                </div>
+                <div class="command-line">
+                    <div class="mono">
+                        <span class="prompt">$ ./connect.sh</span>
+                        <span class="cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>Let's Connect</h2>
+            <p>Open for collaborations, tool ideas, and automation chat</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>GitHub</h3>
+                <p class="mono" style="color: var(--text-secondary); margin-bottom: 1rem;">Check out my projects</p>
+                <a href="https://github.com/mizoz" target="_blank" class="btn btn-secondary">View Profile</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Telegram</h3>
+                <p class="mono" style="color: var(--text-secondary); margin-bottom: 1rem;">Chat about tools & automation</p>
+                <a href="https://t.me/az" target="_blank" class="btn btn-secondary">Message Me</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Email</h3>
+                <p class="mono" style="color: var(--text-secondary); margin-bottom: 1rem;">For collaborations</p>
+                <a href="mailto:dev@local" class="btn btn-secondary">Send Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="mono" style="font-size: 3rem; margin-bottom: 1rem;">🦎</div>
+            <p style="color: var(--text-secondary);">
+                Built with too much coffee and OpenClaw automation
+            </p>
+            <p class="mono" style="color: var(--text-secondary); margin-top: 0.5rem;">
+                Calgary, AB · MST (America/Edmonton)
+            </p>
+            
+            <ul class="footer-links mono">
+                <li><a href="https://github.com/mizoz" target="_blank">GitHub</a></li>
+                <li><a href="https://t.me/az" target="_blank">Telegram</a></li>
+                <li><a href="mailto:dev@local">Email</a></li>
+            </ul>
+            
+            <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 2rem;">
+                © 2026 mizoz. All rights reserved.
+            </p>
+        </div>
+    </footer>
 
     <script>
-        // Typing animation for commands
-        document.addEventListener('DOMContentLoaded', () => {
-            const commands = document.querySelectorAll('.command');
-            commands.forEach((cmd, index) => {
-                if (cmd.querySelector('.cursor')) return;
-                cmd.style.opacity = '0';
-                setTimeout(() => {
-                    cmd.style.opacity = '1';
-                    cmd.style.transition = 'opacity 0.5s ease';
-                }, index * 300);
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
 
-        // Easter egg: Konami code
-        let konamiCode = [];
-        const konamiSequence = [38,38,40,40,37,39,37,39,66,65];
-        
-        document.addEventListener('keydown', (e) => {
-            konamiCode.push(e.keyCode);
-            if (konamiCode.length > konamiSequence.length) {
-                konamiCode.shift();
-            }
-            if (konamiCode.join(',') === konamiSequence.join(',')) {
-                document.body.style.animation = 'rainbow 2s infinite';
-                alert('🦎 Mila says: Nice! You found the secret!');
-            }
+        // Fade in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.project-card, .stat-card, .tech-category').forEach(el => {
+            observer.observe(el);
         });
+
+        // Animated cursor
+        setInterval(() => {
+            const cursor = document.querySelector('.cursor');
+            if (cursor) {
+                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+            }
+        }, 500);
     </script>
 </body>
 </html>
