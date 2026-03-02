@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mizoz | Developer · Builder · Automation</title>
+    <style>
+        :root {
+            --bg: #0f0f1a;
+            --text: #a9b1d6;
+            --accent: #7aa2f7;
+            --success: #9ece6a;
+            --warning: #e0af68;
+            --error: #f7768e;
+            --cursor: #c0caf5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Terminal Header */
+        .terminal-header {
+            background: #1a1b26;
+            border-radius: 8px 8px 0 0;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #2f334d;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #f7768e; }
+        .terminal-dot.yellow { background: #e0af68; }
+        .terminal-dot.green { background: #9ece6a; }
+
+        .terminal-title {
+            margin-left: auto;
+            color: #565f89;
+            font-size: 0.875rem;
+        }
+
+        /* Main Terminal */
+        .terminal {
+            background: #1a1b26;
+            border-radius: 0 0 8px 8px;
+            padding: 1.5rem;
+            min-height: 80vh;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .command {
+            color: var(--success);
+            margin-bottom: 0.5rem;
+        }
+
+        .command::before {
+            content: "$ ";
+            color: var(--accent);
+        }
+
+        .output {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            white-space: pre-wrap;
+        }
+
+        .highlight {
+            color: var(--accent);
+        }
+
+        .success { color: var(--success); }
+        .warning { color: var(--warning); }
+        .error { color: var(--error); }
+
+        /* Animated Cursor */
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background: var(--cursor);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Projects Grid */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .project-card {
+            background: #16161e;
+            border: 1px solid #2f334d;
+            border-radius: 6px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(122, 162, 247, 0.2);
+        }
+
+        .project-card h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            font-size: 0.875rem;
+            color: #565f89;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-badge {
+            background: #16161e;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+        }
+
+        /* Links */
+        .links {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .link-btn {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .link-btn:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        /* ASCII Art */
+        .ascii-art {
+            font-size: 0.7rem;
+            line-height: 1.2;
+            color: var(--warning);
+            margin: 1.5rem 0;
+            white-space: pre;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 1rem; }
+            .terminal { padding: 1rem; }
+            .ascii-art { font-size: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <div class="terminal-title">az@mizoz:~</div>
+        </div>
+
+        <div class="terminal">
+            <div class="command">whoami</div>
+            <div class="output">
+Developer · Builder · Automation Enthusiast
+Based in Calgary, AB 🇨🇦
+            </div>
+
+            <div class="command">cat about.txt</div>
+            <div class="output">
+I build tools that make developers faster.
+
+CLI utilities, automation scripts, AI integrations —
+if it saves time, I'm interested.
+
+Current focus:
+  • <span class="highlight">OpenClaw</span> — AI agent framework
+  • <span class="highlight">20+ CLI Tools</span> — Node.js/Python utilities
+  • <span class="highlight">Automation</span> — If I do it twice, I automate it
+            </div>
+
+            <div class="command">ls projects/</div>
+            <div class="projects">
+                <div class="project-card" onclick="window.open('https://github.com/mizoz', '_blank')">
+                    <h3>🛠️ CLI Tools</h3>
+                    <p>20+ developer utilities for everyday tasks</p>
+                </div>
+                <div class="project-card" onclick="window.open('https://github.com/mizoz/04-Scripts', '_blank')">
+                    <h3>🚀 GIT-UP</h3>
+                    <p>Automated GitHub portfolio activator</p>
+                </div>
+                <div class="project-card" onclick="window.open('https://github.com/mizoz', '_blank')">
+                    <h3>🤖 OpenClaw</h3>
+                    <p>AI agent skills & automation workflows</p>
+                </div>
+                <div class="project-card" onclick="window.open('https://github.com/mizoz', '_blank')">
+                    <h3>🎮 Neongrid</h3>
+                    <p>Cyberpunk terminal tycoon game</p>
+                </div>
+            </div>
+
+            <div class="command">cat tech-stack.json</div>
+            <div class="tech-stack">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Go</span>
+                <span class="tech-badge">Rust</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">OpenClaw</span>
+                <span class="tech-badge">GitHub CLI</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Linux</span>
+            </div>
+
+            <div class="command">./connect.sh</div>
+            <div class="links">
+                <a href="https://github.com/mizoz" class="link-btn" target="_blank">GitHub</a>
+                <a href="https://t.me/az" class="link-btn" target="_blank">Telegram</a>
+                <a href="mailto:dev@local" class="link-btn">Email</a>
+            </div>
+
+            <div class="ascii-art">
+           __
+          /  \
+         /    \
+        /      \
+       /________\
+      |          |
+      |  🦎      |
+      |  Mila    |
+      |__________|
+         |    |
+         |____|
+
+  "Your AI familiar in the machine"
+            </div>
+
+            <div class="command">
+                <span class="cursor"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Typing animation for commands
+        document.addEventListener('DOMContentLoaded', () => {
+            const commands = document.querySelectorAll('.command');
+            commands.forEach((cmd, index) => {
+                if (cmd.querySelector('.cursor')) return;
+                cmd.style.opacity = '0';
+                setTimeout(() => {
+                    cmd.style.opacity = '1';
+                    cmd.style.transition = 'opacity 0.5s ease';
+                }, index * 300);
+            });
+        });
+
+        // Easter egg: Konami code
+        let konamiCode = [];
+        const konamiSequence = [38,38,40,40,37,39,37,39,66,65];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            if (konamiCode.join(',') === konamiSequence.join(',')) {
+                document.body.style.animation = 'rainbow 2s infinite';
+                alert('🦎 Mila says: Nice! You found the secret!');
+            }
+        });
+    </script>
+</body>
+</html>
