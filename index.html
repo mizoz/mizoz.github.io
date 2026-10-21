@@ -3,141 +3,164 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ahmed Mahmoud · Calgary founder, builder & the Lab</title>
-<meta name="description" content="Ahmed Mahmoud is a Calgary founder and builder: founder of FirstShow, maker of websites, video and free tools. Ask the on-device model anything, or open the Lab.">
+<title>Ahmed Mahmoud · Calgary founder & tech wizard · Pick your Ahmed</title>
+<meta name="description" content="Ahmed Mahmoud is a Calgary founder, communications professional and tech wizard. Founder of FirstShow. Pick a door: polished portfolio, 2003 mayhem, the Lab of free tools, or the terminal.">
 <link rel="canonical" href="https://lab.zalastack.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ahmed Mahmoud · Pick your Ahmed">
-<meta property="og:description" content="Calgary founder and builder. Free tools, a tiny on-device model, a terminal and a portfolio with two personalities.">
+<meta property="og:title" content="Pick your Ahmed">
+<meta property="og:description" content="Four doors: a polished portfolio, full 2003 mayhem, a lab of free tools, and a terminal. Calgary founder, communications pro and tech wizard.">
 <meta property="og:url" content="https://lab.zalastack.com/">
 <meta property="og:image" content="https://lab.zalastack.com/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f0e0d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#121110">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' text-anchor='middle' fill='%23ff5a1f'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Anton&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/home.css">
-<link rel="modulepreload" href="/assets/brain.js">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://lab.zalastack.com/#site","url":"https://lab.zalastack.com/","name":"Ahmed Mahmoud","author":{"@id":"https://lab.zalastack.com/#ahmed"}},{"@type":"Person","@id":"https://lab.zalastack.com/#ahmed","name":"Ahmed Mahmoud","alternateName":"mizoz","url":"https://lab.zalastack.com/","image":"https://lab.zalastack.com/assets/og.png","jobTitle":"Founder, FirstShow","description":"Calgary founder and builder. Founder of FirstShow, a sponsorship company for events, creators and venues across Canada. Makes websites, brands, photo, video and free web tools. Communications professional and tech wizard.","address":{"@type":"PostalAddress","addressLocality":"Calgary","addressRegion":"AB","addressCountry":"CA"},"worksFor":{"@type":"Organization","name":"FirstShow","url":"https://firstshow.ca"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Southern Alberta Institute of Technology (SAIT)"},"knowsAbout":["digital communications","video production","photography","live streaming","websites","sponsorship","event marketing","social media","Google Ads","web development"],"sameAs":["https://github.com/mizoz","https://www.linkedin.com/in/ahmed-m-82ba28169/","https://firstshow.ca","https://frameyyc.ca"]}]}</script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Anton&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://lab.zalastack.com/#site","url":"https://lab.zalastack.com/","name":"Ahmed Mahmoud","author":{"@id":"https://lab.zalastack.com/#ahmed"}},{"@type":"Person","@id":"https://lab.zalastack.com/#ahmed","name":"Ahmed Mahmoud","alternateName":"mizoz","url":"https://lab.zalastack.com/","image":"https://lab.zalastack.com/assets/og.png","jobTitle":"Founder, FirstShow","description":"Calgary founder, communications professional and tech wizard. Founder of FirstShow, a sponsorship company for events, creators and venues across Canada. Makes websites, brands, photo, video and free web tools.","address":{"@type":"PostalAddress","addressLocality":"Calgary","addressRegion":"AB","addressCountry":"CA"},"worksFor":{"@type":"Organization","name":"FirstShow","url":"https://firstshow.ca"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Southern Alberta Institute of Technology (SAIT)"},"knowsAbout":["digital communications","video production","photography","live streaming","websites","sponsorship","event marketing","social media","Google Ads","web development"],"sameAs":["https://github.com/mizoz","https://www.linkedin.com/in/ahmed-m-82ba28169/","https://firstshow.ca","https://frameyyc.ca"]}]}</script>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hidden}
+:focus-visible{outline:3px solid #ff5a1f;outline-offset:-6px}
+
+/* the 2x2 that breathes */
+.doors{--c:1fr 1fr;--r:1fr 1fr;display:grid;grid-template-columns:var(--c);grid-template-rows:var(--r);height:100vh;height:100svh;
+  transition:grid-template-columns .6s cubic-bezier(.2,.8,.2,1),grid-template-rows .6s cubic-bezier(.2,.8,.2,1)}
+@media (hover:hover) and (min-width:861px){
+  .doors:has(.d1:hover,.d1:focus-visible){--c:1.9fr 1fr;--r:1.6fr 1fr}
+  .doors:has(.d2:hover,.d2:focus-visible){--c:1fr 1.9fr;--r:1.6fr 1fr}
+  .doors:has(.d3:hover,.d3:focus-visible){--c:1.9fr 1fr;--r:1fr 1.6fr}
+  .doors:has(.d4:hover,.d4:focus-visible){--c:1fr 1.9fr;--r:1fr 1.6fr}
+}
+.door{position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;text-decoration:none;container-type:size;padding:clamp(18px,4cqi,56px)}
+.door .no{position:absolute;left:clamp(18px,4cqi,56px);top:clamp(16px,3.4cqi,44px);font:600 12px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.door h2{margin:0;line-height:.95;flex-shrink:0}
+.door p,.door .go{flex-shrink:0}
+.door>.screen,.door>.chips{flex:0 1 auto;min-height:0;overflow:hidden;margin:clamp(30px,7cqi,64px) 0 auto}
+.door p{margin:clamp(8px,2cqi,18px) 0 0;max-width:44ch;font-size:clamp(13px,2.4cqi,19px)}
+.door .more{max-height:0;opacity:0;overflow:hidden;margin:0;transition:opacity .35s,max-height .5s,margin .5s}
+.door:hover .more,.door:focus-visible .more{max-height:200px;opacity:1;margin-top:clamp(8px,2cqi,18px)}
+.d2 p.more{padding-block:0;border-width:0}
+.d2:hover p.more,.d2:focus-visible p.more{padding-block:6px;border-width:2px}
+.door .go{display:inline-flex;align-self:flex-start;margin-top:clamp(12px,2.6cqi,26px);font-weight:600;font-size:clamp(13px,2.2cqi,16px);transition:transform .3s}
+.door:hover .go{transform:translateX(6px)}
+
+/* 01 polished */
+.d1{background:#f6f3ec;color:#141312}
+.d1 h2{font:400 clamp(30px,9cqi,104px)/.98 "Fraunces",Georgia,serif;letter-spacing:-.035em}
+.d1 h2 em{color:#d2491f}
+.d1 p{color:#5f5b54}
+.d1 .go{border:1px solid #141312;border-radius:999px;padding:10px 18px}
+.d1:hover .go{background:#141312;color:#f6f3ec}
+
+/* 02 mayhem */
+.d2{color:#000;font-family:"Times New Roman",serif;background-color:#ff99ff;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70'%3E%3Cpath d='M17 4l4 9 10 .8-7.6 6.4L26 30l-9-5.4L8 30l2.6-9.8L3 13.8 13 13z' fill='%23ffd700' stroke='%23b8860b'/%3E%3Cpath d='M52 39l4 9 10 .8-7.6 6.4L61 65l-9-5.4L43 65l2.6-9.8L38 48.8 48 48z' fill='%23ffd700' stroke='%23b8860b'/%3E%3C/svg%3E"),linear-gradient(160deg,#ff99ff,#cc99ff 40%,#99ccff 75%,#ccff99);padding-bottom:clamp(48px,8cqi,80px)}
+.d2 .no{background:#000;color:#ff0;padding:3px 8px;opacity:1}
+.d2 h2{font:clamp(34px,11cqi,128px)/.9 Impact,"Anton",sans-serif;text-transform:uppercase;background:linear-gradient(180deg,#fff,#ff0 25%,#f90 50%,#f06 75%,#90f);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:2px #000;filter:drop-shadow(4px 4px 0 #000);transform:rotate(-2deg);transform-origin:left bottom}
+.d2 p{font:700 clamp(13px,2.3cqi,18px) "Comic Sans MS","Comic Neue",cursive;background:rgba(255,255,255,.85);border:2px dashed #ff1493;padding:6px 10px;align-self:flex-start}
+.d2 .go{font:700 clamp(13px,2.4cqi,18px) "Comic Sans MS","Comic Neue",cursive;color:#fff;background:linear-gradient(#66ff66,#00b300);border:3px solid #000;border-radius:12px;padding:8px 16px;box-shadow:3px 3px 0 #000;text-shadow:2px 2px 0 #000}
+.d2:hover .go{transform:scale(1.06) rotate(-2deg)}
+.burst{position:absolute;right:clamp(14px,4cqi,44px);top:clamp(14px,4cqi,40px);width:clamp(70px,16cqi,120px);aspect-ratio:1;display:grid;place-items:center;text-align:center;background:#ff1493;color:#fff;font:900 clamp(10px,2.2cqi,15px)/1.05 Impact,"Anton",sans-serif;text-transform:uppercase;
+  clip-path:polygon(50% 0,61% 13%,77% 6%,79% 23%,95% 25%,88% 40%,100% 52%,87% 62%,93% 78%,77% 79%,73% 95%,59% 87%,50% 100%,40% 87%,26% 95%,22% 79%,6% 78%,12% 62%,0 52%,11% 40%,4% 25%,21% 23%,23% 6%,39% 13%);animation:spin 10s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.marq{position:absolute;left:0;right:0;bottom:0;background:#000;color:#0f0;font:700 13px "Courier New",monospace;white-space:nowrap;overflow:hidden;padding:6px 0}
+.marq span{display:inline-block;padding-left:100%;animation:tick 22s linear infinite}
+@keyframes tick{to{transform:translateX(-100%)}}
+
+/* 03 lab */
+.d3{color:#16211a;background-color:#eef4ec;background-image:linear-gradient(#d7e3d2 1px,transparent 1px),linear-gradient(90deg,#d7e3d2 1px,transparent 1px);background-size:22px 22px}
+.d3 .no{color:#0f8a4b;opacity:1}
+.d3 h2{font:600 clamp(30px,9cqi,100px)/1 "JetBrains Mono",monospace;letter-spacing:-.05em}
+.d3 h2 span{color:#0f8a4b;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.d3 p{color:#3d5244}
+.d3 .go{color:#fff;background:#0f8a4b;border-radius:8px;padding:9px 16px}
+.chips{display:flex;flex-wrap:wrap;align-content:flex-start;justify-content:flex-end;gap:8px;padding:4px 2px}
+.chips span{font:600 clamp(11px,1.9cqi,14px) "JetBrains Mono",monospace;background:#fff;border:1px solid #c9d6c3;border-radius:8px;padding:5px 9px;animation:float 5s ease-in-out infinite;white-space:nowrap}
+.chips span:nth-child(2n){animation-delay:-1.3s}.chips span:nth-child(3n){animation-delay:-2.6s}
+@keyframes float{50%{transform:translateY(-6px)}}
+
+/* 04 terminal */
+.d4{background:#0b0f0c;color:#c8f7d4;font-family:"JetBrains Mono",monospace}
+.d4 .no{color:#7dff9f;opacity:1}
+.screen{font-size:clamp(11px,2cqi,15px);line-height:1.7;text-shadow:0 0 6px rgba(125,255,159,.35)}
+.screen span.l{display:block;white-space:nowrap;overflow:hidden;width:0;animation:type 1s steps(30,end) forwards}
+.screen .p{color:#7dff9f}
+.screen .l:nth-child(1){animation-delay:.3s}.screen .l:nth-child(2){animation-delay:1.4s}.screen .l:nth-child(3){animation-delay:2.5s}.screen .l:nth-child(4){animation-delay:3.6s}.screen .l:nth-child(5){animation-delay:4.7s}
+@keyframes type{to{width:100%}}
+.d4 h2{font:600 clamp(28px,8.5cqi,92px)/1 "JetBrains Mono",monospace;color:#7dff9f;letter-spacing:-.04em}
+.d4 p{color:#8fbf9c}
+.d4 kbd{font:600 .9em "JetBrains Mono",monospace;border:1px solid #2b3a2e;border-bottom-width:2px;border-radius:5px;padding:0 6px;color:#c8f7d4}
+.d4 .go{color:#0b0f0c;background:#7dff9f;border-radius:6px;padding:9px 16px}
+.d4::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 3px)}
+
+/* center badge */
+.ask{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;margin:0;background:#121110;color:#f6f3ec;border:3px solid #f6f3ec;border-radius:999px;padding:12px 22px;font:600 16px "Inter",sans-serif;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.35);pointer-events:none;transition:opacity .3s}
+.ask i{font:italic 400 19px "Fraunces",serif;color:#ff7448}
+.doors:hover~.ask{opacity:0}
+
+.about{background:#121110;color:#a7a299;font-size:14.5px;padding:28px clamp(20px,6vw,80px) 34px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.about p{margin:0;max-width:80ch}.about b{color:#f1eee7}.about a{color:#f1eee7}
+.about nav{display:flex;gap:18px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .doors{grid-template-columns:1fr;grid-template-rows:none;height:auto}
+  .door{min-height:72svh}
+  .door .more{max-height:200px;opacity:1;margin-top:10px}
+  .d2 p.more{padding-block:6px;border-width:2px}
+  .ask{position:absolute;top:18px;transform:translateX(-50%)}
+  .d1 .no{top:78px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.screen span.l{width:auto}.marq span{padding-left:0}}
+</style>
 </head>
 <body>
-<a class="skip" href="#ask">Skip to the command bar</a>
-<div class="spot" aria-hidden="true"></div>
-
-<header class="bar">
-  <a class="mark" href="/" aria-label="Home">A<span>.</span></a>
-  <nav aria-label="Main">
-    <a href="/pro/">Portfolio</a>
-    <a href="#lab">Lab</a>
-    <a href="/mayhem/">Mayhem</a>
-    <a href="#terminal" data-open-term><kbd>~</kbd> Terminal</a>
-  </nav>
-</header>
-
-<main>
-  <section class="hero" aria-labelledby="name">
-    <p class="kicker"><span class="live" aria-hidden="true"></span>Calgary, Alberta · open to work, anywhere</p>
-    <h1 id="name"><span class="n1">Ahmed</span> <span class="n2">Mahmoud</span></h1>
-    <p class="sub">Founder of <a href="https://firstshow.ca">FirstShow</a>. Communications professional and tech wizard. I make websites, brands, photo, video and live streams, and I build free tools people actually use.</p>
-
-    <form class="askform" id="askform" role="search" autocomplete="off">
-      <label class="sr" for="ask">Ask anything about Ahmed, or say what you need to do</label>
-      <span class="spark" aria-hidden="true">✦</span>
-      <input id="ask" type="text" spellcheck="false" placeholder="Ask anything, or tell me what you need to do…">
-      <kbd class="hint" aria-hidden="true">/</kbd>
-      <button class="go" type="submit" aria-label="Go">↵</button>
-    </form>
-    <div class="readout" id="readout" aria-label="Model readout">
-      <span class="chip"><i class="dot"></i><b data-k="status">tiny brain</b> on your device</span>
-      <span class="chip"><b data-k="size">…</b> weights</span>
-      <span class="chip"><b data-k="intents">…</b> intents</span>
-      <span class="chip">intent <b data-k="intent">—</b></span>
-      <span class="chip conf">confidence <b data-k="conf">—</b><span class="cb" id="confbar"></span></span>
-      <span class="chip">⚡ <b data-k="ms">—</b></span>
-      <span class="chip" id="bigstat">big brain: asleep</span>
-    </div>
-    <div class="answer" id="answer" aria-live="polite"></div>
-    <div class="tries" aria-label="Try one">
-      <button type="button" data-try="resize my photo for an instagram story">🖼️ resize for an IG story</button>
-      <button type="button" data-try="how much upload do i need for youtube 1080p60">📡 upload for YouTube 1080p60</button>
-      <button type="button" data-try="who is ahmed?">🙋 who is Ahmed?</button>
-      <button type="button" data-try="is he open to remote work">🌎 open to remote?</button>
-      <button type="button" data-try="plan a gala run of show">🎤 plan a gala</button>
-    </div>
-  </section>
-
-  <section class="doors" aria-labelledby="doors-h">
-    <h2 id="doors-h" class="sec">Pick your <em>Ahmed</em></h2>
-    <div class="dgrid">
-      <a class="door d-pro" href="/pro/"><span class="no">01</span><h3>Polished</h3><p>The portfolio. Calm, clean, recruiter approved. Zero popups.</p><span class="cta">Enter →</span></a>
-      <a class="door d-may" href="/mayhem/"><span class="no">02</span><h3>Mayhem</h3><p>Full 2003 mode. Prize wheel, fake antivirus, Steve. Viewer discretion advised.</p><span class="cta">ENTER IF U DARE 🌀</span><span class="burst" aria-hidden="true">15+ POPUPS!!</span></a>
-      <a class="door d-lab" href="#lab"><span class="no">03</span><h3>The Lab</h3><p>Fifteen live experiments. Free tools, guides, hardware and a game.</p><span class="cta">Open the lab ↓</span></a>
-      <a class="door d-term" href="#terminal" data-open-term><span class="no">04</span><h3>Terminal</h3><p><span class="mono">$ whoami</span><br>Press <kbd>~</kbd> anywhere. Tab completes. It understands plain English too.</p><span class="cta mono">./open --terminal ▍</span></a>
-    </div>
-  </section>
-
-  <section class="lab" id="lab" aria-labelledby="lab-h">
-    <div class="labhead">
-      <div>
-        <p class="kicker green">Door 03 · the lab</p>
-        <h2 id="lab-h" class="sec">Free tools &amp; experiments</h2>
-        <p class="lead">Everything I've built and put online. Free, no sign-up, nothing you type leaves your browser.</p>
-      </div>
-      <div class="lf" role="group" aria-label="Filter">
-        <button type="button" data-f="all" aria-pressed="true">All</button>
-        <button type="button" data-f="social" aria-pressed="false">Social</button>
-        <button type="button" data-f="web" aria-pressed="false">Web</button>
-        <button type="button" data-f="events" aria-pressed="false">Events</button>
-        <button type="button" data-f="video" aria-pressed="false">Video</button>
-        <button type="button" data-f="more" aria-pressed="false">Projects</button>
-      </div>
-    </div>
-    <div class="bento">
-      <a class="exp big e1" data-kind="social" href="/social-image-sizer/"><span class="tag">EXP-001 · social</span><div class="vis v-sizes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><h3>Social Image Sizer</h3><p>One image in, 23 platform sizes out, as a zip.</p></a>
-      <a class="exp e2" data-kind="social" href="/post-preview/"><span class="tag">EXP-002 · social</span><div class="vis v-post" aria-hidden="true"><span>I start things, build things and ship th…</span><b>see more</b></div><h3>Post Preview</h3><p>Your post on six networks, before you post.</p></a>
-      <a class="exp e3" data-kind="web" href="/utm-builder/"><span class="tag">EXP-003 · web</span><div class="vis v-utm mono" aria-hidden="true">?utm_source=<b>linkedin</b>&amp;utm_medium=<b>social</b></div><h3>UTM Builder</h3><p>Clean links, GA4 channel check, QR codes.</p></a>
-      <a class="exp e4" data-kind="events" href="/run-of-show/"><span class="tag">EXP-004 · events</span><div class="vis v-ros mono" aria-hidden="true"><span>19:00 doors</span><span>19:30 <b>welcome</b></span><span>19:42 keynote</span></div><h3>Run of Show</h3><p>Plan it minute by minute, run it live.</p></a>
-      <a class="exp e5" data-kind="video" href="/stream-calc/"><span class="tag">EXP-005 · video</span><div class="vis v-meter" aria-hidden="true"><i style="--w:72%"></i><span class="mono">6.8 Mbps</span></div><h3>Stream Calculator</h3><p>Bitrate, bandwidth and file size.</p></a>
-      <a class="exp e6" data-kind="events" href="/sponsorship-builder/"><span class="tag">EXP-006 · events</span><div class="vis v-tiers" aria-hidden="true"><i style="--h:38%"></i><i style="--h:58%"></i><i style="--h:80%"></i><i style="--h:100%"></i></div><h3>Sponsorship Builder</h3><p>Price tiers, print the sponsor sheet.</p></a>
-      <a class="exp e7" data-kind="web" href="/og-preview/"><span class="tag">EXP-007 · web</span><h3>Link Preview Checker</h3><p>Fix how your links look when shared.</p></a>
-      <a class="exp e8" data-kind="web" href="/alt-text-checker/"><span class="tag">EXP-008 · web</span><h3>Alt Text Checker</h3><p>Find images missing alt text, anywhere.</p></a>
-      <a class="exp e9" data-kind="social" href="/email-signature/"><span class="tag">EXP-009 · social</span><h3>Email Signature</h3><p>Gmail, Outlook, Apple Mail. No watermark.</p></a>
-      <a class="exp e10" data-kind="more" href="/open-trails-canada/"><span class="tag">EXP-010 · guide</span><h3>Open Trails Canada</h3><p>The outdoors around Calgary, for newcomers, in their language.</p></a>
-      <a class="exp e11" data-kind="more" href="/fieldhacks/"><span class="tag">EXP-011 · hardware</span><h3>Fieldhacks</h3><p>Cheap hardware for hunters and backcountry people.</p></a>
-      <a class="exp e12" data-kind="more" href="/neongrid/"><span class="tag">EXP-012 · game</span><h3>NeonGrid ▶</h3><p>A cyberpunk city-builder. Play it now.</p></a>
-      <a class="exp e13" data-kind="more" href="https://city-picks.vercel.app"><span class="tag">EXP-013 · web</span><h3>YYC Class Finder</h3><p>Every Calgary rec program, searchable.</p></a>
-      <a class="exp e14" data-kind="more" href="https://github.com/mizoz/alberta-atlas"><span class="tag">EXP-014 · maps</span><h3>Alberta Atlas</h3><p>Conservation and Crown-land maps.</p></a>
-      <a class="exp e15" data-kind="more" href="https://github.com/mizoz/yyc-flight-radar"><span class="tag">EXP-015 · data</span><h3>YYC Flight Radar</h3><p>Flight deals out of YYC and YEG.</p></a>
-    </div>
-    <p class="labfoot"><a href="/lab/">Full lab notebook →</a></p>
-  </section>
-
-  <section class="how" aria-labelledby="how-h">
-    <h2 id="how-h" class="sec">How the command bar works</h2>
-    <div class="howgrid">
-      <div><b>01</b><h3>A tiny model, trained by me</h3><p>About 100 KB of int8 weights over hashed word and character features. It runs in your browser in under a millisecond. No server, no API, no tracking.</p></div>
-      <div><b>02</b><h3>It routes, it doesn't guess</h3><p>Questions about me are answered from verified facts only. Tool requests open the right tool, already set up ("Instagram story", "YouTube 1080p60").</p></div>
-      <div><b>03</b><h3>A bigger brain, if you want it</h3><p>Wake MiniLM-L6, a 23 MB neural search model. It understands what you mean, not just keywords, and it can only answer by quoting verified facts, so it never makes things up.</p></div>
-    </div>
-  </section>
+<main class="doors">
+  <a class="door d1" href="/pro/">
+    <span class="no">01 · the portfolio</span>
+    <h2>Calm, clean,<br><em>professional.</em></h2>
+    <p>Founder of FirstShow. Communications professional and tech wizard in Calgary.</p>
+    <p class="more">Ventures, tools, experience and skills. Zero popups. Easy to send to your boss.</p>
+    <span class="go">Enter the portfolio →</span>
+  </a>
+  <a class="door d2" href="/mayhem/">
+    <span class="no">02 · the mayhem</span>
+    <span class="burst" aria-hidden="true">15+<br>popups<br>inside!!</span>
+    <h2>Full 2003<br>mode!!!</h2>
+    <p class="more">prize wheel. fake antivirus. a phone call with Steve. music u cannot stop.</p>
+    <span class="go">ENTER IF U DARE 🌀</span>
+    <span class="marq" aria-hidden="true"><span>*** WARNING: contains cookies, crumbs and ur webcam *** best viewed in Internet Explorer 6 *** u won a prize *** do not press the boring button ***</span></span>
+  </a>
+  <a class="door d3" href="/lab/">
+    <span class="no">03 · the lab</span>
+    <span class="chips" aria-hidden="true"><span>🖼️ image sizer</span><span>💬 post preview</span><span>🔗 utm builder</span><span>✉️ signatures</span><span>🎤 run of show</span><span>📡 stream calc</span><span>🤝 sponsorships</span><span>🌲 open trails</span><span>🎮 neongrid</span></span>
+    <h2>The Lab<span>_</span></h2>
+    <p>Fifteen free tools and experiments. Ask it anything: a tiny model I trained runs right in your browser.</p>
+    <span class="go">Open the lab →</span>
+  </a>
+  <a class="door d4" href="/lab/#terminal">
+    <span class="no">04 · the terminal</span>
+    <span class="screen" aria-hidden="true">
+      <span class="l"><span class="p">$</span> whoami</span>
+      <span class="l">ahmed mahmoud. founder. tech wizard.</span>
+      <span class="l"><span class="p">$</span> ls ventures/</span>
+      <span class="l">firstshow  frame-yyc  bite5  wiredeo</span>
+      <span class="l"><span class="p">$</span> hire ahmed ▍</span>
+    </span>
+    <h2>~/terminal</h2>
+    <p>For the command-line crowd. Tab completes, ↑ for history, and it understands plain English. Press <kbd>~</kbd> anytime.</p>
+    <span class="go">./enter</span>
+  </a>
 </main>
-
-<footer class="foot">
-  <p><b>Ahmed Mahmoud</b> is a founder and builder in Calgary, Alberta. He started <a href="https://firstshow.ca">FirstShow</a>, makes websites, brands, photo and video, and builds free tools for marketers and event teams. Open to any role, anywhere.</p>
-  <nav aria-label="Elsewhere"><a href="https://www.linkedin.com/in/ahmed-m-82ba28169/">LinkedIn</a><a href="https://github.com/mizoz">GitHub</a><a href="/pro/">Portfolio</a><a href="/mayhem/">Mayhem</a><a href="/lab/">Lab</a></nav>
+<p class="ask" aria-hidden="true">Pick your <i>Ahmed</i>.</p>
+<footer class="about">
+  <p><b>Ahmed Mahmoud</b> is a founder, communications professional and tech wizard in Calgary, Alberta. He started <a href="https://firstshow.ca">FirstShow</a>, makes websites, brands, photo, video and live streams, and builds <a href="/lab/">free tools</a> for marketers and event teams. Open to any role, anywhere.</p>
+  <nav aria-label="Elsewhere"><a href="/pro/">Portfolio</a><a href="/lab/">The Lab</a><a href="https://www.linkedin.com/in/ahmed-m-82ba28169/">LinkedIn</a><a href="https://github.com/mizoz">GitHub</a></nav>
 </footer>
-
-<div class="term" id="term" hidden role="dialog" aria-modal="true" aria-label="Terminal">
-  <div class="twin">
-    <div class="tbar"><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span><span>ahmed@calgary: ~/lab</span><button id="termclose" type="button" aria-label="Close terminal">esc</button></div>
-    <div class="tout" id="tout" aria-live="polite"></div>
-    <div class="tline"><label for="tin" class="ps">ahmed@calgary:~$</label><input id="tin" spellcheck="false" autocomplete="off" autocapitalize="off"></div>
-    <div class="tchips"><button type="button" data-cmd="help">help</button><button type="button" data-cmd="whoami">whoami</button><button type="button" data-cmd="ls tools">ls tools</button><button type="button" data-cmd="neofetch">neofetch</button><button type="button" data-cmd="hire ahmed">hire ahmed</button><button type="button" data-cmd="brain">brain</button></div>
-  </div>
-</div>
-
-<script type="module" src="/assets/home.js"></script>
+<script>
+addEventListener('keydown',function(e){ if(e.key==='~'||e.key==='`'){ location.href='/lab/#terminal'; } });
+</script>
 </body>
 </html>
