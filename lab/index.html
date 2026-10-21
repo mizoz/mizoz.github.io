@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -82,27 +85,13 @@
         <button type="button" data-f="web" aria-pressed="false">Web</button>
         <button type="button" data-f="events" aria-pressed="false">Events</button>
         <button type="button" data-f="video" aria-pressed="false">Video</button>
-        <button type="button" data-f="more" aria-pressed="false">Projects</button>
+        <button type="button" data-f="projects" aria-pressed="false">Projects</button>
       </div>
     </div>
     <div class="bento">
-      <a class="exp big e1" data-kind="social" href="/social-image-sizer/"><span class="tag">EXP-001 · social</span><div class="vis v-sizes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><h3>Social Image Sizer</h3><p>One image in, 23 platform sizes out, as a zip.</p></a>
-      <a class="exp e2" data-kind="social" href="/post-preview/"><span class="tag">EXP-002 · social</span><div class="vis v-post" aria-hidden="true"><span>I start things, build things and ship th…</span><b>see more</b></div><h3>Post Preview</h3><p>Your post on six networks, before you post.</p></a>
-      <a class="exp e3" data-kind="web" href="/utm-builder/"><span class="tag">EXP-003 · web</span><div class="vis v-utm mono" aria-hidden="true">?utm_source=<b>linkedin</b>&amp;utm_medium=<b>social</b></div><h3>UTM Builder</h3><p>Clean links, GA4 channel check, QR codes.</p></a>
-      <a class="exp e4" data-kind="events" href="/run-of-show/"><span class="tag">EXP-004 · events</span><div class="vis v-ros mono" aria-hidden="true"><span>19:00 doors</span><span>19:30 <b>welcome</b></span><span>19:42 keynote</span></div><h3>Run of Show</h3><p>Plan it minute by minute, run it live.</p></a>
-      <a class="exp e5" data-kind="video" href="/stream-calc/"><span class="tag">EXP-005 · video</span><div class="vis v-meter" aria-hidden="true"><i style="--w:72%"></i><span class="mono">6.8 Mbps</span></div><h3>Stream Calculator</h3><p>Bitrate, bandwidth and file size.</p></a>
-      <a class="exp e6" data-kind="events" href="/sponsorship-builder/"><span class="tag">EXP-006 · events</span><div class="vis v-tiers" aria-hidden="true"><i style="--h:38%"></i><i style="--h:58%"></i><i style="--h:80%"></i><i style="--h:100%"></i></div><h3>Sponsorship Builder</h3><p>Price tiers, print the sponsor sheet.</p></a>
-      <a class="exp e7" data-kind="web" href="/og-preview/"><span class="tag">EXP-007 · web</span><h3>Link Preview Checker</h3><p>Fix how your links look when shared.</p></a>
-      <a class="exp e8" data-kind="web" href="/alt-text-checker/"><span class="tag">EXP-008 · web</span><h3>Alt Text Checker</h3><p>Find images missing alt text, anywhere.</p></a>
-      <a class="exp e9" data-kind="social" href="/email-signature/"><span class="tag">EXP-009 · social</span><h3>Email Signature</h3><p>Gmail, Outlook, Apple Mail. No watermark.</p></a>
-      <a class="exp e10" data-kind="more" href="/open-trails-canada/"><span class="tag">EXP-010 · guide</span><h3>Open Trails Canada</h3><p>The outdoors around Calgary, for newcomers, in their language.</p></a>
-      <a class="exp e11" data-kind="more" href="/fieldhacks/"><span class="tag">EXP-011 · hardware</span><h3>Fieldhacks</h3><p>Cheap hardware for hunters and backcountry people.</p></a>
-      <a class="exp e12" data-kind="more" href="/neongrid/"><span class="tag">EXP-012 · game</span><h3>NeonGrid ▶</h3><p>A cyberpunk city-builder. Play it now.</p></a>
-      <a class="exp e13" data-kind="more" href="https://city-picks.vercel.app"><span class="tag">EXP-013 · web</span><h3>YYC Class Finder</h3><p>Every Calgary rec program, searchable.</p></a>
-      <a class="exp e14" data-kind="more" href="https://github.com/mizoz/alberta-atlas"><span class="tag">EXP-014 · maps</span><h3>Alberta Atlas</h3><p>Conservation and Crown-land maps.</p></a>
-      <a class="exp e15" data-kind="more" href="https://github.com/mizoz/yyc-flight-radar"><span class="tag">EXP-015 · data</span><h3>YYC Flight Radar</h3><p>Flight deals out of YYC and YEG.</p></a>
-    </div>
-    <p class="labfoot"><a href="/lab/">Full lab notebook →</a></p>
+{% assign items = site.lab | sort: "order" %}{% for e in items %}      <a class="exp{% if e.size == 'big' %} big{% elsif e.size == 'wide' %} wide{% endif %}" data-kind="{{ e.kind }}" href="{{ e.url }}"><span class="tag">EXP-{{ e.order | prepend: "00" | slice: -3, 3 }} · {{ e.kind }}</span>{% if e.cover %}<img class="cov" src="{{ e.cover }}" alt="" loading="lazy">{% endif %}<h3>{{ e.title }}</h3><p>{{ e.summary }}</p></a>
+{% endfor %}    </div>
+    <p class="labfoot">Click any experiment for the full story, screenshots and links.</p>
   </section>
 
   <section class="how" aria-labelledby="how-h">

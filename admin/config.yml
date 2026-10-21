@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: mizoz/mizoz.github.io
+  branch: main
+media_folder: assets/lab
+public_folder: /assets/lab
+site_url: https://lab.zalastack.com
+display_url: https://lab.zalastack.com
+logo_url: https://lab.zalastack.com/assets/og.png
+collections:
+  - name: lab
+    label: The Lab
+    label_singular: Experiment
+    description: Every tool and project on lab.zalastack.com/lab. Each entry gets its own page.
+    folder: _lab
+    create: true
+    slug: "{{slug}}"
+    preview_path: "lab/{{slug}}/"
+    sortable_fields: [order, title]
+    summary: "{{order}} · {{title}} ({{kind}})"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Order on the page, name: order, widget: number, value_type: int, hint: "1 shows first" }
+      - { label: Category, name: kind, widget: select, options: [social, web, events, video, projects] }
+      - { label: Card size, name: size, widget: select, options: [normal, wide, big], default: normal, hint: "big = 2x2 feature card, wide = 2 columns" }
+      - { label: One-line summary, name: summary, widget: string }
+      - { label: Link (the live tool or site), name: link, widget: string }
+      - { label: Source code, name: repo, widget: string, required: false }
+      - { label: Cover image, name: cover, widget: image }
+      - { label: Gallery, name: gallery, widget: list, required: false, field: { label: Image, name: image, widget: image } }
+      - { label: Built with, name: stack, widget: list, required: false }
+      - { label: Status, name: status, widget: select, options: [live, beta, idea], default: live }
+      - { label: Write-up, name: body, widget: markdown }

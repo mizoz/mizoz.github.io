@@ -1,20 +1,8 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lab.zalastack.com/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/pro/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/mayhem/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/lab/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/tools/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/social-image-sizer/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/post-preview/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/utm-builder/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/og-preview/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/alt-text-checker/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/email-signature/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/run-of-show/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/sponsorship-builder/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/stream-calc/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/open-trails-canada/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/fieldhacks/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://lab.zalastack.com/neongrid/</loc><lastmod>2026-10-21</lastmod></url>
-</urlset>
+{% assign pages = "/,/pro/,/mayhem/,/lab/,/social-image-sizer/,/post-preview/,/utm-builder/,/og-preview/,/alt-text-checker/,/email-signature/,/run-of-show/,/sponsorship-builder/,/stream-calc/,/open-trails-canada/,/fieldhacks/,/neongrid/" | split: "," %}{% for p in pages %}  <url><loc>{{ site.url }}{{ p }}</loc><lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod></url>
+{% endfor %}{% for e in site.lab %}  <url><loc>{{ site.url }}{{ e.url }}</loc><lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod></url>
+{% endfor %}</urlset>

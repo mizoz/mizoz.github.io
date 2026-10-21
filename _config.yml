@@ -1,0 +1,11 @@
+title: Ahmed Mahmoud
+description: Calgary founder, communications professional and tech wizard.
+url: https://lab.zalastack.com
+collections:
+  lab:
+    output: true
+    permalink: /lab/:name/
+defaults:
+  - scope: { path: "", type: lab }
+    values: { layout: lab-item }
+exclude: [README.md, "*.py"]

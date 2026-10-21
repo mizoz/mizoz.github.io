@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} · The Lab · Ahmed Mahmoud</title>
+<meta name="description" content="{{ page.summary | escape }} Built by Ahmed Mahmoud in Calgary.">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ page.title | escape }} · The Lab">
+<meta property="og:description" content="{{ page.summary | escape }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}{{ page.cover }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f4f1ea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%A7%AA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+{% assign live = page.link %}{% if live contains "://" %}{% assign abs = live %}{% else %}{% assign abs = site.url | append: live %}{% endif %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":{{ page.title | jsonify }},"description":{{ page.summary | jsonify }},"url":{{ site.url | append: page.url | jsonify }},"image":{{ site.url | append: page.cover | jsonify }},"sameAs":{{ abs | jsonify }},"author":{"@type":"Person","@id":"{{ site.url }}/#ahmed","name":"Ahmed Mahmoud","url":"{{ site.url }}/","address":{"@type":"PostalAddress","addressLocality":"Calgary","addressRegion":"AB","addressCountry":"CA"}}}</script>
+<style>
+@view-transition{navigation:auto}
+:root{--bg:#f4f1ea;--paper:#fffdf8;--ink:#121110;--muted:#615c53;--line:#e0dbcf;--accent:#ff5a1f;--green:#0f8a4b}
+@media (prefers-color-scheme:dark){:root{--bg:#0f0e0d;--paper:#181716;--ink:#f2efe8;--muted:#a19b90;--line:#2b2926;--accent:#ff7040;--green:#3ad07f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 "Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{width:min(980px,100% - 40px);margin:0 auto}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font:600 13px "JetBrains Mono",monospace}
+.bar a{text-decoration:none;color:var(--muted)}.bar a:hover{color:var(--ink)}
+.tag{font:600 12px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+h1{font:400 clamp(44px,8vw,88px)/1 "Fraunces",Georgia,serif;letter-spacing:-.035em;margin:12px 0 14px}
+.sum{font-size:clamp(19px,2.2vw,23px);color:var(--muted);margin:0 0 26px;max-width:40ch}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px "Inter",sans-serif;text-decoration:none;border:1px solid var(--ink);border-radius:999px;padding:11px 20px}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+.cover{width:100%;border-radius:18px;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(0,0,0,.35);display:block;background:var(--paper)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+.meta span{font:500 13px "JetBrains Mono",monospace;border:1px solid var(--line);border-radius:999px;padding:4px 11px;background:var(--paper)}
+.meta .st{color:var(--green);border-color:var(--green)}
+article{max-width:68ch;margin:46px 0 0}
+article h2{font:500 28px/1.2 "Fraunces",Georgia,serif;margin:36px 0 10px}
+article p{margin:0 0 16px}
+article li{margin:6px 0}
+article strong{font-weight:600}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:40px 0 0}
+.gallery img{width:100%;border-radius:14px;border:1px solid var(--line)}
+.more{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);margin:60px 0 0;padding:22px 0 50px;font-size:15px}
+.more a{text-decoration:none}.more small{display:block;font:600 11px "JetBrains Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.more b{font:500 20px "Fraunces",Georgia,serif}
+.foot{color:var(--muted);font-size:14px;padding-bottom:40px}
+</style>
+</head>
+<body>
+{% assign items = site.lab | sort: "order" %}
+{% for it in items %}{% if it.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+{% assign prev_i = idx | minus: 1 %}{% assign next_i = idx | plus: 1 %}
+<div class="wrap">
+  <nav class="bar" aria-label="Breadcrumb"><a href="/lab/">← The Lab</a><a href="/">Doors</a></nav>
+  <main>
+    <span class="tag">EXP-{{ page.order | prepend: "00" | slice: -3, 3 }} · {{ page.kind }}</span>
+    <h1>{{ page.title }}</h1>
+    <p class="sum">{{ page.summary }}</p>
+    <div class="acts">
+      <a class="btn primary" href="{{ page.link }}">{% if page.link contains "github.com" %}View on GitHub{% else %}Open {{ page.title }}{% endif %} →</a>
+      {% if page.repo and page.repo != page.link %}<a class="btn" href="{{ page.repo }}">Source code</a>{% endif %}
+    </div>
+    {% if page.cover %}<img class="cover" src="{{ page.cover }}" alt="Screenshot of {{ page.title | escape }}" width="1280" height="720" fetchpriority="high">{% endif %}
+    <div class="meta">{% if page.status %}<span class="st">● {{ page.status }}</span>{% endif %}{% for s in page.stack %}<span>{{ s }}</span>{% endfor %}</div>
+    <article>{{ content }}</article>
+    {% if page.gallery and page.gallery.size > 0 %}<div class="gallery">{% for g in page.gallery %}<img src="{{ g }}" alt="{{ page.title | escape }} screenshot {{ forloop.index }}" loading="lazy">{% endfor %}</div>{% endif %}
+  </main>
+  <nav class="more" aria-label="More experiments">
+    {% if prev_i >= 0 %}{% assign p = items[prev_i] %}<a href="{{ p.url }}"><small>← previous</small><b>{{ p.title }}</b></a>{% else %}<span></span>{% endif %}
+    {% if next_i < items.size %}{% assign n = items[next_i] %}<a href="{{ n.url }}" style="text-align:right"><small>next →</small><b>{{ n.title }}</b></a>{% endif %}
+  </nav>
+  <p class="foot">Made by <a href="/">Ahmed Mahmoud</a> in Calgary. Founder of <a href="https://firstshow.ca">FirstShow</a>.</p>
+</div>
+</body>
+</html>
