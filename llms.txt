@@ -1,0 +1,27 @@
+# Ahmed Mahmoud
+
+> Ahmed Mahmoud is a founder and builder based in Calgary, Alberta, Canada. He founded FirstShow, a sponsorship company for events, creators and venues across Canada, and makes websites, brands, photo, video and free web tools. He is open to work anywhere.
+
+## About
+- Location: Calgary, Alberta, Canada
+- Founder of FirstShow: https://firstshow.ca
+- Previously Digital Coordinator on the Calgary Zoo (Wilder Institute) communications team, 2022 to 2026: video, photography, live streams, websites and the Canto digital asset library. Led the media push for the Wild Canada opening in December 2023.
+- Owner of AMZD Media since 2020: menu photography and corporate event coverage.
+- Studied in the Journalism Diploma program at SAIT, 2020 to 2022.
+- Certifications: Google Ads Search; HubSpot Digital Marketing, Social Media Marketing I and II, Sales Management, Revenue Operations.
+
+## Websites he launched
+- FirstShow: https://firstshow.ca
+- FRAME YYC (photo and video for Calgary businesses): https://frameyyc.ca
+- Bite5 (local food deals for restaurants): https://bite5.vercel.app
+- Wiredeo (brief-to-shoot planning): https://www.wiredeo.com
+- SteadyFile (private dated records): https://workvault-six.vercel.app
+- YYC Class Finder (City of Calgary recreation programs): https://city-picks.vercel.app
+
+## Projects
+- NeonGrid, a browser city-builder game: https://mizoz.github.io/neongrid/
+- Code: https://github.com/mizoz
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/ahmed-m-82ba28169/
+- Homepage: https://mizoz.github.io/
