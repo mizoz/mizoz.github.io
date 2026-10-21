@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 · This door doesn't exist</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+@view-transition{navigation:auto}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;display:grid;place-items:center;background:#0b0f0c;color:#c8f7d4;font:16px/1.6 "JetBrains Mono",monospace;padding:24px}
+.box{max-width:620px;width:100%}
+h1{font:italic 400 clamp(44px,8vw,84px)/1 "Fraunces",Georgia,serif;color:#f6f3ec;margin:0 0 18px;letter-spacing:-.03em}
+h1 span{color:#ff7448}
+pre{margin:0 0 24px;white-space:pre-wrap;color:#8fbf9c;text-shadow:0 0 6px rgba(125,255,159,.25)}
+pre b{color:#7dff9f;font-weight:600}
+nav{display:flex;flex-wrap:wrap;gap:10px}
+a{color:#0b0f0c;background:#7dff9f;text-decoration:none;font-weight:600;border-radius:8px;padding:9px 14px}
+a.alt{background:transparent;color:#c8f7d4;border:1px solid #2b3a2e}
+a:focus-visible{outline:2px solid #ff7448;outline-offset:3px}
+</style>
+</head>
+<body>
+<main class="box">
+  <h1>This door doesn't <span>exist.</span></h1>
+  <pre><b>$</b> open <span id="p"></span>
+open: no such door
+<b>$</b> ls doors/
+portfolio  mayhem  lab  terminal
+<b>$</b> ▍</pre>
+  <nav><a href="/">Back to the doors</a><a class="alt" href="/lab/">The Lab</a><a class="alt" href="/pro/">Portfolio</a></nav>
+</main>
+<script>document.getElementById('p').textContent = location.pathname;</script>
+</body>
+</html>

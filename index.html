@@ -37,7 +37,7 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
 .door .no{position:absolute;left:clamp(18px,4cqi,56px);top:clamp(16px,3.4cqi,44px);font:600 12px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
 .door h2{margin:0;line-height:.95;flex-shrink:0}
 .door p,.door .go{flex-shrink:0}
-.door>.screen,.door>.chips{flex:0 1 auto;min-height:0;overflow:hidden;margin:clamp(30px,7cqi,64px) 0 auto}
+.door>.screen{flex:0 1 auto;min-height:0;overflow:hidden;margin:clamp(30px,7cqi,64px) 0 auto}
 .door p{margin:clamp(8px,2cqi,18px) 0 0;max-width:44ch;font-size:clamp(13px,2.4cqi,19px)}
 .door .more{max-height:0;opacity:0;overflow:hidden;margin:0;transition:opacity .35s,max-height .5s,margin .5s}
 .door:hover .more,.door:focus-visible .more{max-height:200px;opacity:1;margin-top:clamp(8px,2cqi,18px)}
@@ -106,6 +106,26 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
 .about nav{display:flex;gap:18px;flex-wrap:wrap}
 
 
+
+/* ---- v3 polish ---- */
+@view-transition{navigation:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.door::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(480px circle at var(--gx,50%) var(--gy,50%),var(--glow),transparent 62%);opacity:0;transition:opacity .4s}
+.door:hover::before{opacity:1}
+.door>*{position:relative;z-index:1}
+.door>.no,.door>.burst,.door>.marq{position:absolute}
+.d1{--glow:rgba(210,73,31,.13)}.d2{--glow:rgba(255,255,255,.35)}.d3{--glow:rgba(15,138,75,.16)}.d4{--glow:rgba(125,255,159,.12)}
+.top3{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.door>.top3{flex:0 1 auto;min-height:0;overflow:hidden;margin:clamp(30px,7cqi,64px) 0 auto}
+.demo{font:500 clamp(11px,1.9cqi,14px) "JetBrains Mono",monospace;background:#16211a;color:#d6f5df;border-radius:10px;padding:10px 14px;min-width:min(100%,330px);box-shadow:0 8px 24px -12px rgba(15,60,35,.5)}
+.demo .q{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo .q::before{content:"› ";color:#7dff9f}
+.demo .q i{display:inline-block;width:.55em;height:1em;background:#7dff9f;vertical-align:-2px;animation:blink 1s steps(1) infinite;margin-left:2px}
+.demo .a{display:block;color:#7dff9f;margin-top:4px;min-height:1.3em;opacity:0;transition:opacity .25s}
+.demo .a.on{opacity:1}
+.demo .a b{color:#fff;font-weight:600}
+.demo .lbl{display:block;font-size:.8em;color:#7c9a84;margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase}
+
 /* ---- v2 polish ---- */
 .door{min-width:0;min-height:0}
 /* entrance */
@@ -130,8 +150,8 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
 .d2{animation-name:enter,drift;animation-duration:.9s,7s;animation-timing-function:cubic-bezier(.2,.8,.2,1),linear;animation-iteration-count:1,infinite;animation-fill-mode:both,none;animation-play-state:running,paused}
 .d2:hover{animation-play-state:running,running}
 @keyframes drift{to{background-position:70px 70px,0 0}}
-.chips,.burst{transition:translate .4s ease-out}
-.d3 .chips{translate:calc(var(--px,0)*14px) calc(var(--py,0)*10px)}
+.top3,.burst{transition:translate .4s ease-out}
+.d3 .top3{translate:calc(var(--px,0)*14px) calc(var(--py,0)*10px)}
 .d2 .burst{translate:calc(var(--px,0)*-12px) calc(var(--py,0)*-10px)}
 .d1 h2 em{background:linear-gradient(currentColor,currentColor) left 92%/0 2px no-repeat;transition:background-size .5s}
 .d1:hover h2 em{background-size:100% 2px}
@@ -142,7 +162,7 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
 
 @media (max-width:860px){
   .doors{grid-template-columns:1fr;grid-template-rows:none;height:auto}
-  .door{min-height:72svh}
+  .door{min-height:58svh}
   .door .more{max-height:200px;opacity:1;margin-top:10px}
   .d2 p.more{padding-block:6px;border-width:2px}
   .ask{position:absolute;top:18px;transform:translateX(-50%)}
@@ -153,6 +173,7 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
 </style>
 </head>
 <body>
+<h1 class="sr">Ahmed Mahmoud: Calgary founder, communications professional and tech wizard</h1>
 <main class="doors">
   <a class="door d1" href="/pro/">
     <span class="no">01 · the portfolio</span>
@@ -171,7 +192,10 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
   </a>
   <a class="door d3" href="/lab/">
     <span class="no">03 · the lab</span>
-    <span class="chips" aria-hidden="true"><span>🖼️ image sizer</span><span>💬 post preview</span><span>🔗 utm builder</span><span>✉️ signatures</span><span>🎤 run of show</span><span>📡 stream calc</span><span>🤝 sponsorships</span><span>🌲 open trails</span><span>🎮 neongrid</span></span>
+    <span class="top3" aria-hidden="true">
+      <span class="demo"><span class="lbl">tiny model · running live</span><span class="q" id="dq"></span><span class="a" id="da"></span></span>
+      <span class="chips"><span>🖼️ image sizer</span><span>💬 post preview</span><span>🔗 utm builder</span><span>✉️ signatures</span><span>🎤 run of show</span><span>📡 stream calc</span><span>🤝 sponsorships</span><span>🌲 open trails</span><span>🎮 neongrid</span></span>
+    </span>
     <h2>The Lab<span>_</span></h2>
     <p>Fifteen free tools and experiments. Ask it anything: a tiny model I trained runs right in your browser.</p>
     <span class="go">Open the lab →</span>
@@ -201,10 +225,14 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
   var doors = document.querySelector('.doors'), pill = document.querySelector('.ask'), d1 = document.querySelector('.d1');
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, wide = matchMedia('(hover:hover) and (min-width:861px)');
   // pill follows the seam where the four doors meet
-  (function seam(){
+  var until = 0, running = false;
+  function seam(){
     if (wide.matches) { var r = d1.getBoundingClientRect(); pill.style.setProperty('--sx', r.right + 'px'); pill.style.setProperty('--sy', r.bottom + 'px'); }
-    requestAnimationFrame(seam);
-  })();
+    if (performance.now() < until) requestAnimationFrame(seam); else running = false;
+  }
+  function wake(){ until = performance.now() + 900; if (!running) { running = true; requestAnimationFrame(seam); } }
+  ['pointerover','pointerout','focusin','focusout'].forEach(function(ev){ doors.addEventListener(ev, wake); });
+  addEventListener('resize', wake); wake();
   // step through a door
   function enter(a, e){
     if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
@@ -221,12 +249,27 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
     if (e.key === '~' || e.key === '`') { location.href = '/lab/#terminal'; return; }
     var i = '1234'.indexOf(e.key); if (i > -1) enter(doors.children[i]);
   });
+  // the lab door shows the real model at work (outputs measured from the shipped weights)
+  var DEMO = [["resize my pic for an ig story","Social Image Sizer",99],["upload speed for youtube 1080p","Stream Calculator",99],["plan a gala run of show","Run of Show Builder",100],["who is ahmed?","answers from verified facts",99],["utm link for my newsletter","UTM Builder",100],["is he open to remote work?","yes, anywhere",97],["price my sponsor packages","Sponsorship Builder",100],["play a game","NeonGrid",100]];
+  var dq = document.getElementById('dq'), da = document.getElementById('da'), di = 0;
+  function show(){
+    var d = DEMO[di++ % DEMO.length], n = 0;
+    da.classList.remove('on');
+    if (reduce) { dq.textContent = d[0]; da.innerHTML = '→ <b>' + d[1] + '</b> · ' + d[2] + '%'; da.classList.add('on'); return setTimeout(show, 3200); }
+    (function type(){
+      dq.innerHTML = d[0].slice(0, n).replace(/</g,'&lt;') + '<i></i>';
+      if (n++ < d[0].length) return setTimeout(type, 38 + Math.random() * 40);
+      setTimeout(function(){ da.innerHTML = '→ <b>' + d[1] + '</b> · ' + d[2] + '% · <1 ms'; da.classList.add('on'); }, 260);
+      setTimeout(show, 2600);
+    })();
+  }
+  show();
   // terminal re-types when you come back to it
   var scr = document.querySelector('.screen'), d4 = document.querySelector('.d4');
   d4.addEventListener('mouseenter', function(){ [].forEach.call(scr.children, function(l){ l.style.animation = 'none'; void l.offsetWidth; l.style.animation = ''; }); });
   // decorations lean toward the cursor
-  if (!reduce) [].forEach.call(document.querySelectorAll('.d2,.d3'), function(d){
-    d.addEventListener('pointermove', function(e){ var r = d.getBoundingClientRect(); d.style.setProperty('--px', ((e.clientX - r.left) / r.width - .5).toFixed(3)); d.style.setProperty('--py', ((e.clientY - r.top) / r.height - .5).toFixed(3)); });
+  if (!reduce) [].forEach.call(document.querySelectorAll('.door'), function(d){
+    d.addEventListener('pointermove', function(e){ var r = d.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; d.style.setProperty('--gx', x + 'px'); d.style.setProperty('--gy', y + 'px'); d.style.setProperty('--px', (x / r.width - .5).toFixed(3)); d.style.setProperty('--py', (y / r.height - .5).toFixed(3)); });
     d.addEventListener('pointerleave', function(){ d.style.setProperty('--px', 0); d.style.setProperty('--py', 0); });
   });
 })();
