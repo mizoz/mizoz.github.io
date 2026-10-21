@@ -105,6 +105,41 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
 .about p{margin:0;max-width:80ch}.about b{color:#f1eee7}.about a{color:#f1eee7}
 .about nav{display:flex;gap:18px;flex-wrap:wrap}
 
+
+/* ---- v2 polish ---- */
+.door{min-width:0;min-height:0}
+/* entrance */
+.door{animation:enter .9s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
+@keyframes enter{from{opacity:0;transform:scale(.94);filter:blur(6px)}}
+.ask{animation:pop .5s .75s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes pop{from{opacity:0;transform:translate(-50%,-50%) scale(.6)}}
+/* the pill rides the seam (JS sets --sx/--sy) */
+@media (hover:hover) and (min-width:861px){
+  .ask{left:var(--sx,50%);top:var(--sy,50%);transition:opacity .3s,transform .3s}
+  .doors:hover~.ask{opacity:1;transform:translate(-50%,-50%) scale(.82)}
+}
+.ask .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2fa84f;margin-right:8px;vertical-align:1px;box-shadow:0 0 0 0 rgba(47,168,79,.6);animation:ping 2s infinite}
+@keyframes ping{100%{box-shadow:0 0 0 10px rgba(47,168,79,0)}}
+/* stepping through a door */
+.doors.going{transition-duration:.55s}
+.doors.go-d1{--c:1fr 0fr;--r:1fr 0fr}.doors.go-d2{--c:0fr 1fr;--r:1fr 0fr}
+.doors.go-d3{--c:1fr 0fr;--r:0fr 1fr}.doors.go-d4{--c:0fr 1fr;--r:0fr 1fr}
+.doors.going~.ask{opacity:0!important}
+/* hover life */
+.d2{animation-name:enter,drift;animation-duration:.9s,7s;animation-timing-function:cubic-bezier(.2,.8,.2,1),linear;animation-iteration-count:1,infinite;animation-fill-mode:both,none;animation-play-state:running,paused}
+.d2:hover{animation-play-state:running,running}
+@keyframes drift{to{background-position:70px 70px,0 0}}
+.chips,.burst{transition:translate .4s ease-out}
+.d3 .chips{translate:calc(var(--px,0)*14px) calc(var(--py,0)*10px)}
+.d2 .burst{translate:calc(var(--px,0)*-12px) calc(var(--py,0)*-10px)}
+.d1 h2 em{background:linear-gradient(currentColor,currentColor) left 92%/0 2px no-repeat;transition:background-size .5s}
+.d1:hover h2 em{background-size:100% 2px}
+.keys{position:fixed;right:16px;bottom:14px;z-index:6;font:600 11px "JetBrains Mono",monospace;color:#a7a299;background:rgba(18,17,16,.75);border-radius:8px;padding:6px 10px;pointer-events:none;animation:pop2 .5s 1.4s both}
+.keys b{color:#f6f3ec}
+@keyframes pop2{from{opacity:0;transform:translateY(8px)}}
+@media (max-width:860px),(hover:none){.keys{display:none}}
+
 @media (max-width:860px){
   .doors{grid-template-columns:1fr;grid-template-rows:none;height:auto}
   .door{min-height:72svh}
@@ -112,6 +147,7 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
   .d2 p.more{padding-block:6px;border-width:2px}
   .ask{position:absolute;top:18px;transform:translateX(-50%)}
   .d1 .no{top:78px}
+  .ask{animation:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.screen span.l{width:auto}.marq span{padding-left:0}}
 </style>
@@ -154,13 +190,46 @@ body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hi
     <span class="go">./enter</span>
   </a>
 </main>
-<p class="ask" aria-hidden="true">Pick your <i>Ahmed</i>.</p>
+<p class="ask" aria-hidden="true"><span class="dot"></span>Pick your <i>Ahmed</i>.</p>
+<p class="keys" aria-hidden="true">press <b>1</b> <b>2</b> <b>3</b> <b>4</b> · <b>~</b> terminal</p>
 <footer class="about">
   <p><b>Ahmed Mahmoud</b> is a founder, communications professional and tech wizard in Calgary, Alberta. He started <a href="https://firstshow.ca">FirstShow</a>, makes websites, brands, photo, video and live streams, and builds <a href="/lab/">free tools</a> for marketers and event teams. Open to any role, anywhere.</p>
   <nav aria-label="Elsewhere"><a href="/pro/">Portfolio</a><a href="/lab/">The Lab</a><a href="https://www.linkedin.com/in/ahmed-m-82ba28169/">LinkedIn</a><a href="https://github.com/mizoz">GitHub</a></nav>
 </footer>
 <script>
-addEventListener('keydown',function(e){ if(e.key==='~'||e.key==='`'){ location.href='/lab/#terminal'; } });
+(function(){
+  var doors = document.querySelector('.doors'), pill = document.querySelector('.ask'), d1 = document.querySelector('.d1');
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, wide = matchMedia('(hover:hover) and (min-width:861px)');
+  // pill follows the seam where the four doors meet
+  (function seam(){
+    if (wide.matches) { var r = d1.getBoundingClientRect(); pill.style.setProperty('--sx', r.right + 'px'); pill.style.setProperty('--sy', r.bottom + 'px'); }
+    requestAnimationFrame(seam);
+  })();
+  // step through a door
+  function enter(a, e){
+    if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
+    if (e) e.preventDefault();
+    if (reduce || !wide.matches) { location.href = a.href; return; }
+    var n = [].indexOf.call(doors.children, a) + 1;
+    doors.classList.add('going', 'go-d' + n);
+    setTimeout(function(){ location.href = a.href; }, 520);
+  }
+  [].forEach.call(document.querySelectorAll('.door'), function(a){ a.addEventListener('click', function(e){ enter(a, e); }); });
+  addEventListener('pageshow', function(){ doors.className = 'doors'; });
+  addEventListener('keydown', function(e){
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === '~' || e.key === '`') { location.href = '/lab/#terminal'; return; }
+    var i = '1234'.indexOf(e.key); if (i > -1) enter(doors.children[i]);
+  });
+  // terminal re-types when you come back to it
+  var scr = document.querySelector('.screen'), d4 = document.querySelector('.d4');
+  d4.addEventListener('mouseenter', function(){ [].forEach.call(scr.children, function(l){ l.style.animation = 'none'; void l.offsetWidth; l.style.animation = ''; }); });
+  // decorations lean toward the cursor
+  if (!reduce) [].forEach.call(document.querySelectorAll('.d2,.d3'), function(d){
+    d.addEventListener('pointermove', function(e){ var r = d.getBoundingClientRect(); d.style.setProperty('--px', ((e.clientX - r.left) / r.width - .5).toFixed(3)); d.style.setProperty('--py', ((e.clientY - r.top) / r.height - .5).toFixed(3)); });
+    d.addEventListener('pointerleave', function(){ d.style.setProperty('--px', 0); d.style.setProperty('--py', 0); });
+  });
+})();
 </script>
 </body>
 </html>
