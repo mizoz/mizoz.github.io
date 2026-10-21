@@ -1,342 +1,834 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ahmed Mahmoud — Digital Communications & Builder</title>
-<meta name="description" content="Ahmed Mahmoud: digital communications professional in Alberta. Four years running multimedia, websites and digital assets on the Calgary Zoo communications team, plus web apps and tools built on the side.">
-<meta property="og:title" content="Ahmed Mahmoud — Player 1">
-<meta property="og:description" content="Digital communications pro who also builds web apps and tools. Calgary · Edmonton · Remote.">
+<title>Ahmed Mahmoud - Comms Pro (hire me!!!)</title>
+<meta name="description" content="Ahmed Mahmoud: digital communications pro in Alberta. Four years on the Calgary Zoo communications team, plus web apps and tools built for fun. Open to work in Calgary, Edmonton or remote.">
+<meta property="og:title" content="Ahmed Mahmoud - Comms Pro (hire me!!!)">
+<meta property="og:description" content="Video, photo, live streams, websites and digital assets. Four years at the Calgary Zoo. Please hire him.">
 <meta property="og:url" content="https://mizoz.github.io/">
-<meta name="theme-color" content="#0d0b1e">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%230d0b1e'/%3E%3Cpath d='M1 6V2h1v1h1v1h1V3h1V2h1v4H5V4H4v1H3V4H2v2z' fill='%23ffd23f'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%93%B8%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0d0b1e; --bg2:#17142f; --panel:#1f1a40; --ink:#f4f1ff; --muted:#b9b2e0;
-  --pink:#ff4fa3; --cyan:#3ff0ff; --yellow:#ffd23f; --green:#5cff8a; --orange:#ff8c42; --violet:#a78bfa;
-  --line:#3a3270; --px:4px;
+  --banner-h:0px;
+  --yellow:#ffff00;--gold:#ffd700;--hot:#ff1493;--pink:#ff66cc;--lime:#00ff00;--cyan:#00ffff;--purple:#9900ff;--red:#ff0000;
+  --blue:#0000ee;--navy:#000080;--silver:#c0c0c0;--grey:#808080;
+  --impact:Impact,"Anton","Haettenschweiler","Arial Narrow Bold",sans-serif;
+  --comic:"Comic Sans MS","Comic Sans","Chalkboard SE","Comic Neue",cursive;
+  --times:"Times New Roman",Times,serif;
+  --tahoma:Tahoma,Verdana,"Segoe UI",sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "IBM Plex Mono",ui-monospace,monospace;
-  background-image:linear-gradient(var(--bg2) 1px,transparent 1px),linear-gradient(90deg,var(--bg2) 1px,transparent 1px);
-  background-size:32px 32px;overflow-x:hidden}
-a{color:var(--cyan)}
-a:hover{color:var(--yellow)}
-:focus-visible{outline:3px dashed var(--yellow);outline-offset:3px}
-.wrap{width:min(1100px,100% - 32px);margin:auto}
-.px{font-family:"Press Start 2P",monospace;letter-spacing:.02em}
-.vt{font-family:VT323,monospace}
+body{margin:0;font:18px/1.4 var(--times);color:#000;overflow-x:hidden;
+  background-color:#ff99ff;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70'%3E%3Cpath d='M17 4l4 9 10 .8-7.6 6.4L26 30l-9-5.4L8 30l2.6-9.8L3 13.8 13 13z' fill='%23ffd700' stroke='%23b8860b'/%3E%3Cpath d='M52 39l4 9 10 .8-7.6 6.4L61 65l-9-5.4L43 65l2.6-9.8L38 48.8 48 48z' fill='%23ffd700' stroke='%23b8860b'/%3E%3C/svg%3E"),
+    linear-gradient(160deg,#ff99ff 0%,#cc99ff 30%,#99ccff 60%,#ccff99 100%);
+  background-attachment:fixed}
+a{color:var(--blue)}a:visited{color:#551a8b}
+:focus-visible{outline:3px dashed var(--hot);outline-offset:2px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wrap{width:min(1000px,100% - 24px);margin:auto}
+.center{text-align:center}
+[hidden]{display:none!important}
 
-/* top bar */
-.bar{position:sticky;top:0;z-index:20;background:rgba(13,11,30,.92);backdrop-filter:blur(4px);border-bottom:var(--px) solid var(--line)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
-.logo{font-size:12px;color:var(--yellow);text-decoration:none;white-space:nowrap}
-.logo b{color:var(--pink)}
-nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
-nav a{font:10px "Press Start 2P",monospace;color:var(--ink);text-decoration:none;padding:8px 10px;border:2px solid transparent}
-nav a:hover{border-color:var(--cyan);color:var(--cyan)}
+/* buttons */
+.btn{font:700 16px var(--times);background:linear-gradient(#fff,#ddd);border:3px outset #eee;padding:8px 16px;cursor:pointer;color:#000;text-decoration:none;display:inline-block}
+.btn:active{border-style:inset}
+.btn-big{font:700 20px var(--comic);background:linear-gradient(#66ff66,#00cc00);border:3px solid #000;border-radius:12px;box-shadow:4px 4px 0 #000;padding:12px 24px}
+.btn-big:hover{transform:scale(1.05) rotate(-1deg)}
+.btn-small{font:700 13px var(--times);padding:4px 10px;border:2px outset #eee;background:var(--silver)}
+.btn-ugly{font:13px "Courier New",monospace;background:#c0c0c0;border:1px solid #888;padding:3px 8px;color:#555}
+.btn-pink{background:linear-gradient(#ff66cc,#ff1493);color:#fff;text-shadow:1px 1px 0 #000}
 
-/* hero / CRT */
-.hero{padding:56px 0 40px;display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:center}
-.crt{position:relative;background:#06140c;border:var(--px) solid var(--ink);box-shadow:8px 8px 0 var(--pink),inset 0 0 60px rgba(92,255,138,.12);
-  padding:28px 26px;color:var(--green);overflow:hidden;border-radius:6px}
-.crt::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
-.crt .vt{font-size:22px;line-height:1.25;margin:0}
-.crt .prompt{color:var(--yellow)}
-.cursor{display:inline-block;width:.6em;height:1em;background:var(--green);vertical-align:-2px;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-h1{font:clamp(26px,5vw,48px)/1.2 "Press Start 2P",monospace;margin:18px 0 14px;color:var(--ink);text-shadow:4px 4px 0 var(--pink)}
-h1 span{color:var(--yellow)}
-.lead{font-size:17px;color:var(--muted);max-width:60ch;margin:0 0 22px}
-.btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn{font:11px "Press Start 2P",monospace;text-decoration:none;padding:14px 16px;border:3px solid var(--ink);background:var(--yellow);color:var(--bg);
-  box-shadow:5px 5px 0 var(--ink);transition:transform .08s,box-shadow .08s;display:inline-block}
-.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink);color:var(--bg)}
-.btn.alt{background:var(--cyan)}
-.btn.ghost{background:transparent;color:var(--ink)}
-.press{font:10px "Press Start 2P",monospace;color:var(--pink);margin-top:22px;animation:blink 1.2s steps(1) infinite}
+/* beg banner */
+.beg{position:sticky;top:0;z-index:50;background:var(--yellow);border-bottom:4px solid var(--hot);text-align:center;padding:8px 12px;font:700 clamp(14px,2.3vw,20px)/1.35 var(--times)}
+.beg .btn{margin-left:8px;background:linear-gradient(#ff66cc,#ff1493);color:#fff;border:2px solid #000;border-radius:6px;font-size:15px;padding:4px 12px}
+.ticker{background:var(--hot);color:var(--yellow);font:700 15px var(--times);white-space:nowrap;overflow:hidden;border-bottom:2px solid #000;padding:6px 0}
+.ticker span{display:inline-block;padding-left:100%;animation:tick 30s linear infinite}
+@keyframes tick{to{transform:translateX(-100%)}}
+.hits{text-align:center;padding:6px;font:700 13px Arial;background:rgba(255,255,255,.6)}
+.hits-counter{display:inline-block;background:#000;color:#0f0;font:700 18px "Courier New",monospace;letter-spacing:3px;padding:2px 8px;border:3px inset #888;text-shadow:0 0 6px #0f0}
 
-/* player card */
-.card{background:var(--panel);border:var(--px) solid var(--ink);box-shadow:8px 8px 0 var(--cyan);padding:20px}
-.card h2{font:12px "Press Start 2P",monospace;color:var(--cyan);margin:0 0 14px}
-.avatar{width:96px;height:96px;image-rendering:pixelated;border:3px solid var(--ink);background:var(--bg);display:block;margin-bottom:14px}
-.stats{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:14px}
-.stats dt{font:9px "Press Start 2P",monospace;color:var(--yellow);padding-top:4px}
-.stats dd{margin:0}
-.status{display:inline-block;background:var(--green);color:var(--bg);font:9px "Press Start 2P",monospace;padding:6px 8px;margin-top:14px}
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 16px;background:linear-gradient(#fff,#e0e0e0);border-block:3px ridge #c0c0c0}
+.logo{font:italic 700 30px var(--times);color:var(--purple);text-decoration:none;text-shadow:2px 2px 0 var(--gold)}
+.logo sup{font:700 12px Arial;color:var(--red)}
+.nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav ul a{font:14px var(--times);color:var(--blue);background:var(--silver);border:2px outset #fff;padding:3px 9px;display:block}
+.nav .runaway{transition:transform .25s}
 
-/* sections */
-section{padding:56px 0}
-.head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px;border-bottom:var(--px) dashed var(--line);padding-bottom:14px}
-.head h2{font:clamp(16px,2.6vw,22px)/1.3 "Press Start 2P",monospace;margin:0;color:var(--yellow)}
-.head p{margin:0;color:var(--muted)}
-.marquee{overflow:hidden;white-space:nowrap;border-block:var(--px) solid var(--ink);background:var(--pink);color:var(--bg);font:12px "Press Start 2P",monospace;padding:10px 0}
-.marquee span{display:inline-block;padding-left:100%;animation:scroll 32s linear infinite}
-@keyframes scroll{to{transform:translateX(-100%)}}
+/* hero */
+.hero{position:relative;text-align:center;padding:40px 8px 30px}
+.badge1{display:inline-block;background:var(--yellow);border:2px dashed var(--red);padding:5px 14px;font:700 16px var(--times);transform:rotate(-2deg)}
+h1{margin:16px 0 4px;font:clamp(40px,9vw,96px)/1 var(--impact);letter-spacing:.01em;
+  background:linear-gradient(180deg,#fff 0%,#ffff00 25%,#ff9900 50%,#ff0066 75%,#9900ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:2px #000;filter:drop-shadow(5px 5px 0 #000)}
+h1 .rb{background:linear-gradient(90deg,red,orange,yellow,lime,cyan,blue,violet,red);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;animation:rb 3s linear infinite}
+@keyframes rb{to{background-position:200% 0}}
+h1 s{text-decoration-thickness:6px;text-decoration-color:var(--red)}
+.lead{max-width:640px;margin:14px auto 24px;background:rgba(255,255,255,.85);border:3px ridge var(--purple);padding:12px 16px;font:18px var(--times)}
+.lead u{text-decoration-style:wavy;text-decoration-color:var(--red)}
+.cta{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+.burst{position:absolute;width:116px;height:116px;display:grid;place-items:center;text-align:center;font:900 16px/1 var(--impact);color:#fff;text-shadow:1px 1px 0 #000;
+  clip-path:polygon(50% 0,61% 13%,77% 6%,79% 23%,95% 25%,88% 40%,100% 52%,87% 62%,93% 78%,77% 79%,73% 95%,59% 87%,50% 100%,40% 87%,26% 95%,22% 79%,6% 78%,12% 62%,0 52%,11% 40%,4% 25%,21% 23%,23% 6%,39% 13%)}
+.b1{right:1%;top:20px;background:var(--hot);animation:spin 9s linear infinite}
+.b2{left:1%;top:130px;background:#ff6600;transform:rotate(-14deg)}
+.b3{right:4%;bottom:10px;background:var(--red);border-radius:6px;width:auto;height:auto;padding:8px 10px;clip-path:none;transform:rotate(12deg);border:3px double #fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mascot{position:absolute;left:3%;top:10px;font-size:64px;animation:bob 1.4s ease-in-out infinite;filter:drop-shadow(3px 3px 0 #000)}
+@keyframes bob{50%{transform:translateY(-12px) rotate(-6deg)}}
 
-/* level timeline */
-.levels{display:grid;gap:18px;counter-reset:lvl}
-.level{display:grid;grid-template-columns:150px 1fr;gap:18px;background:var(--panel);border:3px solid var(--line);padding:18px 20px;position:relative}
-.level.boss{border-color:var(--yellow);box-shadow:6px 6px 0 var(--yellow)}
-.level .when{font:10px/1.8 "Press Start 2P",monospace;color:var(--cyan)}
-.level .when b{display:block;color:var(--pink);font-size:9px}
-.level h3{margin:0 0 4px;font-size:18px}
-.level .org{color:var(--muted);margin:0 0 10px}
-.level ul{margin:0;padding-left:0;list-style:none}
-.level li{padding-left:22px;position:relative;margin:4px 0}
-.level li::before{content:"►";position:absolute;left:0;color:var(--yellow);font-size:12px;top:3px}
-.badge{display:inline-block;font:9px "Press Start 2P",monospace;background:var(--yellow);color:var(--bg);padding:5px 7px;margin:0 6px 6px 0}
+/* trusted */
+.trusted{background:rgba(255,255,255,.75);border-block:3px double #000;padding:14px 10px;text-align:center}
+.trusted p{margin:0 0 8px;font:italic 15px var(--times)}
+.logos{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:center;font:700 19px var(--times);color:#666}
+.logos span:nth-child(2n){font-family:var(--comic)}.logos span:nth-child(3n){font-family:var(--impact);letter-spacing:.04em}
 
-/* cartridges */
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.filters button{font:10px "Press Start 2P",monospace;background:var(--bg);color:var(--ink);border:3px solid var(--line);padding:10px 12px;cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--cyan);color:var(--bg);border-color:var(--ink)}
-.carts{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
-.cart{--c:var(--pink);background:var(--panel);border:var(--px) solid var(--ink);border-top:18px solid var(--c);box-shadow:6px 6px 0 #000;
-  padding:18px;display:flex;flex-direction:column;position:relative;transition:transform .12s}
-.cart:hover{transform:translateY(-4px) rotate(-.4deg)}
-.cart::before{content:"";position:absolute;top:-14px;left:50%;width:56px;height:8px;margin-left:-28px;background:repeating-linear-gradient(90deg,var(--bg) 0 6px,transparent 6px 10px)}
-.cart .tag{font:9px "Press Start 2P",monospace;color:var(--c);margin-bottom:10px}
-.cart h3{font:13px/1.5 "Press Start 2P",monospace;margin:0 0 10px}
-.cart p{margin:0 0 14px;color:var(--muted);font-size:14.5px}
-.cart .stack{font-size:12px;color:var(--ink);opacity:.8;margin-bottom:14px}
-.cart .links{margin-top:auto;display:flex;gap:14px;flex-wrap:wrap;font-weight:600;font-size:14px}
-.cart[hidden]{display:none}
-.c-web{--c:var(--cyan)} .c-tool{--c:var(--green)} .c-game{--c:var(--pink)} .c-map{--c:var(--orange)} .c-media{--c:var(--violet)}
+/* section headings */
+h2.wa{font:clamp(30px,6vw,52px)/1.05 var(--comic);text-align:center;margin:46px 0 16px;color:var(--yellow);-webkit-text-stroke:2px #000;text-shadow:4px 4px 0 var(--hot),7px 7px 0 #000}
+h3{font-family:var(--times)}
 
-/* inventory */
-.inv{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.slot{background:var(--panel);border:3px solid var(--line);padding:18px}
-.slot h3{font:10px "Press Start 2P",monospace;color:var(--pink);margin:0 0 12px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{border:2px solid var(--line);padding:3px 8px;font-size:13px;background:var(--bg)}
+/* generator */
+.gen{background:#fffbe6;border:4px dashed var(--hot);padding:18px;max-width:760px;margin:auto;box-shadow:6px 6px 0 rgba(0,0,0,.4)}
+.gen label{font:700 16px var(--times)}
+.gen textarea{width:100%;min-height:76px;font:16px "Courier New",monospace;border:3px inset #ccc;padding:8px;margin:6px 0 10px;background:#fff}
+.gen .opts{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:12px;font:16px var(--times)}
+.credits{font:700 14px Arial;color:var(--red);margin:10px 0 0}
+.loading{font:700 17px var(--comic);color:var(--purple);min-height:1.4em;margin-top:12px}
+.progress{height:22px;border:2px inset #999;background:#fff;margin-top:8px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,#000080 0 14px,#fff 14px 16px);transition:width .3s}
+.result{margin-top:16px;background:#fff;border:4px solid #000;padding:14px;display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center}
+.result .photo{aspect-ratio:1;background:linear-gradient(135deg,#ffd700,#ff1493);display:grid;place-items:center;font-size:72px;border:3px solid #000;position:relative}
+.result .photo b{position:absolute;bottom:-10px;right:-10px;background:var(--red);color:#fff;font:900 15px var(--impact);padding:4px 8px;transform:rotate(-10deg);border:2px solid #000}
+.result h3{margin:0 0 6px;font:900 28px var(--impact);color:var(--hot);-webkit-text-stroke:1px #000}
+.result ul{margin:6px 0 0;padding-left:20px;font-size:16px}
+.quake{animation:quake .08s linear 10}
+@keyframes quake{25%{transform:translate(6px,-4px)}50%{transform:translate(-6px,4px)}75%{transform:translate(4px,6px)}}
+.roll{animation:roll 1s ease-in-out}
+@keyframes roll{to{transform:rotate(360deg)}}
 
-/* contact */
-.coin{text-align:center;background:var(--panel);border:var(--px) solid var(--ink);box-shadow:10px 10px 0 var(--yellow);padding:40px 22px}
-.coin h2{font:clamp(18px,3.2vw,28px)/1.4 "Press Start 2P",monospace;color:var(--yellow);margin:0 0 14px}
-.coin p{color:var(--muted);max-width:56ch;margin:0 auto 24px}
-.coin .btns{justify-content:center}
-footer{padding:30px 0 50px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-footer .vt{font-size:20px;color:var(--green)}
+/* top 8 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.thumb{background:#fff;border:4px solid #000;box-shadow:5px 5px 0 #000;padding:8px;text-decoration:none;color:#000;transform:rotate(var(--r,0deg));transition:transform .15s}
+.thumb:nth-child(odd){--r:-1.2deg}.thumb:nth-child(even){--r:1deg}
+.thumb:hover{transform:rotate(0) scale(1.04);z-index:2}
+.art{position:relative;aspect-ratio:16/9;overflow:hidden;display:grid;place-items:center;border:2px solid #000}
+.art .emo{font-size:70px;filter:drop-shadow(4px 4px 0 rgba(0,0,0,.6))}
+.art .cap{position:absolute;left:8px;right:8px;bottom:6px;font:clamp(22px,2.6vw,30px)/1 var(--impact);color:#fff;-webkit-text-stroke:2px #000;text-shadow:3px 3px 0 #000;text-transform:uppercase}
+.art .arrow{position:absolute;right:8px;top:4px;font:900 48px/1 var(--impact);color:var(--red);-webkit-text-stroke:3px #fff;transform:rotate(30deg)}
+.art .face{position:absolute;left:8px;top:6px;font-size:40px}
+.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb p{margin:8px 2px 2px;font:16px var(--times);text-align:center}
+.thumb p b{color:var(--blue);text-decoration:underline}
+.thumb small{display:block;font:13px Arial;color:#555;text-align:center}
+.g1{background:linear-gradient(135deg,#ff004c,#ffb300)}.g2{background:linear-gradient(135deg,#00c6ff,#0050ff)}.g3{background:linear-gradient(135deg,#f7971e,#ffd200)}
+.g4{background:linear-gradient(135deg,#5b3a1e,#d2a679)}.g5{background:linear-gradient(135deg,#1d2b64,#6dd5ed)}.g6{background:linear-gradient(135deg,#0b8a5a,#38ef7d)}
+.g7{background:linear-gradient(135deg,#1a002e,#b400ff)}.g8{background:linear-gradient(135deg,#ff512f,#dd2476)}.g9{background:linear-gradient(135deg,#2f4f2f,#a8c66c)}
 
-/* easter egg */
-#bonus{position:fixed;inset:0;display:none;place-items:center;background:rgba(13,11,30,.9);z-index:50;text-align:center;padding:16px}
-#bonus.on{display:grid}
-#bonus div{font:clamp(14px,3vw,22px)/1.8 "Press Start 2P",monospace;color:var(--yellow);text-shadow:3px 3px 0 var(--pink)}
-.spark{position:fixed;width:8px;height:8px;z-index:60;pointer-events:none}
+/* features */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.feat{background:#fff;border:3px outset #ddd;padding:14px;text-align:center}
+.feat .ico{font-size:44px}
+.feat h3{margin:6px 0;font:700 21px var(--comic);color:var(--purple)}
+.feat p{margin:0;font-size:16px}
 
-@media (max-width:820px){
-  .hero{grid-template-columns:1fr;padding-top:36px}
-  .level{grid-template-columns:1fr;gap:6px}
-  nav a{padding:6px;font-size:8px}
-  .logo{font-size:10px}
+/* resume window */
+.win{background:var(--silver);border:3px outset #fff;box-shadow:2px 2px 0 #000}
+.title{display:flex;justify-content:space-between;align-items:center;gap:8px;background:linear-gradient(90deg,var(--navy),#1084d0);color:#fff;font:700 14px var(--tahoma);padding:3px 4px 3px 8px}
+.title button,.title .xs i{font:700 11px var(--tahoma);background:var(--silver);color:#000;border:2px outset #fff;width:20px;height:18px;padding:0;cursor:pointer;display:inline-grid;place-items:center;font-style:normal}
+.title .xs{display:flex;gap:2px}
+.win .doc{background:#fff;margin:6px;border:2px inset #fff;padding:16px 20px;font:16px/1.5 var(--times)}
+.job{padding:10px 0;border-bottom:1px dotted #888}.job:last-child{border:0}
+.job h3{margin:0;font:700 19px var(--times);color:var(--navy)}
+.job .when{font:700 13px Arial;color:var(--hot)}
+.job ul{margin:6px 0 0;padding-left:22px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chips span{font:700 13px Arial;background:var(--yellow);border:2px outset #ffff99;padding:2px 8px}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;align-items:stretch}
+.plan{background:#fff;border:4px solid #000;padding:16px;text-align:center;position:relative;display:flex;flex-direction:column}
+.plan.popular{background:#fffbcc;border-color:var(--hot);transform:scale(1.04);box-shadow:6px 6px 0 var(--hot)}
+.plan .tag{position:absolute;top:-16px;left:50%;transform:translateX(-50%) rotate(-3deg);background:var(--red);color:#fff;font:900 14px var(--impact);padding:4px 10px;border:2px solid #000;white-space:nowrap}
+.plan h3{margin:4px 0;font:700 24px var(--comic)}
+.amount{font:900 34px var(--impact);margin:6px 0;color:#008000}
+.amount small{font:14px var(--times);color:#000}
+.plan ul{text-align:left;padding-left:20px;margin:6px 0 14px;font-size:16px;flex:1}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.review{background:#fff;border:3px dotted var(--purple);padding:14px;font:italic 17px var(--times)}
+.review cite{display:block;margin-top:8px;font:700 normal 14px Arial}
+.stars{color:#ffb000;font-size:20px;text-shadow:1px 1px 0 #000}
+
+.direct{background:#000;color:var(--lime);border:4px ridge var(--lime);padding:18px;text-align:center;font:16px "Courier New",monospace;margin:30px auto;max-width:720px}
+.direct h3{font:900 24px var(--impact);color:var(--yellow);margin:0 0 4px;letter-spacing:.03em}
+.direct small{display:block;color:#9f9;margin:6px 0 12px;font-size:12px}
+
+.uc{margin:40px auto 10px;max-width:560px;text-align:center;font:900 20px var(--impact);padding:8px;background:repeating-linear-gradient(45deg,#ffd000 0 16px,#000 16px 32px);border:3px solid #000}
+.uc span{background:#ffd000;padding:2px 10px}
+footer{text-align:center;padding:10px 12px 140px;font:14px var(--times)}
+footer .counter{font:700 15px "Courier New",monospace;background:#000;color:#0f0;padding:2px 6px}
+.affiliate{max-width:640px;margin:20px auto;background:#fff;border:4px double var(--hot);padding:16px;text-align:center}
+.coupon{display:block;margin:20px auto;max-width:420px;background:repeating-linear-gradient(90deg,#fff 0 10px,#ffe 10px 20px);border:4px dashed var(--red);padding:16px;font:900 26px var(--impact);color:var(--red);cursor:pointer;text-align:center;animation:wob 1s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(-2deg) scale(1.03)}}
+
+/* popups */
+.popup{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:rgba(0,0,0,.35);padding:12px}
+.popup-box{background:var(--silver);border:3px outset #fff;width:min(400px,100%);box-shadow:4px 4px 0 #000}
+.popup-body{background:#fff;margin:6px;border:2px inset #fff;padding:16px;text-align:center;font:17px var(--times)}
+.popup-body .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.popup .btn-big{font-size:17px;padding:8px 16px}
+.welcome{background:transparent;pointer-events:none}.welcome .popup-box{pointer-events:auto}
+.wheel-wrap{position:relative;width:260px;height:260px;margin:8px auto}
+.wheel-disc{width:100%;height:100%;border-radius:50%;border:6px solid #000;
+  background:conic-gradient(#ff1493 0 45deg,#ffd700 45deg 90deg,#00ccff 90deg 135deg,#00ff00 135deg 180deg,#ff6600 180deg 225deg,#9900ff 225deg 270deg,#ff0000 270deg 315deg,#00ffcc 315deg 360deg);position:relative}
+.wheel-disc span{position:absolute;left:50%;top:50%;width:46%;transform-origin:0 50%;font:700 12px Arial;color:#000;text-shadow:0 0 3px #fff;padding-left:28px;white-space:nowrap}
+.wheel-pointer{position:absolute;left:50%;top:-14px;margin-left:-14px;width:0;height:0;border:14px solid transparent;border-top:26px solid #000;z-index:2}
+.wheel-pointer.tick{animation:tk .12s}
+@keyframes tk{50%{transform:rotate(-18deg)}}
+.wheel-msg{font:700 20px var(--comic);margin:8px 0 0;min-height:1.4em}
+.call-avatar{width:84px;height:84px;margin:6px auto;border-radius:50%;background:linear-gradient(#ffcc99,#cc8855);display:grid;place-items:center;font-size:46px;border:3px solid #000}
+.call-name{font:700 22px var(--times);margin:4px 0 0}.call-role{font:14px Arial;color:#555;margin:0 0 6px}
+.call-status{font:700 16px "Courier New",monospace;color:var(--navy)}
+.call[data-state=ringing] .call-avatar{animation:quake .15s infinite}
+.captcha-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:8px 0}
+.captcha-grid button{aspect-ratio:1;font-size:38px;background:#eee;border:2px solid #999;cursor:pointer}
+.captcha-grid button.picked{outline:4px solid #0066ff;outline-offset:-4px;background:#cce0ff}
+.captcha-msg{min-height:1.3em;font:700 15px Arial}
+
+/* floating stuff */
+.cookie{position:fixed;left:0;right:0;bottom:-220px;z-index:120;background:#ffe4b5;border-top:4px solid #8b4513;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font:700 16px var(--times);transition:bottom .4s}
+.cookie.show{bottom:0}
+.cookie p{margin:0;max-width:560px}
+.cookie-btns{display:flex;gap:8px;align-items:center}
+#cookie-reject{transition:transform .25s}
+.chat{position:fixed;right:12px;bottom:12px;z-index:110;width:270px;background:#fff;border:3px solid #003399;box-shadow:3px 3px 0 rgba(0,0,0,.4);font:14px var(--tahoma)}
+.chat-head{display:flex;align-items:center;gap:8px;width:100%;background:linear-gradient(#3b7bdc,#003399);color:#fff;font:700 14px var(--tahoma);padding:7px 9px;border:0;cursor:pointer;text-align:left}
+.chat-head .dot{width:10px;height:10px;border-radius:50%;background:#0f0;box-shadow:0 0 5px #0f0}
+.chat-badge{margin-left:auto;background:var(--red);border-radius:999px;min-width:20px;height:20px;display:grid;place-items:center;font:700 12px Arial;padding:0 5px}
+.chat-badge:empty{display:none}
+.chat-main{display:none}.chat.open .chat-main{display:block}
+.chat-body{height:200px;overflow-y:auto;padding:8px;background:#f3f7ff}
+.msg{margin:4px 0;padding:6px 8px;border-radius:8px;max-width:88%;font-size:14px}
+.msg.bot{background:#fff;border:1px solid #aac}.msg.me{background:#d6ffd6;margin-left:auto;text-align:right}
+.msg.typing{font-style:italic;color:#888}
+.chat-form{display:flex;border-top:2px solid #003399}
+.chat-form input{flex:1;font:14px var(--tahoma);border:0;padding:8px;min-width:0}
+.chat-form button{font:700 13px var(--tahoma);border:0;background:#ffcc00;padding:0 12px;cursor:pointer}
+.chat.nudge{animation:quake .08s 6}
+.music{position:fixed;left:12px;bottom:12px;z-index:110;font:700 14px var(--times);background:linear-gradient(#ffff66,#ffcc00);border:3px solid #000;border-radius:999px;padding:8px 14px;cursor:pointer;box-shadow:3px 3px 0 #000}
+.cam{position:fixed;left:12px;bottom:64px;z-index:105;width:180px;background:var(--silver);border:3px outset #fff;box-shadow:3px 3px 0 #000;font:12px var(--tahoma)}
+.cam .screen{position:relative;height:118px;background:#111;overflow:hidden;display:grid;place-items:center;margin:4px;border:2px inset #fff}
+.cam .screen::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 1px,transparent 1px 3px);animation:noise .2s steps(2) infinite}
+@keyframes noise{50%{transform:translateY(1px)}}
+.cam .who{font-size:52px;animation:bob 2.2s ease-in-out infinite}
+.cam .rec{position:absolute;left:6px;top:4px;color:#f33;font:700 11px Arial}
+.cam .rec::before{content:"● "}
+.cam .caption{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);color:#0f0;font:11px "Courier New",monospace;padding:2px 4px;white-space:nowrap;overflow:hidden}
+.clippy{position:fixed;right:16px;bottom:280px;z-index:115;display:flex;align-items:flex-end;gap:6px;transform:translateX(140%);transition:transform .4s}
+.clippy.show{transform:none}
+.clippy-bubble{background:#ffffcc;border:2px solid #000;border-radius:10px;padding:10px;width:220px;font:14px var(--tahoma);box-shadow:3px 3px 0 rgba(0,0,0,.3)}
+.clippy-bubble p{margin:0 0 8px}
+.clippy-bubble div{display:flex;gap:6px}
+.clip{font-size:56px;filter:drop-shadow(2px 2px 0 #000);animation:bob 1.8s ease-in-out infinite}
+.virus{position:fixed;z-index:180;left:50%;top:50%;transform:translate(-50%,-50%);width:min(360px,94vw);background:var(--silver);border:3px outset #fff;box-shadow:4px 4px 0 #000;font:14px var(--tahoma)}
+.virus-in{padding:12px}
+.virus-warn{color:var(--red);font:900 18px var(--impact);text-align:center;margin:4px 0 8px;animation:blink .6s steps(1) infinite}
+@keyframes blink{50%{opacity:.2}}
+.bar{height:18px;border:2px inset #fff;background:#fff;margin-bottom:8px}
+.virus-fill{height:100%;width:0;background:linear-gradient(90deg,red,orange);transition:width .3s}
+.virus-list{height:110px;overflow:auto;background:#fff;border:2px inset #fff;margin:0 0 10px;padding:6px 6px 6px 24px;font:12px "Courier New",monospace}
+.error-box{position:fixed;z-index:170;width:290px;background:var(--silver);border:3px outset #fff;box-shadow:3px 3px 0 #000;font:14px var(--tahoma)}
+.error-body{display:flex;gap:10px;align-items:center;padding:14px 12px 8px;background:var(--silver)}
+.error-body span{font-size:30px}.error-body p{margin:0}
+.error-box .btn-ugly{display:block;margin:0 auto 10px;min-width:80px}
+.proof{position:fixed;left:12px;top:calc(var(--banner-h) + 10px);z-index:100;background:#fff;border:2px solid #000;box-shadow:3px 3px 0 rgba(0,0,0,.4);padding:8px 12px;font:14px Arial;max-width:310px;transform:translateX(-120%);opacity:0}
+.proof.show{animation:proof 5s ease forwards}
+@keyframes proof{8%,85%{transform:none;opacity:1}100%{transform:translateX(-120%);opacity:0}}
+.money{position:fixed;top:-40px;z-index:90;font-size:26px;pointer-events:none;animation:drop linear forwards}
+@keyframes drop{to{transform:translateY(110vh) rotate(540deg)}}
+.trail{position:fixed;z-index:300;pointer-events:none;font-size:18px;transform:translate(-50%,-50%);animation:trail .9s ease-out forwards}
+@keyframes trail{to{transform:translate(-50%,10px) scale(.3);opacity:0}}
+.toast{position:fixed;left:50%;top:calc(var(--banner-h) + 50px);transform:translateX(-50%);z-index:250;background:#ffffcc;border:3px solid #000;padding:10px 16px;font:700 16px var(--times);max-width:min(520px,92vw);text-align:center;box-shadow:4px 4px 0 #000}
+
+/* boring mode */
+body.boring{background:#fff}
+body.boring .chaos{display:none!important}
+body.boring .beg{background:#f5f5f5;border-color:#999}
+
+@media (max-width:720px){
+  .burst,.mascot{transform:scale(.62)!important;animation:none}
+  .b1{right:-14px;top:-6px}.b2{left:-14px;top:150px}.b3{display:none}.mascot{left:-6px;top:-8px}
+  .result{grid-template-columns:1fr}.result .photo{max-width:150px}
+  .chat{width:220px}.cam{width:130px;bottom:60px}.cam .screen{height:84px}.cam .who{font-size:38px}
+  .clippy{bottom:250px;right:6px}.clippy-bubble{width:180px}
+  .plan.popular{transform:none}
 }
-@media (max-width:480px){ nav{display:none} }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
-  .marquee span{padding-left:0}
+  .ticker span{padding-left:0}
 }
 </style>
 </head>
 <body>
-<a class="sr" href="#main">Skip to content</a>
-<header class="bar">
-  <div class="wrap">
-    <a class="logo px" href="#top">AHMED<b>.</b>EXE</a>
-    <nav aria-label="Main">
-      <a href="#levels">Levels</a>
-      <a href="#carts">Projects</a>
-      <a href="#inventory">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<a class="sr" href="#resume">Skip to resume</a>
 
-<main id="main">
-  <div class="wrap" id="top">
-    <section class="hero" aria-labelledby="hi">
-      <div>
-        <div class="crt" role="img" aria-label="Retro terminal reading: loading player one, Ahmed Mahmoud, communications and builder class">
-          <p class="vt"><span class="prompt">C:\&gt;</span> LOAD "PLAYER1",8,1</p>
-          <p class="vt">SEARCHING FOR PLAYER1...</p>
-          <p class="vt">LOADING... CLASS: COMMS + BUILDER</p>
-          <p class="vt">READY.<span class="cursor"></span></p>
-        </div>
-        <h1 id="hi">Ahmed<br><span>Mahmoud</span></h1>
-        <p class="lead">Digital communications pro who also builds the tools. Four years on the Calgary Zoo’s communications team running multimedia, websites and the digital asset library — plus web apps, data tools and a retro game made on my own time.</p>
-        <div class="btns">
-          <a class="btn" href="#carts">▶ See projects</a>
-          <a class="btn alt" href="#contact">✉ Hire me</a>
-        </div>
-        <p class="press" aria-hidden="true">PRESS START</p>
-      </div>
+<div class="beg" id="beg">📸 I built 9 projects for FREE and still no job offer. Please hire me so I get paid something!! <a class="btn" href="#hire">HIRE AHMED →</a></div>
+<div class="ticker" aria-hidden="true"><span>🔥🔥 NEW!!! 🔥🔥 now with 4 YEARS of zoo experience!!! 🦁 &nbsp;&nbsp; *** 1,000,000+ impressions on Calgary Zoo channels *** &nbsp;&nbsp; 💸 cheaper than a production agency (probably) 💸 &nbsp;&nbsp; Google Ads Search CERTIFIED (98%!!!) &nbsp;&nbsp; *** best viewed in Internet Explorer 6 *** &nbsp;&nbsp; 🐻‍❄️ ran the media push for Wild Canada 🐻‍❄️</span></div>
+<div class="hits">TOTAL VISITS: <span class="hits-counter" id="hits-count">000000000001</span></div>
 
-      <aside class="card" aria-labelledby="pc">
-        <h2 id="pc">PLAYER CARD</h2>
-        <svg class="avatar" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
-          <rect width="16" height="16" fill="#0d0b1e"/>
-          <path fill="#2b1d14" d="M4 2h8v1h1v3H3V3h1z"/>
-          <path fill="#c68b59" d="M4 5h8v5h-1v1H5v-1H4z"/>
-          <path fill="#2b1d14" d="M4 9h1v1h1v1h4v-1h1V9h1v2h-1v1H5v-1H4z"/>
-          <rect x="5" y="6" width="2" height="1" fill="#0d0b1e"/><rect x="9" y="6" width="2" height="1" fill="#0d0b1e"/>
-          <path fill="#3ff0ff" d="M3 12h10v4H3z"/><path fill="#ff4fa3" d="M7 12h2v4H7z"/>
-        </svg>
-        <dl class="stats">
-          <dt>CLASS</dt><dd>Digital Communications · Builder</dd>
-          <dt>BASE</dt><dd>Alberta — Calgary, Edmonton or remote</dd>
-          <dt>MAIN</dt><dd>Video, photo, websites, digital assets, live streams</dd>
-          <dt>SIDE</dt><dd>Web apps, Python &amp; Go tools, mapping</dd>
-          <dt>SAVE</dt><dd>On GitHub since 2019</dd>
-        </dl>
-        <span class="status">● OPEN TO WORK</span>
-      </aside>
-    </section>
-  </div>
+<nav class="nav" aria-label="Main">
+  <a class="logo" href="#top">Ahmed<sup>™®©</sup></a>
+  <ul>
+    <li><a href="#generate">Generate</a></li>
+    <li><a href="#projects">Projcets</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#plans">Pricing</a></li>
+    <li><a href="#reviews">Reveiws</a></li>
+    <li><a href="#" id="boring" role="button">📄 boring mode</a></li>
+  </ul>
+  <a class="btn btn-small btn-pink runaway" href="#hire">Hire Me Free!!</a>
+</nav>
 
-  <div class="marquee" aria-hidden="true"><span>★ 1M+ IMPRESSIONS ON CALGARY ZOO CHANNELS ★ WILD CANADA LAUNCH MEDIA PUSH ★ LIVE STREAMS ON YOUTUBE + FACEBOOK ★ CANTO DAM ADMIN + TRAINER ★ GOOGLE ADS SEARCH CERTIFIED ★ HUBSPOT ACADEMY CERTIFIED ★ BUILDS WEB APPS FOR FUN ★</span></div>
-
-  <div class="wrap">
-    <section id="levels" aria-labelledby="lv">
-      <div class="head"><h2 id="lv">LEVELS CLEARED</h2><p>The career so far.</p></div>
-      <div class="levels">
-        <article class="level boss">
-          <div class="when">2022 – 2026<b>BOSS LEVEL</b></div>
-          <div>
-            <h3>Digital Coordinator</h3>
-            <p class="org">Wilder Institute / Calgary Zoo · Communications team</p>
-            <ul>
-              <li>Ran the zoo’s multimedia operation: video, photography, motion graphics, live streams, social media, email newsletters and website updates.</li>
-              <li>Managed the CMS across multiple websites and the Canto digital asset library; trained staff across departments to use it.</li>
-              <li>Ran the media push for the opening of Wild Canada (Dec 2023), the largest redevelopment in the zoo’s history.</li>
-              <li>Content across the zoo’s channels passed 1 million impressions.</li>
-              <li>Produced live streams on YouTube and Facebook Live with OBS and vMix, plus virtual events on Zoom and Teams.</li>
-              <li>The go-to tech person outside IT; supervised freelance photographers, videographers and event AV crews, and tracked the content and equipment budget.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="level">
-          <div class="when">2020 – NOW<b>SIDE QUEST</b></div>
-          <div>
-            <h3>Owner, Digital Media &amp; Automation</h3>
-            <p class="org">AMZD Media · self-employed</p>
-            <ul>
-              <li>Menu photography for restaurants and photo/video coverage of corporate events.</li>
-              <li>Runs client projects from intake to delivery, including scope, scheduling, quotes and invoices.</li>
-              <li>Builds web apps and workflow tools — see the cartridges below.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="level">
-          <div class="when">2020 – 2022<b>TRAINING</b></div>
-          <div>
-            <h3>Journalism Diploma program</h3>
-            <p class="org">Southern Alberta Institute of Technology (SAIT)</p>
-          </div>
-        </article>
-        <article class="level">
-          <div class="when">2017 – 2020<b>WORLD 1</b></div>
-          <div>
-            <h3>Registered Electrical Apprentice</h3>
-            <p class="org">OTC Electrical · commercial and residential sites</p>
-          </div>
-        </article>
-        <article class="level">
-          <div class="when">2026<b>POWER-UPS</b></div>
-          <div>
-            <h3>Certifications</h3>
-            <p><span class="badge">Google Ads Search</span><span class="badge">HubSpot Digital Marketing</span><span class="badge">HubSpot Social Media Marketing I &amp; II</span><span class="badge">HubSpot Sales Management</span><span class="badge">HubSpot Revenue Operations</span></p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="carts" aria-labelledby="ct">
-      <div class="head"><h2 id="ct">CARTRIDGE SHELF</h2><p>Things I’ve built. Blow on them first.</p></div>
-      <div class="filters" role="group" aria-label="Filter projects">
-        <button type="button" data-f="all" aria-pressed="true">ALL</button>
-        <button type="button" data-f="web" aria-pressed="false">WEB</button>
-        <button type="button" data-f="tool" aria-pressed="false">TOOLS</button>
-        <button type="button" data-f="media" aria-pressed="false">MEDIA</button>
-        <button type="button" data-f="game" aria-pressed="false">GAMES</button>
-        <button type="button" data-f="map" aria-pressed="false">MAPS</button>
-      </div>
-      <div class="carts" id="cartlist">
-        <article class="cart c-map" data-k="map web"><div class="tag">MAPS · RESEARCH</div><h3>Alberta Atlas</h3><p>Public mapping project for Alberta conservation lands, wildlife management units, pheasant release sites and Crown-land access, with screenshots and a roadmap.</p><div class="stack">Mapping · open data · documentation</div><div class="links"><a href="https://github.com/mizoz/alberta-atlas">Code ↗</a></div></article>
-        <article class="cart c-game" data-k="game web"><div class="tag">GAME · PLAY NOW</div><h3>NeonGrid</h3><p>A cyberpunk city-builder you can play in your browser: place buildings, balance resources, survive random events and unlock research.</p><div class="stack">HTML · CSS · JavaScript</div><div class="links"><a href="https://mizoz.github.io/neongrid/">▶ Play ↗</a><a href="https://github.com/mizoz/neongrid">Code ↗</a></div></article>
-        <article class="cart c-web" data-k="web"><div class="tag">WEB · LIVE</div><h3>YYC Class Finder</h3><p>Turns the City of Calgary’s recreation-program open data into a simple search by age, budget, day and activity, with links back to the official listing.</p><div class="stack">Next.js · TypeScript · open-data API · Vercel</div><div class="links"><a href="https://city-picks.vercel.app">Live ↗</a><a href="https://github.com/mizoz/yyc-class-finder">Code ↗</a></div></article>
-        <article class="cart c-web" data-k="web"><div class="tag">WEB · WEATHER</div><h3>YYC Patio Finder</h3><p>Pairs Calgary patios with live weather and a “Patio Weather Score”, with filters plus map and grid views. Patio list is sample data.</p><div class="stack">Next.js · TypeScript · Tailwind · Open-Meteo</div><div class="links"><a href="https://github.com/mizoz/yyc-patio-finder">Code ↗</a></div></article>
-        <article class="cart c-web" data-k="web"><div class="tag">WEB · MAPS</div><h3>Calgary Coffee Trail</h3><p>A neighbourhood-by-neighbourhood coffee map with search, amenity filters, shop pages and dark mode. Shop details are sample data.</p><div class="stack">Next.js · TypeScript · Leaflet</div><div class="links"><a href="https://github.com/mizoz/calgary-coffee-trail">Code ↗</a></div></article>
-        <article class="cart c-tool" data-k="tool web"><div class="tag">TOOL · DASHBOARD</div><h3>YYC Flight Radar</h3><p>Self-hosted tracker for flight deals out of Calgary and Edmonton: collects public deals, separates real fares from cashback “effective” prices, and shows them on a filterable dashboard.</p><div class="stack">Python · FastAPI · SQLite · tests</div><div class="links"><a href="https://github.com/mizoz/yyc-flight-radar">Code ↗</a></div></article>
-        <article class="cart c-tool" data-k="tool"><div class="tag">TOOL · CLI</div><h3>Deal Scout</h3><p>Scans deal feeds and shop pages, filters out what you don’t want, ranks the rest and writes a shareable Markdown or JSON digest.</p><div class="stack">Python · YAML config · pytest · GitHub Actions</div><div class="links"><a href="https://github.com/mizoz/dealscout">Code ↗</a></div></article>
-        <article class="cart c-tool" data-k="tool"><div class="tag">TOOL · CLI</div><h3>ContextCRM</h3><p>A local-first contact tracker for the command line: people, organizations, timelines, follow-ups and full-text search in one SQLite file.</p><div class="stack">Go · SQLite · JSON output · CI</div><div class="links"><a href="https://github.com/mizoz/context-crm">Code ↗</a></div></article>
-        <article class="cart c-media" data-k="tool media"><div class="tag">MEDIA · LINUX</div><h3>COSMIC Dictate</h3><p>Push-to-talk voice typing for Linux: hold a hotkey, speak, and the text appears in whatever app you’re using. Works with cloud or offline speech recognition.</p><div class="stack">Bash · Python · PipeWire · systemd</div><div class="links"><a href="https://github.com/mizoz/cosmic-dictate">Code ↗</a></div></article>
-      </div>
-    </section>
-
-    <section id="inventory" aria-labelledby="iv">
-      <div class="head"><h2 id="iv">INVENTORY</h2><p>Tools I actually use.</p></div>
-      <div class="inv">
-        <div class="slot"><h3>CREATIVE</h3><div class="chips"><span>Premiere Pro</span><span>After Effects</span><span>Photoshop</span><span>Lightroom</span><span>Illustrator</span><span>InDesign</span><span>Canva</span></div></div>
-        <div class="slot"><h3>BROADCAST</h3><div class="chips"><span>OBS</span><span>vMix</span><span>YouTube Live</span><span>Facebook Live</span><span>Zoom</span><span>Teams</span></div></div>
-        <div class="slot"><h3>DIGITAL</h3><div class="chips"><span>WordPress / CMS</span><span>Canto DAM</span><span>Google Analytics</span><span>SEO basics</span><span>Google Ads</span><span>Meta Business Suite</span></div></div>
-        <div class="slot"><h3>OFFICE</h3><div class="chips"><span>Microsoft Office</span><span>Excel</span><span>SharePoint</span><span>Asana</span><span>Trello</span><span>Monday.com</span></div></div>
-        <div class="slot"><h3>CODE</h3><div class="chips"><span>Python</span><span>TypeScript</span><span>Next.js</span><span>Go</span><span>SQLite</span><span>Git &amp; GitHub Actions</span><span>Linux</span></div></div>
-        <div class="slot"><h3>SOFT SKILLS</h3><div class="chips"><span>Writing &amp; editing</span><span>Training guides</span><span>Stakeholder requests</span><span>Budgets</span><span>Crew supervision</span></div></div>
-      </div>
-    </section>
-
-    <section id="contact" aria-labelledby="cn">
-      <div class="coin">
-        <h2 id="cn">INSERT COIN<br>TO CONTINUE</h2>
-        <p>Looking for a communications, digital or marketing role in Calgary, Edmonton or remote. Most of my client and zoo work is under NDA — samples are happily shared on request.</p>
-        <div class="btns">
-          <a class="btn" href="https://www.linkedin.com/in/ahmed-m-82ba28169/">LinkedIn ↗</a>
-          <a class="btn alt" href="https://github.com/mizoz">GitHub ↗</a>
-        </div>
-      </div>
-    </section>
-  </div>
+<main class="wrap" id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="mascot chaos" aria-hidden="true">📸</div>
+    <span class="badge1">⭐ #1 comms guy in my apartment ⭐</span>
+    <h1 id="h1">Hire a <span class="rb">REAL</span> Comms Pro<br>For <s>$1,000,000</s> a Fair Salary!!!</h1>
+    <p class="lead">My skills are trained on <b>four years on the Calgary Zoo's communications team</b> and one (1) Wild Canada launch. Video, photo, live streams, websites, digital assets. Results <u>guaranteed</u> and definately probably good.</p>
+    <div class="cta"><a class="btn btn-big" href="#generate">✨ GENERATE HIRE ✨</a><a class="btn" href="#projects">see projcets</a></div>
+    <div class="burst b1 chaos" aria-hidden="true">HUMAN<br>POWERED<br>🧠</div>
+    <div class="burst b2 chaos" aria-hidden="true">OPEN<br>TO<br>WORK!!</div>
+    <div class="burst b3 chaos" aria-hidden="true">NOT A<br>BOT!!</div>
+  </section>
 </main>
 
-<footer class="wrap">
-  <span>© 2026 Ahmed Mahmoud · Alberta, Canada</span>
-  <span class="vt">↑↑↓↓←→←→BA</span>
+<div class="trusted">
+  <p>Trusted by organizations such as:</p>
+  <div class="logos"><span>Calgary Zoo (real!!)</span><span>restaurants (real)</span><span>corporate events (real)</span><span>my mom</span><span>Steve</span></div>
+</div>
+
+<div class="wrap">
+  <h2 class="wa" id="generate">🎨 Generate Ur Perfect Hire!!! 🎨</h2>
+  <form class="gen" id="gen-form">
+    <label for="gen-text">Describe ur open role:</label>
+    <textarea id="gen-text" placeholder="communications coordinator who can also fix the projector and make the live stream work"></textarea>
+    <div class="opts">
+      <label><input type="checkbox" checked> Add live streams</label>
+      <label><input type="checkbox" checked> Add video editing</label>
+      <label><input type="checkbox"> Make it good (+$400)</label>
+    </div>
+    <button class="btn btn-big" type="submit">GENERATE HIRE 🚀</button>
+    <p class="credits">Credits left: <span id="credits">3</span></p>
+    <div class="loading" id="loading" aria-live="polite"></div>
+    <div class="progress" id="progress" hidden><i></i></div>
+    <div class="result" id="result" hidden>
+      <div class="photo" aria-hidden="true">😎<b>100% MATCH</b></div>
+      <div>
+        <h3>CANDIDATE FOUND: AHMED!!!</h3>
+        <div id="result-note" style="font:italic 15px var(--times)"></div>
+        <ul>
+          <li>4 years on the Calgary Zoo communications team</li>
+          <li>Video, photo, motion graphics and live streams (OBS, vMix)</li>
+          <li>CMS across multiple websites + Canto digital asset library</li>
+          <li>Google Ads + HubSpot certified</li>
+        </ul>
+        <p style="margin:10px 0 0"><a class="btn btn-pink" href="#hire">hire him for real →</a></p>
+      </div>
+    </div>
+  </form>
+
+  <h2 class="wa" id="projects">Projcets Made By Ahmed 😎</h2>
+  <div class="grid">
+    <a class="thumb" href="https://mizoz.github.io/neongrid/"><div class="art g7"><img src="https://raw.githubusercontent.com/mizoz/neongrid/main/docs/screenshot.png" alt="" loading="lazy" onerror="this.remove()"><span class="arrow">➜</span><span class="cap">I MADE A GAME!!</span></div><p><b>NeonGrid</b> — play it in ur browser</p><small>cyberpunk city-builder · HTML, CSS, JavaScript</small></a>
+    <a class="thumb" href="https://city-picks.vercel.app"><div class="art g2"><span class="face">😱</span><span class="emo">🏊</span><span class="cap">EVERY CLASS IN CALGARY?!</span></div><p><b>YYC Class Finder</b> — LIVE!!</p><small>city open data · Next.js, TypeScript</small></a>
+    <a class="thumb" href="https://github.com/mizoz/yyc-flight-radar"><div class="art g5"><span class="arrow">↓</span><span class="emo">✈️</span><span class="cap">CHEAP FLIGHTS (NOT CLICKBAIT)</span></div><p><b>YYC Flight Radar</b></p><small>flight-deal tracker for YYC + YEG · Python, FastAPI, SQLite</small></a>
+    <a class="thumb" href="https://github.com/mizoz/yyc-patio-finder"><div class="art g3"><span class="emo">☀️🍹</span><span class="cap">PATIO WEATHER 10/10</span></div><p><b>YYC Patio Finder</b></p><small>patios + live weather score · Next.js (sample patio list)</small></a>
+    <a class="thumb" href="https://github.com/mizoz/dealscout"><div class="art g1"><span class="face">🤑</span><span class="arrow">➜</span><span class="emo">💸</span><span class="cap">I FOUND $1</span></div><p><b>Deal Scout</b></p><small>ranks the best deals into a digest · Python</small></a>
+    <a class="thumb" href="https://github.com/mizoz/alberta-atlas"><div class="art g9"><span class="emo">🗺️🦌</span><span class="cap">ALBERTA BUT MAPPED</span></div><p><b>Alberta Atlas</b></p><small>conservation + Crown-land maps</small></a>
+    <a class="thumb" href="https://github.com/mizoz/calgary-coffee-trail"><div class="art g4"><span class="emo">☕</span><span class="cap">EVERY COFFEE SHOP (EMOTIONAL)</span></div><p><b>Calgary Coffee Trail</b></p><small>coffee map · Next.js, Leaflet (sample shop data)</small></a>
+    <a class="thumb" href="https://github.com/mizoz/context-crm"><div class="art g6"><span class="emo">📇</span><span class="cap">I NEVER FORGET A FOLLOW-UP</span></div><p><b>ContextCRM</b></p><small>command-line contact tracker · Go, SQLite</small></a>
+    <a class="thumb" href="https://github.com/mizoz/cosmic-dictate"><div class="art g8"><span class="face">🗣️</span><span class="emo">🎤</span><span class="cap">TYPING WITH MY VOICE</span></div><p><b>COSMIC Dictate</b></p><small>push-to-talk voice typing for Linux · Bash, Python</small></a>
+  </div>
+
+  <h2 class="wa">Skills!!!!</h2>
+  <div class="features">
+    <div class="feat"><div class="ico">🎥</div><h3>Video + Photo</h3><p>Point camera. Get picture. Sometimes the picture is a polar bear. Premiere, After Effects, Photoshop, Lightroom.</p></div>
+    <div class="feat"><div class="ico">📡</div><h3>Live Streams</h3><p>YouTube and Facebook Live with OBS and vMix, plus Zoom and Teams events. The stream stays up. Mostly I am the reason.</p></div>
+    <div class="feat"><div class="ico">🌐</div><h3>Websites + CMS</h3><p>Managed the CMS across multiple websites. WordPress, Google Analytics, SEO basics, Google Ads, Meta Business Suite.</p></div>
+    <div class="feat"><div class="ico">🗂️</div><h3>Asset Library Engine™</h3><p>Ran the zoo's Canto digital asset library and trained staff in every department to actually find things in it.</p></div>
+  </div>
+
+  <h2 class="wa" id="resume">My Resume (teh boring part)</h2>
+  <section class="win" aria-labelledby="rz">
+    <div class="title"><span id="rz">📄 resume_FINAL_final2.doc - WordPad</span><span class="xs" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+    <div class="doc" id="resume-doc">
+      <div class="job">
+        <h3>Digital Coordinator · Wilder Institute / Calgary Zoo</h3>
+        <div class="when">2022 – April 2026 · Communications team</div>
+        <ul>
+          <li>Managed the zoo's multimedia production: video, photography, motion graphics, live streams, social media, email newsletters and website updates.</li>
+          <li>Managed the CMS across multiple websites and the Canto digital asset library; trained staff across departments.</li>
+          <li>Led the media push for the opening of Wild Canada (Dec 2023), the largest redevelopment in the zoo's history.</li>
+          <li>Content across the zoo's channels passed 1 million impressions.</li>
+          <li>Produced live streams on YouTube and Facebook Live with OBS and vMix, plus virtual events on Zoom and Teams.</li>
+          <li>Primary technical resource outside IT; supervised freelance photographers, videographers and event AV crews; tracked the content and equipment budget.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Owner, Digital Media &amp; Automation · AMZD Media</h3>
+        <div class="when">2020 – present · self-employed</div>
+        <ul>
+          <li>Menu photography for restaurants and photo/video coverage of corporate events.</li>
+          <li>Manage client projects from intake to delivery, including scope, scheduling, quotes and invoices.</li>
+        </ul>
+      </div>
+      <div class="job"><h3>Journalism Diploma program · SAIT</h3><div class="when">2020 – 2022</div></div>
+      <div class="job"><h3>Registered Electrical Apprentice · OTC Electrical</h3><div class="when">2017 – 2020 · commercial and residential sites</div></div>
+      <div class="job"><h3>Certifications</h3><div class="chips"><span>Google Ads Search</span><span>HubSpot Digital Marketing</span><span>HubSpot Social Media Marketing I &amp; II</span><span>HubSpot Sales Management</span><span>HubSpot Revenue Operations</span></div></div>
+      <div class="job"><h3>Tools</h3><p style="margin:4px 0 0">Premiere Pro · After Effects · Photoshop · Lightroom · Illustrator · InDesign · Canva · OBS · vMix · WordPress · Canto · Google Analytics · Google Ads · Meta Business Suite · Microsoft Office · SharePoint · Asana · Trello · Python · TypeScript · Go</p></div>
+    </div>
+  </section>
+
+  <h2 class="wa" id="plans">Hiring Plans 💰💰💰</h2>
+  <div class="plans">
+    <div class="plan"><h3>Coffee Chat</h3><p class="amount">$0<small>/forever</small></p><ul><li>15 minutes</li><li>I bring questions</li><li>camera on (webcam works)</li></ul><button class="btn buy" data-plan="Coffee Chat">Get Coffee</button></div>
+    <div class="plan popular"><span class="tag">MOST POPULER</span><h3>Full-Time Hire</h3><p class="amount"><span id="exp">4.00</span><small> yrs experience</small></p><ul><li>communications, digital or marketing</li><li>Calgary, Edmonton or remote</li><li>experience goes up every second u wait</li></ul><button class="btn btn-big buy" data-plan="Full-Time Hire">HIRE NOW!!</button></div>
+    <div class="plan"><h3>Reference Check</h3><p class="amount" style="color:#000">Call Steve</p><ul><li>Steve has known me for years</li><li>Steve answers on the 3rd ring</li><li>Steve is not available weekends</li></ul><button class="btn buy" data-plan="Enterprise">Call Steve</button></div>
+  </div>
+
+  <h2 class="wa" id="reviews">What People Say!!!</h2>
+  <div class="reviews">
+    <div class="review">"He fixed the wifi AND the printer. Same day. 10/10 would raise again."<cite>— my mom, Head of References</cite><div class="stars">⭐⭐⭐⭐⭐</div></div>
+    <div class="review">"The live stream did not go down. I don't know what else to tell u."<cite>— a projector, probably</cite><div class="stars">⭐⭐⭐⭐</div></div>
+    <div class="review">"Please let me sleep. He has 9 projects open."<cite>— Ahmed's laptop</cite><div class="stars">⭐⭐⭐⭐⭐⭐⭐</div></div>
+  </div>
+
+  <div class="direct">
+    <h3>Get DIRECT CONNECTION feedback from notAhmed™</h3>
+    <p>Only $0.99 per 7 seconds!!!</p>
+    <small>notAhmed is not Ahmed. billed per 7 seconds, rounded up to the nearest hour. direct connection may be a voicemail.</small>
+    <button class="btn btn-big" id="notahmed-book">BOOK NOW</button>
+  </div>
+
+  <button class="coupon" id="coupon" hidden>🎟️ 47 FREE SECONDS WITH AHMED 🎟️<br><small style="font:14px var(--times);color:#000">click to redeem!!</small></button>
+  <div class="affiliate" id="affiliate" hidden>
+    <h3 style="margin:0 0 6px;font:900 24px var(--impact);color:var(--hot)">Sorry the coupon is gone 😭</h3>
+    <p>But u can still help me!! Message me on LinkedIn. Hiring is very fair.</p>
+    <a class="btn btn-big" href="https://www.linkedin.com/in/ahmed-m-82ba28169/">HIRE AHMED →</a>
+  </div>
+
+  <section class="affiliate" id="hire" aria-labelledby="hh">
+    <h3 id="hh" style="margin:0 0 6px;font:900 30px var(--impact);color:var(--purple)">📬 SIGN MY GUESTBOOK (pls hire me)</h3>
+    <p>Looking for a <b>communications, digital or marketing</b> role in <b>Calgary, Edmonton or remote</b>. Most of my zoo and client work is under NDA, so samples are shared on request.</p>
+    <a class="btn btn-big" href="https://www.linkedin.com/in/ahmed-m-82ba28169/">💌 LinkedIn</a>
+    <a class="btn" href="https://github.com/mizoz" style="margin-left:8px">GitHub</a>
+  </section>
+
+  <div class="uc"><span>🚧 SITE UNDER CONSTRUCTION 🚧</span></div>
+</div>
+
+<footer>
+  <p>You are visitor #<span class="counter" id="counter">000000000001</span></p>
+  <p>© 2026 Ahmed Mahmoud (not a real inc.) · Made by hand in Alberta · <a href="#" id="terms">Terms</a> · <a href="#" id="privacy">Privacy (lol)</a></p>
+  <p style="font-size:12px">Best viewed in Netscape Navigator 4.0 at 800×600. No frames were harmed.</p>
 </footer>
 
-<div id="bonus" role="dialog" aria-modal="true" aria-label="Bonus stage"><div>★ BONUS STAGE ★<br>+30 LIVES<br><br>THANKS FOR PLAYING!<br><small style="font-size:10px;color:#f4f1ff">press any key</small></div></div>
+<!-- welcome -->
+<div class="popup welcome chaos" id="welcome" role="dialog" aria-modal="false" aria-labelledby="w-t" hidden>
+  <div class="popup-box">
+    <div class="title"><span id="w-t">Message from Ahmed</span><button type="button" data-close="welcome" aria-label="Close">X</button></div>
+    <div class="popup-body">Hello!! I am Ahmed.<br>I made this website for FREE.<br>If u are hiring in comms pls hire me.
+      <div class="row"><button class="btn btn-big" data-close="welcome">OK</button><a class="btn btn-big" href="#hire" data-close="welcome">OK (i will hire him)</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- prize -->
+<div class="popup chaos" id="popup" role="dialog" aria-modal="true" aria-labelledby="p-t" hidden>
+  <div class="popup-box">
+    <div class="title"><span id="p-t">⚠ CONGRATULATIONS!!! ⚠</span><button type="button" id="popup-close" aria-label="Close">X</button></div>
+    <div class="popup-body"><b style="font-size:20px">You are the 1,000,000th visitor!!! 🎉</b><br>Claim ur FREE coffee chat now!!!
+      <div class="row"><button class="btn btn-big" id="popup-claim">CLAIM PRIZE</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- leaving -->
+<div class="popup chaos" id="leaving" role="dialog" aria-modal="true" aria-labelledby="l-t" hidden>
+  <div class="popup-box">
+    <div class="title"><span id="l-t">⚠ WAIT!!! ⚠</span><button type="button" id="leaving-close" aria-label="Close">X</button></div>
+    <div class="popup-body"><b style="font-size:22px">ur leaving?? 😭😭😭</b><br>here is 0.5% off my first coffee. final offer. (not final)
+      <div class="row"><button class="btn btn-big" id="leaving-ok">OK FINE</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- wheel -->
+<div class="popup chaos" id="wheel" role="dialog" aria-modal="true" aria-labelledby="wh-t" hidden>
+  <div class="popup-box">
+    <div class="title"><span id="wh-t">Ahmed Prize Wheel (not rigged)</span></div>
+    <div class="popup-body">
+      <div class="wheel-wrap"><div class="wheel-pointer" id="wheel-pointer"></div><div class="wheel-disc" id="wheel-disc"></div></div>
+      <p class="wheel-msg" id="wheel-msg" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+
+<!-- call -->
+<div class="popup chaos" id="call" role="dialog" aria-modal="true" aria-labelledby="c-t" hidden>
+  <div class="popup-box">
+    <div class="title"><span id="c-t">Ahmed Phone 2003</span><button type="button" id="call-x" aria-label="Hang up">X</button></div>
+    <div class="popup-body">
+      <div class="call-avatar">👨‍🔧</div>
+      <p class="call-name">Steve</p>
+      <p class="call-role">Reference Department, MS Paint Division</p>
+      <p class="call-status" id="call-status" aria-live="polite"></p>
+      <button class="btn btn-big btn-pink" id="call-hangup">HANG UP</button>
+    </div>
+  </div>
+</div>
+
+<!-- captcha -->
+<div class="popup chaos" id="captcha" role="dialog" aria-modal="true" aria-labelledby="cp-t" hidden>
+  <div class="popup-box">
+    <div class="title"><span id="cp-t">🤖 Prove ur not a robot</span><button type="button" data-captcha="close" aria-label="Close">X</button></div>
+    <div class="popup-body">
+      <p style="margin:0">Select all images with a <b>camera</b>:</p>
+      <div class="captcha-grid" id="captcha-grid"></div>
+      <button class="btn btn-big" data-captcha="verify">VERIFY</button>
+      <p class="captcha-msg" id="captcha-msg" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+
+<!-- persistent chaos -->
+<div class="cookie chaos" id="cookie" role="region" aria-label="Cookie notice">
+  <p>🍪 We use cookies, crumbs, and ur webcam to improve ur experience. By looking at this site u agree to everything.</p>
+  <div class="cookie-btns"><button class="btn" id="cookie-accept">Accept</button><button class="btn btn-big" id="cookie-accept2">ACCEPT HARDER</button><button class="btn-ugly" id="cookie-reject">reject</button></div>
+</div>
+
+<aside class="cam chaos" aria-label="AhmedCam">
+  <div class="title"><span>📹 AhmedCam 2003</span><span class="xs" aria-hidden="true"><i>×</i></span></div>
+  <div class="screen"><span class="rec">LIVE</span><span class="who" aria-hidden="true">🧑‍💻</span><span class="caption" id="cam-cap">applying to jobs...</span></div>
+</aside>
+
+<div class="chat chaos" id="chat">
+  <button class="chat-head" id="chat-head" type="button"><span class="dot"></span>AhmedBot (online-ish)<span class="chat-badge" id="chat-badge">1</span></button>
+  <div class="chat-main">
+    <div class="chat-body" id="chat-body" aria-live="polite"><div class="msg bot">hi!! i am AhmedBot. ask me anything about hiring Ahmed 🙂</div></div>
+    <form class="chat-form" id="chat-form"><input id="chat-input" aria-label="Message" placeholder="type here..." autocomplete="off"><button>Send</button></form>
+  </div>
+</div>
+
+<button class="music chaos" id="music" type="button">🔊 PLAY MUSIC</button>
 
 <script>
 (function(){
-  var btns=document.querySelectorAll('.filters button'), carts=document.querySelectorAll('.cart');
-  btns.forEach(function(b){b.addEventListener('click',function(){
-    var f=b.dataset.f;
-    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
-    carts.forEach(function(c){c.hidden=!(f==='all'||c.dataset.k.split(' ').indexOf(f)>-1)});
-  })});
-  var code=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'],i=0,bonus=document.getElementById('bonus');
-  function party(){
-    bonus.classList.add('on');
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var cols=['#ff4fa3','#3ff0ff','#ffd23f','#5cff8a','#a78bfa'];
-    for(var n=0;n<80;n++){(function(){
-      var s=document.createElement('div');s.className='spark';s.style.background=cols[n%5];
-      var x=innerWidth/2,y=innerHeight/2,vx=(Math.random()-.5)*14,vy=(Math.random()-1)*14,t=0;
-      document.body.appendChild(s);
-      (function f(){t++;vy+=.45;x+=vx;y+=vy;s.style.transform='translate('+x+'px,'+y+'px)';t<90?requestAnimationFrame(f):s.remove()})();
-    })()}
-  }
-  addEventListener('keydown',function(e){
-    if(bonus.classList.contains('on')){bonus.classList.remove('on');return}
-    i=(e.key===code[i]||e.key.toLowerCase()===code[i])?i+1:(e.key===code[0]?1:0);
-    if(i===code.length){i=0;party()}
+'use strict';
+var $ = function(id){ return document.getElementById(id); };
+var pick = function(a){ return a[Math.floor(Math.random()*a.length)]; };
+var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+var timers = [], intervals = [];
+var after = function(ms, fn){ timers.push(setTimeout(fn, ms)); };
+var every = function(ms, fn){ intervals.push(setInterval(fn, ms)); };
+var boring = false;
+var store = { get:function(k){ try{return localStorage.getItem(k);}catch(e){return null;} }, set:function(k,v){ try{localStorage.setItem(k,v);}catch(e){} } };
+
+// banner height for fixed elements
+var setBanner = function(){ document.documentElement.style.setProperty('--banner-h', $('beg').offsetHeight + 'px'); };
+setBanner(); addEventListener('resize', setBanner);
+
+// toast
+var toastEl = null;
+function toast(msg){
+  if (toastEl) toastEl.remove();
+  toastEl = document.createElement('div'); toastEl.className = 'toast'; toastEl.setAttribute('role','status'); toastEl.textContent = msg;
+  document.body.appendChild(toastEl);
+  var t = toastEl; setTimeout(function(){ t.remove(); }, 3800);
+}
+
+// ---------- sound (all synthesized, no files) ----------
+var AC = null;
+function ac(){ if (!AC) { AC = new (window.AudioContext || window.webkitAudioContext)(); } if (AC.state === 'suspended') AC.resume(); return AC; }
+function beep(freq, dur, type, vol, when){
+  var c = ac(), t = c.currentTime + (when||0), o = c.createOscillator(), g = c.createGain();
+  o.type = type || 'square'; o.frequency.setValueAtTime(freq, t);
+  g.gain.setValueAtTime(vol || .06, t); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+  o.connect(g).connect(musicBus ? c.destination : c.destination); o.start(t); o.stop(t + dur + .02);
+  return o;
+}
+var musicBus = null;
+var sfx = {
+  tick: function(){ beep(1800, .03, 'square', .05); },
+  win: function(){ [523,659,784,1047,1319].forEach(function(f,i){ beep(f, .18, 'square', .06, i*.09); }); },
+  sad: function(){ [392,370,349,294].forEach(function(f,i){ var o = beep(f, i===3?.8:.32, 'sawtooth', .05, i*.34); if(i===3){ o.frequency.linearRampToValueAtTime(260, ac().currentTime + i*.34 + .8); } }); },
+  error: function(){ beep(220, .25, 'square', .05); },
+  ring: function(){ var c = ac(); [0,.5].forEach(function(d){ [440,480].forEach(function(f){ beep(f, .45, 'sine', .05, d); }); }); }
+};
+
+// music: little bossa-ish loop in square/triangle waves
+var music = { on:false, gain:null, loop:null, step:0 };
+var chords = [[220,277,330,415],[247,294,370,440],[196,247,294,370],[185,233,277,349]];
+var bass = [110,123,98,92];
+function musicTick(){
+  var c = ac(), t = c.currentTime, s = music.step++, bar = Math.floor(s/8)%4, beat = s%8;
+  var g = function(f, d, type, v){ var o = c.createOscillator(), gg = c.createGain(); o.type = type; o.frequency.value = f; gg.gain.setValueAtTime(v, t); gg.gain.exponentialRampToValueAtTime(.0001, t + d); o.connect(gg).connect(music.gain); o.start(t); o.stop(t + d + .02); };
+  if (beat === 0 || beat === 3 || beat === 6) g(bass[bar], .32, 'triangle', .5);
+  if ([1,4,6].indexOf(beat) > -1) chords[bar].forEach(function(f){ g(f, .16, 'square', .06); });
+  if (beat % 2 === 0) g(4000 + Math.random()*800, .02, 'square', .04);
+}
+function musicStart(){
+  if (music.on || boring) return;
+  var c = ac(); music.gain = c.createGain(); music.gain.gain.value = calling ? .05 : .35; music.gain.connect(c.destination);
+  music.loop = setInterval(musicTick, 170); music.on = true; $('music').textContent = '🔇 stop music (doesnt work)';
+}
+function musicStop(){ if (!music.on) return; clearInterval(music.loop); music.gain.disconnect(); music.on = false; $('music').textContent = '🔊 PLAY MUSIC'; }
+$('music').addEventListener('click', function(e){
+  e.stopPropagation();
+  if (!music.on) return musicStart();
+  $('music').textContent = 'stopping in 5 seconds...';
+  setTimeout(musicStop, 5000);
+});
+// starts on first interaction (browsers block autoplay)
+var started = false;
+function firstTouch(){ if (started) return; started = true; if (!boring && store.get('ahmed-music') !== 'off') musicStart(); }
+['pointerdown','keydown'].forEach(function(ev){ addEventListener(ev, firstTouch, { once:true }); });
+
+// ---------- visitor counter (counts YOUR visits on this browser) ----------
+var visits = (parseInt(store.get('ahmed-visits') || '0', 10) || 0) + 1; store.set('ahmed-visits', visits);
+var vs = String(visits).padStart(12, '0'); $('hits-count').textContent = vs; $('counter').textContent = vs;
+
+// ---------- welcome popup ----------
+var welcome = $('welcome');
+if ((function(){ try { return sessionStorage.getItem('ahmed-welcome') !== '1'; } catch(e) { return true; } })()) welcome.hidden = false;
+document.querySelectorAll('[data-close="welcome"]').forEach(function(b){ b.addEventListener('click', function(){ welcome.hidden = true; try { sessionStorage.setItem('ahmed-welcome','1'); } catch(e) {} }); });
+
+// ---------- prize popup + wheel ----------
+var prizes = ['coffee chat','resume PDF','LinkedIn follow','47 SECONDS','high five','portfolio tour','zoo fun fact','47 SECONDS'];
+var disc = $('wheel-disc'), N = prizes.length, W = 360/N, angle = 0, spinning = false;
+prizes.forEach(function(p, i){ var s = document.createElement('span'); s.textContent = p; s.style.transform = 'rotate(' + (i*W + W/2 - 90) + 'deg)'; disc.appendChild(s); });
+after(6000, function(){ if (!boring) $('popup').hidden = false; });
+$('popup-close').addEventListener('click', function(){ $('popup').hidden = true; });
+var ease1 = function(x){ return 1 - Math.pow(1-x, 3); }, ease2 = function(x){ return x < .5 ? 2*x*x : 1 - Math.pow(-2*x+2, 2)/2; };
+var segAt = function(a){ return Math.floor((((-a) % 360) + 360) % 360 / W); };
+function spinTo(target, dur, ease){
+  return new Promise(function(res){
+    var from = angle, t0 = performance.now(), seg = segAt(from);
+    (function f(now){
+      var k = Math.min(1, (now - t0)/dur); angle = from + (target - from)*ease(k); disc.style.transform = 'rotate(' + angle + 'deg)';
+      var s = segAt(angle); if (s !== seg) { seg = s; sfx.tick(); var p = $('wheel-pointer'); p.classList.remove('tick'); void p.offsetWidth; p.classList.add('tick'); }
+      k < 1 ? requestAnimationFrame(f) : res();
+    })(t0);
   });
-  bonus.addEventListener('click',function(){bonus.classList.remove('on')});
+}
+var wait = function(ms){ return new Promise(function(r){ setTimeout(r, ms); }); };
+$('popup-claim').addEventListener('click', async function(){
+  $('popup').hidden = true; if (spinning) return; spinning = true; ac();
+  var msg = $('wheel-msg'); msg.textContent = 'spinning...'; $('wheel').hidden = false;
+  // land on "coffee chat" (index 0) first, then creep over to 47 SECONDS (index 7)
+  var base = angle + 1800 + ((( -(0*W + W/2) - angle) % 360) + 360) % 360;
+  await wait(300); await spinTo(base, reduce ? 10 : 4500, ease1);
+  msg.textContent = 'u won a FREE COFFEE CHAT!!!'; await wait(1100);
+  await spinTo(base + W, reduce ? 10 : 1400, ease2); sfx.win();
+  msg.textContent = 'wait no. u won 47 SECONDS WITH AHMED!!!'; await wait(2500);
+  $('wheel').hidden = true; spinning = false; $('coupon').hidden = false;
+  $('coupon').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+});
+$('coupon').addEventListener('click', function(){
+  sfx.sad(); toast('the coupon has expired. someone else took it. 😭');
+  setTimeout(function(){ $('coupon').hidden = true; $('affiliate').hidden = false; $('affiliate').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); }, 2600);
+});
+
+// ---------- exit intent ----------
+var leftOnce = false;
+document.addEventListener('mouseleave', function(e){ if (leftOnce || boring || e.clientY > 10) return; leftOnce = true; $('leaving').hidden = false; });
+['leaving-close','leaving-ok'].forEach(function(id){ $(id).addEventListener('click', function(){ $('leaving').hidden = true; }); });
+
+// ---------- cookies ----------
+var cookie = $('cookie');
+function showCookie(text){ if (boring) return; if (text) cookie.querySelector('p').textContent = text; cookie.classList.add('show'); }
+after(3000, function(){ showCookie(); });
+function acceptCookie(){ cookie.classList.remove('show'); after(12000, function(){ showCookie('🍪 u accepted cookies WRONG. pls accept again (correctly this time).'); }); }
+$('cookie-accept').addEventListener('click', acceptCookie);
+$('cookie-accept2').addEventListener('click', acceptCookie);
+$('cookie-reject').addEventListener('click', function(){ showCookie('🍪 rejecting is a premium feature. upgrade to Full-Time Hire.'); });
+document.querySelectorAll('.runaway, #cookie-reject').forEach(function(el){
+  el.addEventListener('mouseenter', function(){ if (boring) return; var x = (Math.random()-.5)*300, y = (Math.random()-.5)*200; el.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + x/10 + 'deg)'; });
+});
+
+// ---------- generator + captcha ----------
+var credits = 3, verified = false;
+var steps = ['Warming up the camera...','Color grading ur job posting...','Rendering in Premiere (1%)...','Adding motion graphics...','Uploading to Canto...','Asking Steve for a reference...','Almost done (not really)...'];
+var notes = ['Wow!! This is EXACTLY what u typed (we think)','Match confidence: 112%','Our system said "this one\'s a keeper"','Candidate found in only 47 minutes!!','Note: this candidate is also open to remote work'];
+var emojis = ['📸','🐻‍❄️','📹','🦒','🎬','🍔','📷','🐧','🎥'];
+var grid = $('captcha-grid');
+function buildCaptcha(){ grid.innerHTML = ''; emojis.slice().sort(function(){ return Math.random()-.5; }).forEach(function(e){ var b = document.createElement('button'); b.type = 'button'; b.textContent = e; b.setAttribute('aria-label', e); grid.appendChild(b); }); $('captcha-msg').textContent = ''; }
+$('gen-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  if (!verified && !boring) { buildCaptcha(); $('captcha').hidden = false; return; }
+  verified = false; generate();
+});
+$('captcha').addEventListener('click', function(e){
+  if (e.target.parentElement === grid) return e.target.classList.toggle('picked');
+  var a = e.target.dataset.captcha; if (a === 'close') $('captcha').hidden = true;
+  if (a === 'verify') {
+    if (Math.random() > .5) { $('captcha-msg').textContent = '❌ wrong. the polar bear had a camera. try again'; sfx.error(); grid.querySelectorAll('.picked').forEach(function(b){ b.classList.remove('picked'); }); }
+    else { $('captcha-msg').textContent = '✅ ok fine ur human'; verified = true; setTimeout(function(){ $('captcha').hidden = true; $('gen-form').requestSubmit(); }, 800); }
+  }
+});
+function generate(){
+  if (credits <= 0) { $('loading').textContent = '❌ out of free hires!! come back tomorrow (or just hire the real one)'; return; }
+  credits--; $('credits').textContent = credits === 0 ? '0 (come back in 24h)' : credits;
+  $('result').hidden = true; $('progress').hidden = false;
+  var bar = $('progress').firstElementChild, i = 0;
+  var iv = setInterval(function(){
+    $('loading').textContent = steps[i % steps.length]; bar.style.width = Math.min(99, (i+1)*14) + '%'; i++;
+    if (i > steps.length) {
+      clearInterval(iv); $('progress').hidden = true; $('loading').textContent = '';
+      $('result-note').textContent = pick(notes); $('result').hidden = false;
+      if (!reduce && !boring) { document.body.classList.add('quake'); setTimeout(function(){ document.body.classList.remove('quake'); }, 800); }
+      sfx.win();
+    }
+  }, 650);
+}
+
+// ---------- plans ----------
+var exp = 4;
+every(1000, function(){ exp += .01 + Math.random()*.03; $('exp').textContent = exp.toFixed(2); });
+var calling = false, callIv = null, callT = 0;
+function callStatus(state, text){ $('call').dataset.state = state; $('call-status').textContent = text; }
+function startCall(){
+  if (!$('call').hidden) return; calling = true; if (music.gain) music.gain.gain.value = .05;
+  $('call').hidden = false; callT = 0; callStatus('ringing', 'You are calling Steve right now...'); sfx.ring();
+  callIv = setInterval(function(){
+    callT += .5;
+    if (callT < 5 && callT % 2 === 0) sfx.ring();
+    if (callT >= 5 && callT < 22) { var s = Math.floor(callT - 5); callStatus('connected', 'Connected to Steve 0:' + String(s).padStart(2,'0') + '  "yeah Ahmed is great"'); }
+    if (callT >= 22) { callStatus('ended', 'Steve hung up on u.'); clearInterval(callIv); }
+  }, 500);
+}
+function endCall(){
+  var ended = $('call').dataset.state === 'ended';
+  clearInterval(callIv); $('call').hidden = true; calling = false; if (music.gain) music.gain.gain.value = .35;
+  if (!ended) toast('u hung up on Steve. Steve will remember this.');
+}
+$('call-hangup').addEventListener('click', endCall); $('call-x').addEventListener('click', endCall);
+document.querySelectorAll('.buy').forEach(function(b){
+  b.addEventListener('click', function(){
+    var p = b.dataset.plan; if (p === 'Enterprise') return startCall();
+    toast('✅ You picked ' + p + '!! (nothing happened. pls message me on LinkedIn to do it for real)');
+  });
+});
+$('notahmed-book').addEventListener('click', function(){ toast('notAhmed is on another direct connection. u are #' + (4000 + Math.floor(Math.random()*2000)).toLocaleString('en-US') + ' in line.'); });
+$('terms').addEventListener('click', function(e){ e.preventDefault(); toast('Terms: u agree to hire me. that is all.'); });
+$('privacy').addEventListener('click', function(e){ e.preventDefault(); toast('Privacy: this site does not save anything about u. the webcam was a joke 📹'); });
+
+// ---------- chat bot ----------
+var chat = $('chat'), body = $('chat-body');
+var replies = ['have u tried hiring me and seeing what happens','great question!! the answer is: live streams','i dont know. but Ahmed probably does','ur message has been forwarded to Steve. Steve is at lunch.','lol','error 418: im a teapot','pls rate this conversation 5 stars or i get unplugged 😢','did u mean: hire Ahmed?','Ahmed managed the zoo\'s Canto library. he can find any file. probably even ur keys','yes he does video, photo AND websites. at the same time if u want'];
+var nags = ['psst. u still there??','r u hiring?? 👀','FREE COFFEE CHAT!!! (actually free)','hello?????'];
+function say(t, who){ var d = document.createElement('div'); d.className = 'msg ' + (who || 'bot'); d.textContent = t; body.appendChild(d); body.scrollTop = body.scrollHeight; return d; }
+$('chat-head').addEventListener('click', function(){ chat.classList.toggle('open'); $('chat-badge').textContent = ''; });
+$('chat-form').addEventListener('submit', function(e){
+  e.preventDefault(); var inp = $('chat-input'), v = inp.value.trim(); if (!v) return;
+  say(v, 'me'); inp.value = ''; var t = say('typing...', 'bot typing');
+  setTimeout(function(){ t.remove(); say(pick(replies)); }, 1500 + Math.random()*2500);
+});
+every(15000, function(){
+  if (boring) return; say(pick(nags));
+  if (!chat.classList.contains('open')) { var b = $('chat-badge'); b.textContent = Number(b.textContent || 0) + 1; chat.classList.add('nudge'); setTimeout(function(){ chat.classList.remove('nudge'); }, 600); }
+});
+
+// ---------- clippy-ish helper ----------
+var clipLines = ['It looks like ur hiring! Would u like help?','It looks like ur scrolling. Would u like to stop?','Did u know: hiring Ahmed increases live stream uptime by 4000%*. *source: me','I noticed u havent hired Ahmed yet. Thats ok. I\'ll wait. 👁️👁️','It looks like ur trying to close this. That feature is coming soon!','Tip: the resume is the boring part. it is also the important part.'];
+var clippy = document.createElement('div'); clippy.className = 'clippy chaos';
+clippy.innerHTML = '<div class="clippy-bubble" role="status"><p></p><div><button class="btn btn-small" data-clippy="yes">Yes!!</button><button class="btn-ugly" data-clippy="no">No</button></div></div><div class="clip" aria-hidden="true">📎</div>';
+document.body.appendChild(clippy);
+function showClippy(){ if (boring) return; clippy.querySelector('p').textContent = pick(clipLines); clippy.classList.add('show'); }
+after(8000, showClippy);
+clippy.addEventListener('click', function(e){ var a = e.target.dataset.clippy; if (!a) return; clippy.classList.remove('show'); if (a === 'yes') document.getElementById('resume').scrollIntoView({ behavior:'smooth' }); after(a === 'no' ? 4000 : 20000, showClippy); });
+
+// ---------- antivirus 2003 ----------
+var virus = document.createElement('div'); virus.className = 'virus chaos'; virus.hidden = true; virus.setAttribute('role','alertdialog'); virus.setAttribute('aria-label','Antivirus');
+virus.innerHTML = '<div class="title"><span>🛡️ Ahmed Antivirus 2003</span><button type="button" data-virus aria-label="Close">X</button></div><div class="virus-in"><p class="virus-warn">⚠ WARNING: <b class="vc">0</b> VIRUSES FOUND ⚠</p><div class="bar"><div class="virus-fill"></div></div><ul class="virus-list"></ul><button class="btn btn-big" data-virus style="width:100%">REMOVE ALL (hire Ahmed)</button></div>';
+document.body.appendChild(virus);
+var viruses = ['boring_resume.doc','unpaid_internship.exe','Comic.Sans.Infection','no_portfolio.scr','lorem_ipsum.dll','"rockstar ninja" job_title.bat','reply_all.worm','steve.exe','Times.New.Roman.Trojan'];
+function runVirus(){
+  if (boring) return; virus.hidden = false; sfx.error();
+  var list = virus.querySelector('.virus-list'), fill = virus.querySelector('.virus-fill'), vc = virus.querySelector('.vc'), n = 0; list.innerHTML = '';
+  var iv = setInterval(function(){ n++; fill.style.width = Math.min(100, n*9) + '%'; vc.textContent = n*7; var li = document.createElement('li'); li.textContent = '🦠 ' + pick(viruses); list.prepend(li); if (n >= 11) clearInterval(iv); }, 300);
+  intervals.push(iv);
+}
+after(25000, runVirus);
+virus.addEventListener('click', function(e){ if (e.target.dataset.virus === undefined) return; virus.hidden = true; after(45000, runVirus); });
+
+// ---------- error boxes ----------
+var errs = ['Resume.exe has stopped working.','Not enough live streams. Add more?','Error: Success.','Task failed successfully.','Ur job posting is too good. Downgrading...','Keyboard not found. Press F1 to continue.','Too many skills. Please select fewer.'];
+var errCount = 0;
+function spawnErr(){
+  if (boring || errCount >= 6) return; errCount++; sfx.error();
+  var box = document.createElement('div'); box.className = 'error-box chaos'; box.setAttribute('role','alertdialog');
+  box.innerHTML = '<div class="title"><span>Ahmed</span><button type="button" data-err aria-label="Close">X</button></div><div class="error-body"><span>❌</span><p></p></div><button class="btn-ugly" data-err>OK</button>';
+  box.querySelector('p').textContent = pick(errs);
+  var top = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner-h')) || 0;
+  box.style.left = Math.max(4, Math.random()*(innerWidth - 300)) + 'px';
+  box.style.top = (top + 10 + Math.random()*Math.max(0, innerHeight - top - 210)) + 'px';
+  box.addEventListener('click', function(e){ if (e.target.dataset.err === undefined) return; box.remove(); errCount--; if (Math.random() > .4) { after(300, spawnErr); after(700, spawnErr); } });
+  document.body.appendChild(box);
+}
+after(18000, spawnErr);
+every(30000, function(){ if (Math.random() > .5) spawnErr(); });
+
+// ---------- social proof ----------
+var places = ['Calgary','Edmonton','a Tim Hortons drive-thru','Red Deer (again)','the Moon','ur house','Steve\'s basement','the polar bear exhibit'];
+var acts = ['viewed Ahmed\'s resume','played NeonGrid','almost hired Ahmed','cried','clicked the red arrow','bought nothing','spun the prize wheel'];
+var proof = document.createElement('div'); proof.className = 'proof chaos'; proof.setAttribute('role','status'); document.body.appendChild(proof);
+every(9000, function(){ if (boring) return; proof.textContent = '🔔 Someone in ' + pick(places) + ' just ' + pick(acts) + ' ' + (1 + Math.floor(Math.random()*59)) + ' seconds ago'; proof.classList.remove('show'); void proof.offsetWidth; proof.classList.add('show'); });
+
+// ---------- webcam caption ----------
+var camLines = ['applying to jobs...','editing a video...','renaming 4,000 files...','refreshing inbox...','fixing the projector...','drinking coffee ☕','waiting 4 ur email...'];
+every(3500, function(){ $('cam-cap').textContent = pick(camLines); });
+
+// ---------- tab title, fonts, typos, money, trail, roll ----------
+var titles = ['(1) NEW MESSAGE!!!','📸 AHMED 📸','u won a prize','Ahmed Mahmoud - Comms Pro (hire me!!!)','⚠ come back ⚠'], ti = 0, realTitle = document.title;
+every(1200, function(){ if (!boring) document.title = titles[ti++ % titles.length]; });
+var fonts = ['Comic Sans MS','Papyrus','Impact','Times New Roman','Courier New','Brush Script MT','Wingdings'];
+every(1500, function(){ if (boring || reduce) return; var hs = document.querySelectorAll('h2, .feat h3'); var h = pick(hs); if (!h) return; h.style.fontFamily = pick(fonts); setTimeout(function(){ h.style.fontFamily = ''; }, 900); });
+var typos = { the:'teh', you:'u', your:'ur', and:'adn', with:'wiht', free:'freee', now:'NOW!!!', our:'are', really:'rly', please:'pls' };
+function textNodes(){
+  var w = document.createTreeWalker(document.querySelector('main') ? document.body : document.body, NodeFilter.SHOW_TEXT), out = [];
+  while (w.nextNode()) { var n = w.currentNode; if (n.parentElement.closest('script,style,.chat,.cookie,#resume-doc,.title,h1') || !n.textContent.trim()) continue; out.push(n); }
+  return out;
+}
+every(2000, function(){ if (boring) return; var n = pick(textNodes()); if (n) n.textContent = n.textContent.replace(/\b(\w+)\b/g, function(m){ return typos[m] && Math.random() > .5 ? typos[m] : m; }); });
+if (!reduce) every(350, function(){ if (boring) return; var m = document.createElement('span'); m.className = 'money chaos'; m.textContent = pick(['💵','📸','🎥','⭐','🍁','🐻‍❄️']); m.style.left = Math.random()*100 + 'vw'; m.style.animationDuration = (3 + Math.random()*4) + 's'; document.body.appendChild(m); setTimeout(function(){ m.remove(); }, 7000); });
+var lastTrail = 0, trailGlyphs = ['✨','📸','🔥','⭐','🎬','😱','➡️'];
+if (!reduce) addEventListener('mousemove', function(e){ if (boring) return; var t = performance.now(); if (t - lastTrail < 40) return; lastTrail = t; var s = document.createElement('span'); s.className = 'trail'; s.textContent = pick(trailGlyphs); s.style.left = e.clientX + 'px'; s.style.top = e.clientY + 'px'; document.body.appendChild(s); setTimeout(function(){ s.remove(); }, 900); });
+document.addEventListener('click', function(){ if (boring || reduce || Math.random() <= .9) return; document.body.classList.add('roll'); setTimeout(function(){ document.body.classList.remove('roll'); }, 1000); });
+
+// ---------- Esc closes the top popup ----------
+addEventListener('keydown', function(e){
+  if (e.key !== 'Escape') return;
+  var open = ['captcha','call','wheel','leaving','popup','welcome'].map($).filter(function(p){ return p && !p.hidden; })[0];
+  if (open && open.id !== 'wheel') { if (open.id === 'call') endCall(); else open.hidden = true; }
+});
+
+// ---------- boring mode (for recruiters) ----------
+function setBoring(on){
+  boring = on; document.body.classList.toggle('boring', on); document.title = realTitle;
+  $('boring').textContent = on ? '🎉 fun mode' : '📄 boring mode';
+  if (on) { musicStop(); cookie.classList.remove('show'); document.querySelectorAll('.popup').forEach(function(p){ p.hidden = true; }); virus.hidden = true; document.querySelectorAll('.error-box').forEach(function(b){ b.remove(); }); errCount = 0; clippy.classList.remove('show'); }
+  store.set('ahmed-boring', on ? '1' : '0');
+}
+$('boring').addEventListener('click', function(e){ e.preventDefault(); setBoring(!boring); if (boring) $('resume').scrollIntoView(); });
+if (store.get('ahmed-boring') === '1' || /[?&]boring\b/.test(location.search)) setBoring(true);
 })();
 </script>
 </body>
