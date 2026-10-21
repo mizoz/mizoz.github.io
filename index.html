@@ -257,6 +257,45 @@ footer .counter{font:700 15px "Courier New",monospace;background:#000;color:#0f0
 @keyframes trail{to{transform:translate(-50%,10px) scale(.3);opacity:0}}
 .toast{position:fixed;left:50%;top:calc(var(--banner-h) + 50px);transform:translateX(-50%);z-index:250;background:#ffffcc;border:3px solid #000;padding:10px 16px;font:700 16px var(--times);max-width:min(520px,92vw);text-align:center;box-shadow:4px 4px 0 #000}
 
+
+/* v3 extras */
+.win.minimized .doc{display:none}
+.win.minimized .mini-note{display:block}
+.mini-note{display:none;background:#fff;margin:6px;border:2px inset #fff;padding:10px 14px;font:16px var(--times)}
+.title .xs button{font:700 11px var(--tahoma);background:var(--silver);color:#000;border:2px outset #fff;width:20px;height:18px;padding:0;cursor:pointer}
+.sale{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin:0 auto 22px;max-width:760px;background:#000;color:#ff0;border:4px dashed var(--red);padding:10px 14px;font:900 22px var(--impact);letter-spacing:.03em;text-align:center}
+.sale b{color:#0f0;font-family:"Courier New",monospace}
+.sale .stock{background:var(--red);color:#fff;padding:2px 10px;animation:blink .8s steps(1) infinite}
+.plans{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.plan .was{text-decoration:line-through;color:#900;font:700 16px var(--times);display:block}
+.plan.premium{background:linear-gradient(135deg,#fff7c2,#ffe066);border-color:#b8860b}
+.compare{width:100%;border-collapse:collapse;margin:26px 0 8px;background:#fff;font:15px var(--times);border:4px solid #000}
+.compare caption{font:900 24px var(--impact);background:var(--yellow);border:4px solid #000;border-bottom:0;padding:6px}
+.compare th,.compare td{border:2px solid #000;padding:6px 8px;text-align:center}
+.compare th{background:#ccf}
+.compare td:first-child{text-align:left;font-weight:700}
+.compare tr:nth-child(even) td{background:#f5f5ff}
+.pricematch{text-align:center;font:italic 15px var(--times);margin:6px 0 0}
+.faq{background:#fff;border:4px ridge var(--silver);padding:6px 18px}
+.faq details{border-bottom:2px dotted #999;padding:10px 0}
+.faq summary{cursor:pointer;font:700 18px var(--comic);color:var(--navy)}
+.faq p{margin:8px 0 0}
+.xp{position:fixed;z-index:175;width:min(330px,94vw);background:var(--silver);border:3px outset #fff;box-shadow:4px 4px 0 #000;font:15px var(--tahoma)}
+.xp .xp-body{background:#fff;margin:6px;border:2px inset #fff;padding:14px;text-align:center}
+.xp .row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.xp .big{font:900 22px var(--impact);margin:4px 0}
+.xp .ipod{font-size:64px}
+.xp .stars-run{display:flex;justify-content:center;gap:4px;font-size:30px;position:relative;height:44px}
+.xp .stars-run button{background:none;border:0;font-size:30px;cursor:pointer;transition:transform .2s}
+.ach{position:fixed;left:50%;bottom:70px;transform:translateX(-50%) translateY(140px);z-index:260;display:flex;align-items:center;gap:10px;background:#1b1b1b;color:#fff;border-radius:40px;padding:8px 22px 8px 8px;box-shadow:0 4px 12px rgba(0,0,0,.5);font:14px var(--tahoma);transition:transform .4s}
+.ach.show{transform:translateX(-50%) translateY(0)}
+.ach i{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#107c10;font-size:22px;font-style:normal}
+.ach b{display:block;color:#9f9;font-size:12px}
+.dvd{position:fixed;z-index:85;left:0;top:0;font:900 26px var(--impact);padding:6px 14px;border:3px solid currentColor;border-radius:50%;pointer-events:none;opacity:.85;letter-spacing:.06em}
+.bsod{position:fixed;inset:0;z-index:400;background:#0000aa;color:#fff;font:18px/1.5 "Courier New",monospace;padding:8vh 8vw;cursor:pointer}
+.bsod h2{display:inline-block;background:#aaa;color:#0000aa;padding:0 10px;font:700 18px "Courier New",monospace;margin:0 0 20px}
+.cartbtn{font:700 13px var(--times);background:#fff;border:2px outset #ddd;padding:4px 10px;text-decoration:none;color:#000}
+
 /* boring mode */
 body.boring{background:#fff}
 body.boring .chaos{display:none!important}
@@ -289,12 +328,13 @@ body.boring .beg{background:#f5f5f5;border-color:#999}
     <li><a href="#generate">Generate</a></li>
     <li><a href="#projects">Projcets</a></li>
     <li><a href="#websites">Websites</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#resume">Resume</a></li>
     <li><a href="#plans">Pricing</a></li>
     <li><a href="#reviews">Reveiws</a></li>
     <li><a href="#" id="boring" role="button">📄 boring mode</a></li>
   </ul>
-  <a class="btn btn-small btn-pink runaway" href="#hire">Hire Me Free!!</a>
+  <span style="display:flex;gap:8px;align-items:center"><a class="cartbtn" href="#plans" id="cart">🛒 Cart (0)</a><a class="btn btn-small btn-pink runaway" href="#hire">Hire Me Free!!</a></span>
 </nav>
 
 <main class="wrap" id="top">
@@ -376,9 +416,55 @@ body.boring .beg{background:#f5f5f5;border-color:#999}
     <div class="feat"><div class="ico">🗂️</div><h3>Asset Library Engine™</h3><p>Managed a huge Canto photo and video library and trained staff in every department to actually find things in it.</p></div>
   </div>
 
-  <h2 class="wa" id="resume">My Resume (teh boring part)</h2>
-  <section class="win" aria-labelledby="rz">
-    <div class="title"><span id="rz">📄 resume_FINAL_final2.doc - WordPad</span><span class="xs" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+
+
+  <h2 class="wa" id="plans">Hiring Plans 💰💰💰</h2>
+  <div class="sale"><span>🔥 MEGA SALE ENDS IN <b id="sale-timer">04:59</b> 🔥</span><span class="stock">ONLY 1 AHMED LEFT IN STOCK!!</span></div>
+  <div class="plans">
+    <div class="plan"><h3>Coffee Chat</h3><p class="amount"><span class="was">$49.99</span>$0<small>/forever</small></p><ul><li>15 minutes</li><li>I bring questions</li><li>camera on (webcam works)</li></ul><button class="btn buy2" data-plan="Coffee Chat">Add to Cart</button></div>
+    <div class="plan"><h3>Lunch Meeting</h3><p class="amount" style="font-size:24px">u pay 4 lunch</p><ul><li>1 (one) Ahmed</li><li>will order the 2nd cheapest thing</li><li>refills not included</li></ul><button class="btn buy2" data-plan="Lunch Meeting">Add to Cart</button></div>
+    <div class="plan popular"><span class="tag">MOST POPULER</span><h3>Full-Time Hire</h3><p class="amount"><span id="exp">4.00</span><small> yrs experience</small></p><ul><li>any role. seriously, any.</li><li>anywhere on Earth (Moon negotiable)</li><li>experience goes up every second u wait</li></ul><button class="btn btn-big buy2" data-plan="Full-Time Hire">HIRE NOW!!</button></div>
+    <div class="plan"><h3>Part-Time Ahmed</h3><p class="amount">½<small> Ahmed</small></p><ul><li>half the Ahmed, all the fun</li><li>top half or bottom half (u pick)</li><li>launches 3.5 websites</li></ul><button class="btn buy2" data-plan="Part-Time Ahmed">Add to Cart</button></div>
+    <div class="plan"><h3>Ahmed For A Day</h3><p class="amount"><span class="was">$9,999</span>1 pizza</p><ul><li>includes 1 (one) website</li><li>includes 0 (zero) weekends</li><li>pizza must have toppings</li></ul><button class="btn buy2" data-plan="Ahmed For A Day">Add to Cart</button></div>
+    <div class="plan premium"><span class="tag" style="background:#b8860b">✨ NEW ✨</span><h3>Ahmed+ Premium</h3><p class="amount">$∞<small>/mo</small></p><ul><li>ad-free Ahmed</li><li>NO popups (we promise)</li><li>just the resume. so boring.</li></ul><button class="btn buy2" data-plan="Ahmed+ Premium">Go Premium</button></div>
+    <div class="plan"><h3>Lifetime Ahmed</h3><p class="amount" style="font-size:24px">1 job offer</p><ul><li>one-time payment</li><li>lifetime updates</li><li>no refunds (he's very happy)</li></ul><button class="btn btn-pink buy2" data-plan="Lifetime Ahmed">BUY ONCE</button></div>
+    <div class="plan"><h3>Reference Check</h3><p class="amount" style="color:#000">Call Steve</p><ul><li>Steve has known me for years</li><li>Steve answers on the 3rd ring</li><li>Steve is not available weekends</li></ul><button class="btn buy" data-plan="Enterprise">Call Steve</button></div>
+  </div>
+  <table class="compare">
+    <caption>Compare Plans!!! (very scientific)</caption>
+    <tr><th>Feature</th><th>Coffee</th><th>Part-Time</th><th>Full-Time</th><th>Premium</th></tr>
+    <tr><td>Replies to emails</td><td>✔</td><td>✔ (half)</td><td>✔✔</td><td>✔✔✔</td></tr>
+    <tr><td>Launches websites</td><td>0</td><td>3.5</td><td>7+</td><td>∞</td></tr>
+    <tr><td>Fixes the printer</td><td>❌</td><td>maybe</td><td>✔</td><td>✔ (and the fax)</td></tr>
+    <tr><td>Makes the live stream work</td><td>❌</td><td>✔</td><td>✔</td><td>✔ in 4K</td></tr>
+    <tr><td>Brings snacks</td><td>❌</td><td>🍪</td><td>🍪🍪</td><td>🎂</td></tr>
+    <tr><td>Popups</td><td>12</td><td>6</td><td>3</td><td>0 (finally)</td></tr>
+    <tr><td>Steve approved</td><td>✔</td><td>✔</td><td>✔</td><td>Steve is crying</td></tr>
+  </table>
+  <p class="pricematch">💸 PRICE MATCH GUARANTEE: found a cheaper Ahmed? We'll beat it by 0.01%. (there is no cheaper Ahmed)</p>
+
+  <h2 class="wa" id="reviews">What People Say!!!</h2>
+  <div class="reviews">
+    <div class="review">"He fixed the wifi AND the printer. Same day. 10/10 would raise again."<cite>— my mom, Head of References</cite><div class="stars">⭐⭐⭐⭐⭐</div></div>
+    <div class="review">"The live stream did not go down. I don't know what else to tell u."<cite>— a projector, probably</cite><div class="stars">⭐⭐⭐⭐</div></div>
+    <div class="review">"Please let me sleep. He has 9 projects open."<cite>— Ahmed's laptop</cite><div class="stars">⭐⭐⭐⭐⭐⭐⭐</div></div>
+  </div>
+
+
+  <h2 class="wa" id="faq">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>Is Ahmed real?</summary><p>Yes. 100% human. Has thumbs and everything.</p></details>
+    <details><summary>Will he relocate?</summary><p>Yes. Anywhere. He has a Class 5 licence and a very good attitude.</p></details>
+    <details><summary>What kind of job does he want?</summary><p>Any job. Comms, marketing, video, web, ops, events, the fun ones and the boring ones.</p></details>
+    <details><summary>Why are there so many popups?</summary><p>It's a feature. Turn on 📄 boring mode in the menu to turn them all off.</p></details>
+    <details><summary>Who is Steve?</summary><p>We don't talk about Steve.</p></details>
+    <details><summary>Can I see the serious resume?</summary><p>Yes, right below. It's minimized because it's boring. Click □.</p></details>
+  </div>
+
+  <h2 class="wa" id="resume" style="font-size:26px">resume.doc (minimized bc it's boring)</h2>
+  <section class="win minimized" id="resume-win" aria-labelledby="rz">
+    <div class="title"><span id="rz">📄 resume_FINAL_final2.doc - WordPad</span><span class="xs"><button type="button" id="res-min" aria-label="Minimize">_</button><button type="button" id="res-max" aria-label="Open resume">□</button><button type="button" id="res-x" aria-label="Close">×</button></span></div>
+    <p class="mini-note">📄 The serious stuff lives here: real jobs, real dates, real certifications. Click <b>□</b> to open it (or turn on 📄 boring mode).</p>
     <div class="doc" id="resume-doc">
       <div class="job">
         <h3>Digital Coordinator · Wilder Institute / Calgary Zoo</h3>
@@ -406,20 +492,6 @@ body.boring .beg{background:#f5f5f5;border-color:#999}
       <div class="job"><h3>Tools</h3><p style="margin:4px 0 0">Premiere Pro · After Effects · Photoshop · Lightroom · Illustrator · InDesign · Canva · OBS · vMix · WordPress · Canto · Google Analytics · Google Ads · Meta Business Suite · Microsoft Office · SharePoint · Asana · Trello · Python · TypeScript · Go</p></div>
     </div>
   </section>
-
-  <h2 class="wa" id="plans">Hiring Plans 💰💰💰</h2>
-  <div class="plans">
-    <div class="plan"><h3>Coffee Chat</h3><p class="amount">$0<small>/forever</small></p><ul><li>15 minutes</li><li>I bring questions</li><li>camera on (webcam works)</li></ul><button class="btn buy" data-plan="Coffee Chat">Get Coffee</button></div>
-    <div class="plan popular"><span class="tag">MOST POPULER</span><h3>Full-Time Hire</h3><p class="amount"><span id="exp">4.00</span><small> yrs experience</small></p><ul><li>any role. seriously, any.</li><li>anywhere on Earth (Moon negotiable)</li><li>experience goes up every second u wait</li></ul><button class="btn btn-big buy" data-plan="Full-Time Hire">HIRE NOW!!</button></div>
-    <div class="plan"><h3>Reference Check</h3><p class="amount" style="color:#000">Call Steve</p><ul><li>Steve has known me for years</li><li>Steve answers on the 3rd ring</li><li>Steve is not available weekends</li></ul><button class="btn buy" data-plan="Enterprise">Call Steve</button></div>
-  </div>
-
-  <h2 class="wa" id="reviews">What People Say!!!</h2>
-  <div class="reviews">
-    <div class="review">"He fixed the wifi AND the printer. Same day. 10/10 would raise again."<cite>— my mom, Head of References</cite><div class="stars">⭐⭐⭐⭐⭐</div></div>
-    <div class="review">"The live stream did not go down. I don't know what else to tell u."<cite>— a projector, probably</cite><div class="stars">⭐⭐⭐⭐</div></div>
-    <div class="review">"Please let me sleep. He has 9 projects open."<cite>— Ahmed's laptop</cite><div class="stars">⭐⭐⭐⭐⭐⭐⭐</div></div>
-  </div>
 
   <div class="direct">
     <h3>Get DIRECT CONNECTION feedback from notAhmed™</h3>
@@ -731,12 +803,7 @@ function endCall(){
   if (!ended) toast('u hung up on Steve. Steve will remember this.');
 }
 $('call-hangup').addEventListener('click', endCall); $('call-x').addEventListener('click', endCall);
-document.querySelectorAll('.buy').forEach(function(b){
-  b.addEventListener('click', function(){
-    var p = b.dataset.plan; if (p === 'Enterprise') return startCall();
-    toast('✅ You picked ' + p + '!! (nothing happened. pls message me on LinkedIn to do it for real)');
-  });
-});
+document.querySelectorAll('.buy').forEach(function(b){ b.addEventListener('click', startCall); });
 $('notahmed-book').addEventListener('click', function(){ toast('notAhmed is on another direct connection. u are #' + (4000 + Math.floor(Math.random()*2000)).toLocaleString('en-US') + ' in line.'); });
 $('terms').addEventListener('click', function(e){ e.preventDefault(); toast('Terms: u agree to hire me. that is all.'); });
 $('privacy').addEventListener('click', function(e){ e.preventDefault(); toast('Privacy: this site does not save anything about u. the webcam was a joke 📹'); });
@@ -831,11 +898,145 @@ addEventListener('keydown', function(e){
   if (open && open.id !== 'wheel') { if (open.id === 'call') endCall(); else open.hidden = true; }
 });
 
+// ================= v3: MORE FUN =================
+// resume window buttons
+var rw = $('resume-win');
+$('res-max').addEventListener('click', function(){ rw.classList.remove('minimized'); ach('Opened the boring part', '📄'); });
+$('res-min').addEventListener('click', function(){ rw.classList.add('minimized'); });
+$('res-x').addEventListener('click', function(){ toast('u cannot close the resume. it is load-bearing.'); });
+
+// generic XP window
+var xpCount = 0;
+function xp(title, html, buttons, opts){
+  if (boring) return null; opts = opts || {};
+  var w = document.createElement('div'); w.className = 'xp chaos'; w.setAttribute('role','dialog'); w.setAttribute('aria-label', title);
+  w.innerHTML = '<div class="title"><span></span><button type="button" data-x aria-label="Close">X</button></div><div class="xp-body">' + html + '<div class="row"></div></div>';
+  w.querySelector('.title span').textContent = title;
+  var row = w.querySelector('.row');
+  (buttons || []).forEach(function(b){ var el = document.createElement('button'); el.type = 'button'; el.className = b.cls || 'btn'; el.textContent = b.label; el.addEventListener('click', function(){ b.fn && b.fn(close, el); }); row.appendChild(el); });
+  var top = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--banner-h')) || 0;
+  w.style.left = Math.max(6, Math.random()*(innerWidth - 340)) + 'px';
+  w.style.top = (top + 20 + Math.random()*Math.max(0, innerHeight - top - 320)) + 'px';
+  function close(){ if (!w.parentNode) return; w.remove(); xpCount--; closedPopups++; if (closedPopups === 5) ach('Closed 5 popups', '🪟'); if (closedPopups === 15) ach('Popup Survivor (15 closed)', '🏅'); if (opts.onClose) opts.onClose(); }
+  w.querySelector('[data-x]').addEventListener('click', function(){ (opts.onX || close)(close); });
+  document.body.appendChild(w); xpCount++; sfx.error();
+  return w;
+}
+var closedPopups = 0;
+
+// achievements
+var achQ = [], achBusy = false, achSeen = {};
+function ach(name, icon){
+  if (boring || achSeen[name]) return; achSeen[name] = 1; achQ.push([name, icon]); if (!achBusy) achNext();
+}
+function achNext(){
+  var a = achQ.shift(); if (!a) { achBusy = false; return; } achBusy = true;
+  var el = document.createElement('div'); el.className = 'ach chaos'; el.setAttribute('role','status');
+  el.innerHTML = '<i></i><span><b>🏆 ACHIEVEMENT UNLOCKED</b></span>'; el.querySelector('i').textContent = a[1]; el.querySelector('span').appendChild(document.createTextNode(a[0]));
+  document.body.appendChild(el); requestAnimationFrame(function(){ el.classList.add('show'); });
+  [784,988,1175].forEach(function(f,i){ beep(f, .12, 'triangle', .05, i*.08); });
+  setTimeout(function(){ el.classList.remove('show'); setTimeout(function(){ el.remove(); achNext(); }, 450); }, 3200);
+}
+after(1500, function(){ ach('Found Ahmed\'s homepage', '🧭'); });
+$('cookie-accept2').addEventListener('click', function(){ ach('Accepted cookies HARDER', '🍪'); });
+$('cookie-reject').addEventListener('click', function(){ ach('Tried to reject cookies (lol)', '🚫'); });
+$('chat-head').addEventListener('click', function(){ ach('Talked to a bot', '🤖'); });
+$('music').addEventListener('click', function(){ ach('DJ Ahmed', '🎵'); });
+addEventListener('scroll', function(){ if (innerHeight + scrollY >= document.body.scrollHeight - 40) ach('Reached the bottom of the internet', '⬇️'); }, { passive:true });
+
+// cart + checkout
+var cart = 0;
+function updateCart(){ $('cart').textContent = '🛒 Cart (' + cart + ')'; }
+document.querySelectorAll('.buy2').forEach(function(b){
+  b.addEventListener('click', function(){
+    var plan = b.dataset.plan; cart++; updateCart(); ach('First purchase (of a human)', '🛒');
+    if (plan === 'Ahmed+ Premium') { toast('✨ Welcome to Ahmed+ Premium. Enjoy ur popup-free experience.'); setTimeout(function(){ setBoring(true); $('resume').scrollIntoView(); }, 1200); return; }
+    if (boring) { toast('✅ ' + plan + ' added. message me on LinkedIn to check out for real!'); return; }
+    xp('Checkout - Ahmed Store 2003', '<p class="big">🛒 ' + plan + '</p><p>Choose payment method:</p>', [
+      { label:'🤝 Handshake', fn:function(c){ c(); toast('handshake declined. ur hand was too sweaty. try again.'); } },
+      { label:'💼 Job offer', cls:'btn btn-big', fn:function(c){ c(); ach('Made it rain (job offers)', '💼'); xp('Payment Processing...', '<p>Contacting bank...</p><p>Contacting Steve...</p><p><b>Payment method only accepted on LinkedIn.</b></p>', [{ label:'Go to LinkedIn', cls:'btn btn-big', fn:function(c2){ c2(); location.href = 'https://www.linkedin.com/in/ahmed-m-82ba28169/'; } }, { label:'cancel', cls:'btn-ugly', fn:function(c2){ c2(); } }]); } },
+      { label:'🍪 Cookies', fn:function(c){ c(); toast('we already took ur cookies. remember the banner?'); } }
+    ]);
+  });
+});
+
+// sale timer that never ends
+var sale = 299;
+every(1000, function(){ sale--; if (sale < 0) { sale = 299; toast('🔥 SALE EXTENDED!!! (it was always going to be)'); } $('sale-timer').textContent = String(Math.floor(sale/60)).padStart(2,'0') + ':' + String(sale%60).padStart(2,'0'); });
+
+// welcome close -> are u sure chain
+document.querySelectorAll('#welcome [data-close="welcome"]').forEach(function(b){
+  if (b.tagName === 'A') return;
+  b.addEventListener('click', function(){
+    var lines = ['Are u sure?', 'Are u REALLY sure?', 'Are u sure ur sure?'], i = 0;
+    (function ask(){
+      if (i >= lines.length) { toast('ok fine 😔'); return; }
+      xp('Confirm', '<p class="big">' + lines[i] + '</p>', [{ label:'Yes', fn:function(c){ c(); i++; ask(); } }, { label:'No', cls:'btn btn-big', fn:function(c){ c(); toast('great!! scroll down to hire Ahmed 👇'); } }]);
+    })();
+  });
+});
+
+// timed popup parade
+var parade = [
+  [14000, function(){ xp('Ahmed Update 2.0', '<p class="big">⬆️ Ahmed 2.0 is available!</p><p>New: more skills, fewer bugs, same great hair.</p>', [{ label:'Restart now', cls:'btn btn-big', fn:function(c){ c(); document.body.classList.add('roll'); setTimeout(function(){ document.body.classList.remove('roll'); toast('Ahmed 2.0 installed!! (nothing changed)'); }, 1000); } }, { label:'Remind me in 5 seconds', fn:function(c){ c(); after(5000, parade[0][1]); } }]); }],
+  [32000, function(){ xp('Ahmed Newsletter', '<p class="big">📰 Join 0 subscribers!!</p><p>Get weekly updates about Ahmed doing stuff.</p>', [{ label:'Yes!! sign me up', cls:'btn btn-big', fn:function(c){ c(); toast('ur subscribed!! (there is no newsletter)'); } }, { label:'No, I hate fun and puppies', cls:'btn-ugly', fn:function(c){ c(); toast('wow. ok. 🐶😢'); } }]); }],
+  [44000, rateUs],
+  [56000, function(){ xp('🎁 FREE iPod Nano!!!', '<div class="ipod">📱</div><p class="big">U WON A FREE iPOD NANO!!!</p><p>(it is a picture of an iPod)</p>', [{ label:'CLAIM', cls:'btn btn-big', fn:function(c){ c(); toast('here is ur iPod: 📱 enjoy'); ach('Owns an iPod (picture)', '📱'); } }]); }],
+  [68000, function(){ xp('Quick Survey', '<p class="big">How did u hear about Ahmed?</p>', ['LinkedIn','GitHub','my mom','Steve','I AM Steve'].map(function(o){ return { label:o, fn:function(c){ c(); toast(o === 'I AM Steve' ? 'Steve!!! call me back!!!' : 'thank u for ur feedback. it has been ignored.'); } }; })); }],
+  [80000, function(){ xp('⚠ Low Disk Space', '<p class="big">💾 Ur computer is running SLOW!!</p><p>Download more Ahmed to speed it up.</p>', [{ label:'Download Ahmed', cls:'btn btn-big', fn:function(c){ c(); toast('downloading Ahmed... 1%... (just hire him, it\'s faster)'); } }, { label:'no', cls:'btn-ugly', fn:function(c){ c(); } }]); }],
+  [95000, function(){ xp('Hello??', '<p class="big">⏰ u have been here 95 seconds</p><p>Ahmed could have launched a website by now.</p>', [{ label:'lol ok', fn:function(c){ c(); } }]); }],
+  [110000, bsod]
+];
+parade.forEach(function(p){ after(p[0], function(){ if (!boring) p[1](); }); });
+
+function rateUs(){
+  var w = xp('Rate Ahmed\'s Website', '<p class="big">How many stars?</p><div class="stars-run"></div>', [{ label:'skip', cls:'btn-ugly', fn:function(c){ c(); } }]);
+  if (!w) return; var box = w.querySelector('.stars-run');
+  [1,2,3,4,5].forEach(function(n){
+    var b = document.createElement('button'); b.type = 'button'; b.textContent = '⭐'; b.setAttribute('aria-label', n + ' stars');
+    if (n < 5) b.addEventListener('mouseenter', function(){ b.style.transform = 'translate(' + ((Math.random()-.5)*160) + 'px,' + ((Math.random()-.5)*60) + 'px)'; });
+    b.addEventListener('click', function(){ w.remove(); xpCount--; toast(n === 5 ? 'thank u!!! 5 stars!!! ⭐⭐⭐⭐⭐' : 'ur rating has been rounded up to 5 stars ⭐'); ach('Gave 5 stars (no choice)', '⭐'); });
+    box.appendChild(b);
+  });
+}
+
+// blue screen of fun
+function bsod(){
+  if (boring) return;
+  var d = document.createElement('div'); d.className = 'bsod chaos'; d.setAttribute('role','alertdialog'); d.tabIndex = 0;
+  d.innerHTML = '<h2>AHMED</h2><p>A fatal exception 0E has occurred at 0028:C0FFEE. The current visitor has had too much fun.</p><p>* Press any key to hire Ahmed.<br>* Press CTRL+ALT+DEL to hire Ahmed anyway.</p><p style="margin-top:30px">Press any key to continue _</p>';
+  document.body.appendChild(d); d.focus(); sfx.error();
+  function gone(){ d.remove(); removeEventListener('keydown', gone, true); ach('Survived the Blue Screen', '💙'); }
+  d.addEventListener('click', gone); addEventListener('keydown', gone, true);
+}
+
+// bouncing DVD logo
+if (!reduce) (function(){
+  var d = document.createElement('div'); d.className = 'dvd chaos'; d.textContent = 'AHMED'; d.setAttribute('aria-hidden','true'); document.body.appendChild(d);
+  var x = 40, y = 120, vx = 1.6, vy = 1.3, cols = ['#ff1493','#00ccff','#00cc00','#ff9900','#9900ff','#ff0000'], ci = 0; d.style.color = cols[0];
+  (function f(){
+    if (!boring) {
+      var w = d.offsetWidth, h = d.offsetHeight, W = innerWidth, H = innerHeight, hitX = false, hitY = false;
+      x += vx; y += vy;
+      if (x <= 0 || x + w >= W) { vx *= -1; hitX = true; x = Math.max(0, Math.min(x, W - w)); }
+      if (y <= 0 || y + h >= H) { vy *= -1; hitY = true; y = Math.max(0, Math.min(y, H - h)); }
+      if (hitX || hitY) { d.style.color = cols[++ci % cols.length]; }
+      if (hitX && hitY) ach('Saw the logo hit the corner', '📀');
+      d.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+    }
+    requestAnimationFrame(f);
+  })();
+})();
+
+// konami code
+var kc = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'], ki = 0;
+addEventListener('keydown', function(e){ ki = (e.key === kc[ki] || e.key.toLowerCase() === kc[ki]) ? ki + 1 : (e.key === kc[0] ? 1 : 0); if (ki === kc.length) { ki = 0; ach('+30 lives (Konami code)', '🎮'); for (var i = 0; i < 6; i++) after(i*150, spawnErr); } });
+
 // ---------- boring mode (for recruiters) ----------
 function setBoring(on){
   boring = on; document.body.classList.toggle('boring', on); document.title = realTitle;
   $('boring').textContent = on ? '🎉 fun mode' : '📄 boring mode';
-  if (on) { musicStop(); cookie.classList.remove('show'); document.querySelectorAll('.popup').forEach(function(p){ p.hidden = true; }); virus.hidden = true; document.querySelectorAll('.error-box').forEach(function(b){ b.remove(); }); errCount = 0; clippy.classList.remove('show'); }
+  if (on) { musicStop(); cookie.classList.remove('show'); document.querySelectorAll('.popup').forEach(function(p){ p.hidden = true; }); virus.hidden = true; document.querySelectorAll('.error-box').forEach(function(b){ b.remove(); }); errCount = 0; clippy.classList.remove('show'); document.querySelectorAll('.xp,.bsod,.ach').forEach(function(e){ e.remove(); }); xpCount = 0; $('resume-win').classList.remove('minimized'); }
   store.set('ahmed-boring', on ? '1' : '0');
 }
 $('boring').addEventListener('click', function(e){ e.preventDefault(); setBoring(!boring); if (boring) $('resume').scrollIntoView(); });
