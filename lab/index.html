@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Lab · Free Tools & Experiments by Ahmed Mahmoud</title>
+<meta name="description" content="Free tools, guides and side projects by Ahmed Mahmoud in Calgary: social image sizer, UTM builder, post preview, run of show, Open Trails Canada and more.">
+<link rel="canonical" href="https://lab.zalastack.com/lab/">
+<meta property="og:title" content="The Lab · Ahmed Mahmoud">
+<meta property="og:description" content="15 live experiments: free tools for marketers and event teams, an outdoors guide for newcomers, hardware hacks and a game.">
+<meta property="og:url" content="https://lab.zalastack.com/lab/">
+<meta name="theme-color" content="#f3f6f1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%A7%AA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "name": "The Lab: tools, guides and experiments by Ahmed Mahmoud", "url": "https://lab.zalastack.com/lab/", "dateModified": "2026-10-21", "author": {"@id": "https://lab.zalastack.com/#ahmed"}, "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Social Image Sizer", "url": "https://lab.zalastack.com/social-image-sizer/"}, {"@type": "ListItem", "position": 2, "name": "Post Preview", "url": "https://lab.zalastack.com/post-preview/"}, {"@type": "ListItem", "position": 3, "name": "UTM Builder", "url": "https://lab.zalastack.com/utm-builder/"}, {"@type": "ListItem", "position": 4, "name": "Link Preview Checker", "url": "https://lab.zalastack.com/og-preview/"}, {"@type": "ListItem", "position": 5, "name": "Alt Text Checker", "url": "https://lab.zalastack.com/alt-text-checker/"}, {"@type": "ListItem", "position": 6, "name": "Email Signature Generator", "url": "https://lab.zalastack.com/email-signature/"}, {"@type": "ListItem", "position": 7, "name": "Run of Show Builder", "url": "https://lab.zalastack.com/run-of-show/"}, {"@type": "ListItem", "position": 8, "name": "Sponsorship Builder", "url": "https://lab.zalastack.com/sponsorship-builder/"}, {"@type": "ListItem", "position": 9, "name": "Stream Calculator", "url": "https://lab.zalastack.com/stream-calc/"}, {"@type": "ListItem", "position": 10, "name": "Open Trails Canada", "url": "https://lab.zalastack.com/open-trails-canada/"}, {"@type": "ListItem", "position": 11, "name": "Fieldhacks", "url": "https://lab.zalastack.com/fieldhacks/"}, {"@type": "ListItem", "position": 12, "name": "NeonGrid", "url": "https://lab.zalastack.com/neongrid/"}, {"@type": "ListItem", "position": 13, "name": "YYC Class Finder", "url": "https://city-picks.vercel.app"}, {"@type": "ListItem", "position": 14, "name": "Alberta Atlas", "url": "https://github.com/mizoz/alberta-atlas"}, {"@type": "ListItem", "position": 15, "name": "YYC Flight Radar", "url": "https://github.com/mizoz/yyc-flight-radar"}]}}, {"@type": "Person", "@id": "https://lab.zalastack.com/#ahmed", "name": "Ahmed Mahmoud", "url": "https://lab.zalastack.com/", "jobTitle": "Founder, FirstShow", "address": {"@type": "PostalAddress", "addressLocality": "Calgary", "addressRegion": "AB", "addressCountry": "CA"}, "sameAs": ["https://github.com/mizoz", "https://www.linkedin.com/in/ahmed-m-82ba28169/", "https://firstshow.ca"]}]}</script>
+<style>
+:root{--bg:#f3f6f1;--grid:#dfe7da;--paper:#fff;--ink:#16211a;--muted:#5a6b5f;--line:#c9d6c3;--accent:#0f8a4b;--warn:#e0a100}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1411;--grid:#17211b;--paper:#141c17;--ink:#e3eee6;--muted:#93a69a;--line:#26352c;--accent:#38d17f;--warn:#ffc531}}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:16px/1.55 "IBM Plex Sans",system-ui,sans-serif;background:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{width:min(1120px,100% - 32px);margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 0;font:600 13px "IBM Plex Mono",monospace;flex-wrap:wrap}
+.top a{text-decoration:none;color:var(--muted)}.top a:hover{color:var(--accent)}
+header{padding:36px 0 26px;border-bottom:2px solid var(--ink)}
+.label{font:600 12px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font:600 clamp(36px,6vw,64px)/1.05 "IBM Plex Mono",monospace;letter-spacing:-.03em;margin:10px 0 12px}
+h1 span{color:var(--accent)}
+header p{max-width:62ch;margin:0;color:var(--muted)}
+.meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px;font:13px "IBM Plex Mono",monospace;color:var(--muted)}
+.meta b{color:var(--ink)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;padding:22px 0 8px}
+.filters button{font:600 12px "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.06em;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;padding:12px 0 40px}
+.exp{position:relative;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:18px 18px 16px;text-decoration:none;transition:transform .15s,border-color .15s,box-shadow .15s}
+.exp:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 6px 0 -2px var(--accent)}
+.exp[hidden]{display:none}
+.no{font:600 12px "IBM Plex Mono",monospace;color:var(--muted)}
+.kind{position:absolute;right:16px;top:16px;font:600 11px "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.08em;border:1px dashed var(--line);padding:2px 7px;border-radius:4px;color:var(--muted)}
+.exp h2{font:600 20px/1.25 "IBM Plex Sans",sans-serif;margin:10px 0 6px}
+.exp p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.stack{margin-top:auto;font:12px "IBM Plex Mono",monospace;color:var(--muted)}
+.status{position:absolute;right:16px;bottom:14px;font:600 12px "IBM Plex Mono",monospace;color:var(--accent)}
+.notes{border-top:2px solid var(--ink);padding:22px 0 50px;font:14px "IBM Plex Mono",monospace;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.notes a{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <nav class="top" aria-label="Doors"><a href="/">← back to the doors</a><span><a href="/pro/">portfolio</a> · <a href="/mayhem/">mayhem</a> · <a href="/terminal/">terminal</a></span></nav>
+  <header>
+    <span class="label">Door 3 · The Lab</span>
+    <h1>Experiments<span>_</span></h1>
+    <p>Everything I've built and put online: free tools for marketers and event teams, an outdoors guide for newcomers, hardware hacks and a game. All free, all live, most of them work offline and none of them track you.</p>
+    <div class="meta"><span><b>15</b> experiments</span><span><b>15</b> live</span><span>lab tech: <b>Ahmed Mahmoud</b>, Calgary</span></div>
+  </header>
+  <div class="filters" role="group" aria-label="Filter experiments"><button type="button" data-f="all" aria-pressed="true">all</button><button type="button" data-f="tool" aria-pressed="false">tools</button><button type="button" data-f="guide" aria-pressed="false">guides</button><button type="button" data-f="hardware" aria-pressed="false">hardwares</button><button type="button" data-f="game" aria-pressed="false">games</button><button type="button" data-f="web" aria-pressed="false">webs</button><button type="button" data-f="map" aria-pressed="false">maps</button><button type="button" data-f="data" aria-pressed="false">datas</button></div>
+  <div class="grid">
+    <a class="exp" href="/social-image-sizer/" data-kind="tool"><span class="no">EXP-001</span><span class="kind">tool</span><h2>Social Image Sizer</h2><p>One image in, every social media size out, as a zip.</p><span class="stack">canvas · jszip</span><span class="status">● live</span></a>
+    <a class="exp" href="/post-preview/" data-kind="tool"><span class="no">EXP-002</span><span class="kind">tool</span><h2>Post Preview</h2><p>See a post on LinkedIn, X, Instagram, Threads, Facebook and Bluesky before you post it.</p><span class="stack">twitter-text rules</span><span class="status">● live</span></a>
+    <a class="exp" href="/utm-builder/" data-kind="tool"><span class="no">EXP-003</span><span class="kind">tool</span><h2>UTM Builder</h2><p>Clean UTM links, a GA4 channel check and QR codes.</p><span class="stack">ga4 · qr</span><span class="status">● live</span></a>
+    <a class="exp" href="/og-preview/" data-kind="tool"><span class="no">EXP-004</span><span class="kind">tool</span><h2>Link Preview Checker</h2><p>See how a link looks when shared, then generate the tags to fix it.</p><span class="stack">open graph</span><span class="status">● live</span></a>
+    <a class="exp" href="/alt-text-checker/" data-kind="tool"><span class="no">EXP-005</span><span class="kind">tool</span><h2>Alt Text Checker</h2><p>Find images missing alt text on any page, from a bookmark.</p><span class="stack">wcag 2.2</span><span class="status">● live</span></a>
+    <a class="exp" href="/email-signature/" data-kind="tool"><span class="no">EXP-006</span><span class="kind">tool</span><h2>Email Signature Generator</h2><p>Signatures for Gmail, Outlook and Apple Mail. No watermark.</p><span class="stack">table html</span><span class="status">● live</span></a>
+    <a class="exp" href="/run-of-show/" data-kind="tool"><span class="no">EXP-007</span><span class="kind">tool</span><h2>Run of Show Builder</h2><p>Plan an event minute by minute, print the cue sheet, follow it live.</p><span class="stack">works offline</span><span class="status">● live</span></a>
+    <a class="exp" href="/sponsorship-builder/" data-kind="tool"><span class="no">EXP-008</span><span class="kind">tool</span><h2>Sponsorship Builder</h2><p>Price sponsor tiers with a formula you can see, print the sponsor sheet.</p><span class="stack">cpm math</span><span class="status">● live</span></a>
+    <a class="exp" href="/stream-calc/" data-kind="tool"><span class="no">EXP-009</span><span class="kind">tool</span><h2>Stream Calculator</h2><p>Live stream bitrate, upload bandwidth and video file size.</p><span class="stack">platform docs</span><span class="status">● live</span></a>
+    <a class="exp" href="/open-trails-canada/" data-kind="guide"><span class="no">EXP-010</span><span class="kind">guide</span><h2>Open Trails Canada</h2><p>A free multilingual guide to the outdoors around Calgary and Alberta for newcomers to Canada.</p><span class="stack">multilingual</span><span class="status">● live</span></a>
+    <a class="exp" href="/fieldhacks/" data-kind="hardware"><span class="no">EXP-011</span><span class="kind">hardware</span><h2>Fieldhacks</h2><p>Cheap hardware builds for hunters and backcountry people.</p><span class="stack">diy hardware</span><span class="status">● live</span></a>
+    <a class="exp" href="/neongrid/" data-kind="game"><span class="no">EXP-012</span><span class="kind">game</span><h2>NeonGrid</h2><p>A cyberpunk city-builder you can play in the browser.</p><span class="stack">vanilla js</span><span class="status">● live</span></a>
+    <a class="exp" href="https://city-picks.vercel.app" data-kind="web"><span class="no">EXP-013</span><span class="kind">web</span><h2>YYC Class Finder</h2><p>Every City of Calgary recreation program, searchable.</p><span class="stack">open data</span><span class="status">● live</span></a>
+    <a class="exp" href="https://github.com/mizoz/alberta-atlas" data-kind="map"><span class="no">EXP-014</span><span class="kind">map</span><h2>Alberta Atlas</h2><p>Maps of Alberta conservation land, wildlife units and Crown-land access.</p><span class="stack">gis</span><span class="status">● live</span></a>
+    <a class="exp" href="https://github.com/mizoz/yyc-flight-radar" data-kind="data"><span class="no">EXP-015</span><span class="kind">data</span><h2>YYC Flight Radar</h2><p>Flight deals out of Calgary and Edmonton on one dashboard.</p><span class="stack">python · fastapi</span><span class="status">● live</span></a>
+  </div>
+  <p class="notes"><span>Got an idea for an experiment, or found a bug? <a href="https://www.linkedin.com/in/ahmed-m-82ba28169/">Tell me on LinkedIn</a> or open an issue on <a href="https://github.com/mizoz">GitHub</a>.</span><span>Founder of <a href="https://firstshow.ca">FirstShow</a></span></p>
+</main>
+<script>
+var b=document.querySelectorAll('.filters button'),e=document.querySelectorAll('.exp');
+b.forEach(function(x){x.addEventListener('click',function(){var f=x.dataset.f;b.forEach(function(y){y.setAttribute('aria-pressed',y===x)});e.forEach(function(c){c.hidden=!(f==='all'||c.dataset.kind===f)})})});
+</script>
+</body>
+</html>

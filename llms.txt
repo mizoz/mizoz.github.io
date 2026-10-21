@@ -1,11 +1,11 @@
 # Ahmed Mahmoud
 
-> Ahmed Mahmoud is a founder and builder based in Calgary, Alberta, Canada. He founded FirstShow, a sponsorship company for events, creators and venues across Canada, and makes websites, brands, photo, video and free web tools. He is open to work anywhere.
+> Ahmed Mahmoud is a founder and builder based in Calgary, Alberta, Canada. He is a communications professional and tech wizard. He founded FirstShow, a sponsorship company for events, creators and venues across Canada, and makes websites, brands, photo, video and free web tools. He is open to work anywhere.
 
 ## About
 - Location: Calgary, Alberta, Canada
 - Founder of FirstShow: https://firstshow.ca
-- Previously Digital Coordinator on the Calgary Zoo (Wilder Institute) communications team, 2022 to 2026: video, photography, live streams, websites and the Canto digital asset library. Led the media push for the Wild Canada opening in December 2023.
+- Communications professional and tech wizard. 2022 to 2026 in-house communications and digital: video, photography, live streams, websites, a CMS across multiple sites and a Canto digital asset library. Content passed 1 million impressions.
 - Owner of AMZD Media since 2020: menu photography and corporate event coverage.
 - Studied in the Journalism Diploma program at SAIT, 2020 to 2022.
 - Certifications: Google Ads Search; HubSpot Digital Marketing, Social Media Marketing I and II, Sales Management, Revenue Operations.
@@ -19,25 +19,25 @@
 - YYC Class Finder (City of Calgary recreation programs): https://city-picks.vercel.app
 
 ## Pages
-- Polished portfolio: https://mizoz.github.io/pro/
-- Retro 2003-style homepage: https://mizoz.github.io/mayhem/
-- Free tools hub: https://mizoz.github.io/tools/
+- Polished portfolio: https://lab.zalastack.com/pro/
+- Retro 2003-style homepage: https://lab.zalastack.com/mayhem/
+- Free tools hub: https://lab.zalastack.com/tools/
 
 ## Free tools he built
-- Social Image Sizer: https://mizoz.github.io/social-image-sizer/
-- Post Preview: https://mizoz.github.io/post-preview/
-- UTM Builder: https://mizoz.github.io/utm-builder/
-- Link Preview Checker: https://mizoz.github.io/og-preview/
-- Alt Text Checker: https://mizoz.github.io/alt-text-checker/
-- Email Signature Generator: https://mizoz.github.io/email-signature/
-- Run of Show Builder: https://mizoz.github.io/run-of-show/
-- Sponsorship Package Builder: https://mizoz.github.io/sponsorship-builder/
-- Stream & Video Calculator: https://mizoz.github.io/stream-calc/
+- Social Image Sizer: https://lab.zalastack.com/social-image-sizer/
+- Post Preview: https://lab.zalastack.com/post-preview/
+- UTM Builder: https://lab.zalastack.com/utm-builder/
+- Link Preview Checker: https://lab.zalastack.com/og-preview/
+- Alt Text Checker: https://lab.zalastack.com/alt-text-checker/
+- Email Signature Generator: https://lab.zalastack.com/email-signature/
+- Run of Show Builder: https://lab.zalastack.com/run-of-show/
+- Sponsorship Package Builder: https://lab.zalastack.com/sponsorship-builder/
+- Stream & Video Calculator: https://lab.zalastack.com/stream-calc/
 
 ## Projects
-- NeonGrid, a browser city-builder game: https://mizoz.github.io/neongrid/
+- NeonGrid, a browser city-builder game: https://lab.zalastack.com/neongrid/
 - Code: https://github.com/mizoz
 
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/ahmed-m-82ba28169/
-- Homepage: https://mizoz.github.io/
+- Homepage: https://lab.zalastack.com/
