@@ -18,6 +18,22 @@
 - SteadyFile (private dated records): https://workvault-six.vercel.app
 - YYC Class Finder (City of Calgary recreation programs): https://city-picks.vercel.app
 
+## Pages
+- Polished portfolio: https://mizoz.github.io/pro/
+- Retro 2003-style homepage: https://mizoz.github.io/mayhem/
+- Free tools hub: https://mizoz.github.io/tools/
+
+## Free tools he built
+- Social Image Sizer: https://mizoz.github.io/social-image-sizer/
+- Post Preview: https://mizoz.github.io/post-preview/
+- UTM Builder: https://mizoz.github.io/utm-builder/
+- Link Preview Checker: https://mizoz.github.io/og-preview/
+- Alt Text Checker: https://mizoz.github.io/alt-text-checker/
+- Email Signature Generator: https://mizoz.github.io/email-signature/
+- Run of Show Builder: https://mizoz.github.io/run-of-show/
+- Sponsorship Package Builder: https://mizoz.github.io/sponsorship-builder/
+- Stream & Video Calculator: https://mizoz.github.io/stream-calc/
+
 ## Projects
 - NeonGrid, a browser city-builder game: https://mizoz.github.io/neongrid/
 - Code: https://github.com/mizoz
