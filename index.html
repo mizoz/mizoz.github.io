@@ -332,7 +332,7 @@ body.boring .beg{background:#f5f5f5;border-color:#999}
     <li><a href="#resume">Resume</a></li>
     <li><a href="#plans">Pricing</a></li>
     <li><a href="#reviews">Reveiws</a></li>
-    <li><a href="#" id="boring" role="button">📄 boring mode</a></li>
+    <li><a href="#" id="boring" role="button">😴 boring mode</a></li>
   </ul>
   <span style="display:flex;gap:8px;align-items:center"><a class="cartbtn" href="#plans" id="cart">🛒 Cart (0)</a><a class="btn btn-small btn-pink runaway" href="#hire">Hire Me Free!!</a></span>
 </nav>
@@ -426,7 +426,7 @@ body.boring .beg{background:#f5f5f5;border-color:#999}
     <div class="plan popular"><span class="tag">MOST POPULER</span><h3>Full-Time Hire</h3><p class="amount"><span id="exp">4.00</span><small> yrs experience</small></p><ul><li>any role. seriously, any.</li><li>anywhere on Earth (Moon negotiable)</li><li>experience goes up every second u wait</li></ul><button class="btn btn-big buy2" data-plan="Full-Time Hire">HIRE NOW!!</button></div>
     <div class="plan"><h3>Part-Time Ahmed</h3><p class="amount">½<small> Ahmed</small></p><ul><li>half the Ahmed, all the fun</li><li>top half or bottom half (u pick)</li><li>launches 3.5 websites</li></ul><button class="btn buy2" data-plan="Part-Time Ahmed">Add to Cart</button></div>
     <div class="plan"><h3>Ahmed For A Day</h3><p class="amount"><span class="was">$9,999</span>1 pizza</p><ul><li>includes 1 (one) website</li><li>includes 0 (zero) weekends</li><li>pizza must have toppings</li></ul><button class="btn buy2" data-plan="Ahmed For A Day">Add to Cart</button></div>
-    <div class="plan premium"><span class="tag" style="background:#b8860b">✨ NEW ✨</span><h3>Ahmed+ Premium</h3><p class="amount">$∞<small>/mo</small></p><ul><li>ad-free Ahmed</li><li>NO popups (we promise)</li><li>just the resume. so boring.</li></ul><button class="btn buy2" data-plan="Ahmed+ Premium">Go Premium</button></div>
+    <div class="plan premium"><span class="tag" style="background:#b8860b">✨ NEW ✨</span><h3>Ahmed+ Premium</h3><p class="amount">$∞<small>/mo</small></p><ul><li>ad-free Ahmed</li><li>NO popups (we promise)</li><li>always sold out</li></ul><button class="btn buy2" data-plan="Ahmed+ Premium">Go Premium</button></div>
     <div class="plan"><h3>Lifetime Ahmed</h3><p class="amount" style="font-size:24px">1 job offer</p><ul><li>one-time payment</li><li>lifetime updates</li><li>no refunds (he's very happy)</li></ul><button class="btn btn-pink buy2" data-plan="Lifetime Ahmed">BUY ONCE</button></div>
     <div class="plan"><h3>Reference Check</h3><p class="amount" style="color:#000">Call Steve</p><ul><li>Steve has known me for years</li><li>Steve answers on the 3rd ring</li><li>Steve is not available weekends</li></ul><button class="btn buy" data-plan="Enterprise">Call Steve</button></div>
   </div>
@@ -456,15 +456,16 @@ body.boring .beg{background:#f5f5f5;border-color:#999}
     <details><summary>Is Ahmed real?</summary><p>Yes. 100% human. Has thumbs and everything.</p></details>
     <details><summary>Will he relocate?</summary><p>Yes. Anywhere. He has a Class 5 licence and a very good attitude.</p></details>
     <details><summary>What kind of job does he want?</summary><p>Any job. Comms, marketing, video, web, ops, events, the fun ones and the boring ones.</p></details>
-    <details><summary>Why are there so many popups?</summary><p>It's a feature. Turn on 📄 boring mode in the menu to turn them all off.</p></details>
+    <details><summary>Why are there so many popups?</summary><p>Because it's funny. You cannot turn them off. We tried. Steve tried. Nobody can.</p></details>
+    <details><summary>Can I turn on boring mode?</summary><p>lol. no.</p></details>
     <details><summary>Who is Steve?</summary><p>We don't talk about Steve.</p></details>
-    <details><summary>Can I see the serious resume?</summary><p>Yes, right below. It's minimized because it's boring. Click □.</p></details>
+    <details><summary>Can I see the serious resume?</summary><p>Yes, right below. It's minimized because it's boring. Click □. We won't judge. (we will judge a little)</p></details>
   </div>
 
   <h2 class="wa" id="resume" style="font-size:26px">resume.doc (minimized bc it's boring)</h2>
   <section class="win minimized" id="resume-win" aria-labelledby="rz">
     <div class="title"><span id="rz">📄 resume_FINAL_final2.doc - WordPad</span><span class="xs"><button type="button" id="res-min" aria-label="Minimize">_</button><button type="button" id="res-max" aria-label="Open resume">□</button><button type="button" id="res-x" aria-label="Close">×</button></span></div>
-    <p class="mini-note">📄 The serious stuff lives here: real jobs, real dates, real certifications. Click <b>□</b> to open it (or turn on 📄 boring mode).</p>
+    <p class="mini-note">📄 The serious stuff lives here: real jobs, real dates, real certifications. Click <b>□</b> to open it, if u must.</p>
     <div class="doc" id="resume-doc">
       <div class="job">
         <h3>Digital Coordinator · Wilder Institute / Calgary Zoo</h3>
@@ -950,7 +951,7 @@ function updateCart(){ $('cart').textContent = '🛒 Cart (' + cart + ')'; }
 document.querySelectorAll('.buy2').forEach(function(b){
   b.addEventListener('click', function(){
     var plan = b.dataset.plan; cart++; updateCart(); ach('First purchase (of a human)', '🛒');
-    if (plan === 'Ahmed+ Premium') { toast('✨ Welcome to Ahmed+ Premium. Enjoy ur popup-free experience.'); setTimeout(function(){ setBoring(true); $('resume').scrollIntoView(); }, 1200); return; }
+    if (plan === 'Ahmed+ Premium') { toast('❌ Ahmed+ Premium is SOLD OUT. here are more popups instead!!'); ach('Tried to buy silence', '🔇'); for (var i = 0; i < 5; i++) after(i*200, spawnErr); return; }
     if (boring) { toast('✅ ' + plan + ' added. message me on LinkedIn to check out for real!'); return; }
     xp('Checkout - Ahmed Store 2003', '<p class="big">🛒 ' + plan + '</p><p>Choose payment method:</p>', [
       { label:'🤝 Handshake', fn:function(c){ c(); toast('handshake declined. ur hand was too sweaty. try again.'); } },
@@ -1039,8 +1040,14 @@ function setBoring(on){
   if (on) { musicStop(); cookie.classList.remove('show'); document.querySelectorAll('.popup').forEach(function(p){ p.hidden = true; }); virus.hidden = true; document.querySelectorAll('.error-box').forEach(function(b){ b.remove(); }); errCount = 0; clippy.classList.remove('show'); document.querySelectorAll('.xp,.bsod,.ach').forEach(function(e){ e.remove(); }); xpCount = 0; $('resume-win').classList.remove('minimized'); }
   store.set('ahmed-boring', on ? '1' : '0');
 }
-$('boring').addEventListener('click', function(e){ e.preventDefault(); setBoring(!boring); if (boring) $('resume').scrollIntoView(); });
-if (store.get('ahmed-boring') === '1' || /[?&]boring\b/.test(location.search)) setBoring(true);
+var boringTries = 0;
+$('boring').addEventListener('click', function(e){ e.preventDefault(); boringTries++;
+  var msgs = ['❌ boring mode is not available in ur region','❌ boring mode was discontinued in 2003','❌ boring mode is in another castle','❌ u have used 0 of 0 boring credits','❌ Steve deleted boring mode'];
+  toast(msgs[(boringTries-1) % msgs.length]); ach('Tried to be boring (denied)', '😴');
+  for (var i = 0; i < Math.min(2 + boringTries, 6); i++) after(i*180, spawnErr);
+  if (boringTries === 3) { document.body.classList.add('roll'); setTimeout(function(){ document.body.classList.remove('roll'); }, 1000); }
+});
+try { localStorage.removeItem('ahmed-boring'); } catch(e) {}
 })();
 </script>
 </body>
