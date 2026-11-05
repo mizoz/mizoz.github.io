@@ -1,278 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ahmed Mahmoud · Calgary founder & tech wizard · Pick your Ahmed</title>
-<meta name="description" content="Ahmed Mahmoud is a Calgary founder, communications professional and tech wizard. Founder of FirstShow. Pick a door: polished portfolio, 2003 mayhem, the Lab of free tools, or the terminal.">
-<link rel="canonical" href="https://lab.zalastack.com/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Pick your Ahmed">
-<meta property="og:description" content="Four doors: a polished portfolio, full 2003 mayhem, a lab of free tools, and a terminal. Calgary founder, communications pro and tech wizard.">
-<meta property="og:url" content="https://lab.zalastack.com/">
-<meta property="og:image" content="https://lab.zalastack.com/assets/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#121110">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' text-anchor='middle' fill='%23ff5a1f'%3EA%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Anton&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://lab.zalastack.com/#site","url":"https://lab.zalastack.com/","name":"Ahmed Mahmoud","author":{"@id":"https://lab.zalastack.com/#ahmed"}},{"@type":"Person","@id":"https://lab.zalastack.com/#ahmed","name":"Ahmed Mahmoud","alternateName":"mizoz","url":"https://lab.zalastack.com/","image":"https://lab.zalastack.com/assets/og.png","jobTitle":"Founder, FirstShow","description":"Calgary founder, communications professional and tech wizard. Founder of FirstShow, a sponsorship company for events, creators and venues across Canada. Makes websites, brands, photo, video and free web tools.","address":{"@type":"PostalAddress","addressLocality":"Calgary","addressRegion":"AB","addressCountry":"CA"},"worksFor":{"@type":"Organization","name":"FirstShow","url":"https://firstshow.ca"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Southern Alberta Institute of Technology (SAIT)"},"knowsAbout":["digital communications","video production","photography","live streaming","websites","sponsorship","event marketing","social media","Google Ads","web development"],"sameAs":["https://github.com/mizoz","https://www.linkedin.com/in/ahmed-m-82ba28169/","https://firstshow.ca","https://frameyyc.ca"]}]}</script>
-<style>
-*{box-sizing:border-box}
-html,body{margin:0}
-body{background:#121110;font:16px/1.5 "Inter",system-ui,sans-serif;overflow-x:hidden}
-:focus-visible{outline:3px solid #ff5a1f;outline-offset:-6px}
-
-/* the 2x2 that breathes */
-.doors{--c:1fr 1fr;--r:1fr 1fr;display:grid;grid-template-columns:var(--c);grid-template-rows:var(--r);height:100vh;height:100svh;
-  transition:grid-template-columns .6s cubic-bezier(.2,.8,.2,1),grid-template-rows .6s cubic-bezier(.2,.8,.2,1)}
-@media (hover:hover) and (min-width:861px){
-  .doors:has(.d1:hover,.d1:focus-visible){--c:1.9fr 1fr;--r:1.6fr 1fr}
-  .doors:has(.d2:hover,.d2:focus-visible){--c:1fr 1.9fr;--r:1.6fr 1fr}
-  .doors:has(.d3:hover,.d3:focus-visible){--c:1.9fr 1fr;--r:1fr 1.6fr}
-  .doors:has(.d4:hover,.d4:focus-visible){--c:1fr 1.9fr;--r:1fr 1.6fr}
-}
-.door{position:relative;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;text-decoration:none;container-type:size;padding:clamp(18px,4cqi,56px)}
-.door .no{position:absolute;left:clamp(18px,4cqi,56px);top:clamp(16px,3.4cqi,44px);font:600 12px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
-.door h2{margin:0;line-height:.95;flex-shrink:0}
-.door p,.door .go{flex-shrink:0}
-.door>.screen{flex:0 1 auto;min-height:0;overflow:hidden;margin:clamp(30px,7cqi,64px) 0 auto}
-.door p{margin:clamp(8px,2cqi,18px) 0 0;max-width:44ch;font-size:clamp(13px,2.4cqi,19px)}
-.door .more{max-height:0;opacity:0;overflow:hidden;margin:0;transition:opacity .35s,max-height .5s,margin .5s}
-.door:hover .more,.door:focus-visible .more{max-height:200px;opacity:1;margin-top:clamp(8px,2cqi,18px)}
-.d2 p.more{padding-block:0;border-width:0}
-.d2:hover p.more,.d2:focus-visible p.more{padding-block:6px;border-width:2px}
-.door .go{display:inline-flex;align-self:flex-start;margin-top:clamp(12px,2.6cqi,26px);font-weight:600;font-size:clamp(13px,2.2cqi,16px);transition:transform .3s}
-.door:hover .go{transform:translateX(6px)}
-
-/* 01 polished */
-.d1{background:#f6f3ec;color:#141312}
-.d1 h2{font:400 clamp(30px,9cqi,104px)/.98 "Fraunces",Georgia,serif;letter-spacing:-.035em}
-.d1 h2 em{color:#d2491f}
-.d1 p{color:#5f5b54}
-.d1 .go{border:1px solid #141312;border-radius:999px;padding:10px 18px}
-.d1:hover .go{background:#141312;color:#f6f3ec}
-
-/* 02 mayhem */
-.d2{color:#000;font-family:"Times New Roman",serif;background-color:#ff99ff;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70'%3E%3Cpath d='M17 4l4 9 10 .8-7.6 6.4L26 30l-9-5.4L8 30l2.6-9.8L3 13.8 13 13z' fill='%23ffd700' stroke='%23b8860b'/%3E%3Cpath d='M52 39l4 9 10 .8-7.6 6.4L61 65l-9-5.4L43 65l2.6-9.8L38 48.8 48 48z' fill='%23ffd700' stroke='%23b8860b'/%3E%3C/svg%3E"),linear-gradient(160deg,#ff99ff,#cc99ff 40%,#99ccff 75%,#ccff99);padding-bottom:clamp(48px,8cqi,80px)}
-.d2 .no{background:#000;color:#ff0;padding:3px 8px;opacity:1}
-.d2 h2{font:clamp(34px,11cqi,128px)/.9 Impact,"Anton",sans-serif;text-transform:uppercase;background:linear-gradient(180deg,#fff,#ff0 25%,#f90 50%,#f06 75%,#90f);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:2px #000;filter:drop-shadow(4px 4px 0 #000);transform:rotate(-2deg);transform-origin:left bottom}
-.d2 p{font:700 clamp(13px,2.3cqi,18px) "Comic Sans MS","Comic Neue",cursive;background:rgba(255,255,255,.85);border:2px dashed #ff1493;padding:6px 10px;align-self:flex-start}
-.d2 .go{font:700 clamp(13px,2.4cqi,18px) "Comic Sans MS","Comic Neue",cursive;color:#fff;background:linear-gradient(#66ff66,#00b300);border:3px solid #000;border-radius:12px;padding:8px 16px;box-shadow:3px 3px 0 #000;text-shadow:2px 2px 0 #000}
-.d2:hover .go{transform:scale(1.06) rotate(-2deg)}
-.burst{position:absolute;right:clamp(14px,4cqi,44px);top:clamp(14px,4cqi,40px);width:clamp(70px,16cqi,120px);aspect-ratio:1;display:grid;place-items:center;text-align:center;background:#ff1493;color:#fff;font:900 clamp(10px,2.2cqi,15px)/1.05 Impact,"Anton",sans-serif;text-transform:uppercase;
-  clip-path:polygon(50% 0,61% 13%,77% 6%,79% 23%,95% 25%,88% 40%,100% 52%,87% 62%,93% 78%,77% 79%,73% 95%,59% 87%,50% 100%,40% 87%,26% 95%,22% 79%,6% 78%,12% 62%,0 52%,11% 40%,4% 25%,21% 23%,23% 6%,39% 13%);animation:spin 10s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.marq{position:absolute;left:0;right:0;bottom:0;background:#000;color:#0f0;font:700 13px "Courier New",monospace;white-space:nowrap;overflow:hidden;padding:6px 0}
-.marq span{display:inline-block;padding-left:100%;animation:tick 22s linear infinite}
-@keyframes tick{to{transform:translateX(-100%)}}
-
-/* 03 lab */
-.d3{color:#16211a;background-color:#eef4ec;background-image:linear-gradient(#d7e3d2 1px,transparent 1px),linear-gradient(90deg,#d7e3d2 1px,transparent 1px);background-size:22px 22px}
-.d3 .no{color:#0f8a4b;opacity:1}
-.d3 h2{font:600 clamp(30px,9cqi,100px)/1 "JetBrains Mono",monospace;letter-spacing:-.05em}
-.d3 h2 span{color:#0f8a4b;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.d3 p{color:#3d5244}
-.d3 .go{color:#fff;background:#0f8a4b;border-radius:8px;padding:9px 16px}
-.chips{display:flex;flex-wrap:wrap;align-content:flex-start;justify-content:flex-end;gap:8px;padding:4px 2px}
-.chips span{font:600 clamp(11px,1.9cqi,14px) "JetBrains Mono",monospace;background:#fff;border:1px solid #c9d6c3;border-radius:8px;padding:5px 9px;animation:float 5s ease-in-out infinite;white-space:nowrap}
-.chips span:nth-child(2n){animation-delay:-1.3s}.chips span:nth-child(3n){animation-delay:-2.6s}
-@keyframes float{50%{transform:translateY(-6px)}}
-
-/* 04 terminal */
-.d4{background:#0b0f0c;color:#c8f7d4;font-family:"JetBrains Mono",monospace}
-.d4 .no{color:#7dff9f;opacity:1}
-.screen{font-size:clamp(11px,2cqi,15px);line-height:1.7;text-shadow:0 0 6px rgba(125,255,159,.35)}
-.screen span.l{display:block;white-space:nowrap;overflow:hidden;width:0;animation:type 1s steps(30,end) forwards}
-.screen .p{color:#7dff9f}
-.screen .l:nth-child(1){animation-delay:.3s}.screen .l:nth-child(2){animation-delay:1.4s}.screen .l:nth-child(3){animation-delay:2.5s}.screen .l:nth-child(4){animation-delay:3.6s}.screen .l:nth-child(5){animation-delay:4.7s}
-@keyframes type{to{width:100%}}
-.d4 h2{font:600 clamp(28px,8.5cqi,92px)/1 "JetBrains Mono",monospace;color:#7dff9f;letter-spacing:-.04em}
-.d4 p{color:#8fbf9c}
-.d4 kbd{font:600 .9em "JetBrains Mono",monospace;border:1px solid #2b3a2e;border-bottom-width:2px;border-radius:5px;padding:0 6px;color:#c8f7d4}
-.d4 .go{color:#0b0f0c;background:#7dff9f;border-radius:6px;padding:9px 16px}
-.d4::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 3px)}
-
-/* center badge */
-.ask{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;margin:0;background:#121110;color:#f6f3ec;border:3px solid #f6f3ec;border-radius:999px;padding:12px 22px;font:600 16px "Inter",sans-serif;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.35);pointer-events:none;transition:opacity .3s}
-.ask i{font:italic 400 19px "Fraunces",serif;color:#ff7448}
-.doors:hover~.ask{opacity:0}
-
-.about{background:#121110;color:#a7a299;font-size:14.5px;padding:28px clamp(20px,6vw,80px) 34px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.about p{margin:0;max-width:80ch}.about b{color:#f1eee7}.about a{color:#f1eee7}
-.about nav{display:flex;gap:18px;flex-wrap:wrap}
-
-
-
-/* ---- v3 polish ---- */
-@view-transition{navigation:auto}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.door::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(480px circle at var(--gx,50%) var(--gy,50%),var(--glow),transparent 62%);opacity:0;transition:opacity .4s}
-.door:hover::before{opacity:1}
-.door>*{position:relative;z-index:1}
-.door>.no,.door>.burst,.door>.marq{position:absolute}
-.d1{--glow:rgba(210,73,31,.13)}.d2{--glow:rgba(255,255,255,.35)}.d3{--glow:rgba(15,138,75,.16)}.d4{--glow:rgba(125,255,159,.12)}
-.top3{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-.door>.top3{flex:0 1 auto;min-height:0;overflow:hidden;margin:clamp(30px,7cqi,64px) 0 auto}
-.demo{font:500 clamp(11px,1.9cqi,14px) "JetBrains Mono",monospace;background:#16211a;color:#d6f5df;border-radius:10px;padding:10px 14px;min-width:min(100%,330px);box-shadow:0 8px 24px -12px rgba(15,60,35,.5)}
-.demo .q{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.demo .q::before{content:"› ";color:#7dff9f}
-.demo .q i{display:inline-block;width:.55em;height:1em;background:#7dff9f;vertical-align:-2px;animation:blink 1s steps(1) infinite;margin-left:2px}
-.demo .a{display:block;color:#7dff9f;margin-top:4px;min-height:1.3em;opacity:0;transition:opacity .25s}
-.demo .a.on{opacity:1}
-.demo .a b{color:#fff;font-weight:600}
-.demo .lbl{display:block;font-size:.8em;color:#7c9a84;margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase}
-
-/* ---- v2 polish ---- */
-.door{min-width:0;min-height:0}
-/* entrance */
-.door{animation:enter .9s cubic-bezier(.2,.8,.2,1) both}
-.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
-@keyframes enter{from{opacity:0;transform:scale(.94);filter:blur(6px)}}
-.ask{animation:pop .5s .75s cubic-bezier(.3,1.6,.5,1) both}
-@keyframes pop{from{opacity:0;transform:translate(-50%,-50%) scale(.6)}}
-/* the pill rides the seam (JS sets --sx/--sy) */
-@media (hover:hover) and (min-width:861px){
-  .ask{left:var(--sx,50%);top:var(--sy,50%);transition:opacity .3s,transform .3s}
-  .doors:hover~.ask{opacity:1;transform:translate(-50%,-50%) scale(.82)}
-}
-.ask .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2fa84f;margin-right:8px;vertical-align:1px;box-shadow:0 0 0 0 rgba(47,168,79,.6);animation:ping 2s infinite}
-@keyframes ping{100%{box-shadow:0 0 0 10px rgba(47,168,79,0)}}
-/* stepping through a door */
-.doors.going{transition-duration:.55s}
-.doors.go-d1{--c:1fr 0fr;--r:1fr 0fr}.doors.go-d2{--c:0fr 1fr;--r:1fr 0fr}
-.doors.go-d3{--c:1fr 0fr;--r:0fr 1fr}.doors.go-d4{--c:0fr 1fr;--r:0fr 1fr}
-.doors.going~.ask{opacity:0!important}
-/* hover life */
-.d2{animation-name:enter,drift;animation-duration:.9s,7s;animation-timing-function:cubic-bezier(.2,.8,.2,1),linear;animation-iteration-count:1,infinite;animation-fill-mode:both,none;animation-play-state:running,paused}
-.d2:hover{animation-play-state:running,running}
-@keyframes drift{to{background-position:70px 70px,0 0}}
-.top3,.burst{transition:translate .4s ease-out}
-.d3 .top3{translate:calc(var(--px,0)*14px) calc(var(--py,0)*10px)}
-.d2 .burst{translate:calc(var(--px,0)*-12px) calc(var(--py,0)*-10px)}
-.d1 h2 em{background:linear-gradient(currentColor,currentColor) left 92%/0 2px no-repeat;transition:background-size .5s}
-.d1:hover h2 em{background-size:100% 2px}
-.keys{position:fixed;right:16px;bottom:14px;z-index:6;font:600 11px "JetBrains Mono",monospace;color:#a7a299;background:rgba(18,17,16,.75);border-radius:8px;padding:6px 10px;pointer-events:none;animation:pop2 .5s 1.4s both}
-.keys b{color:#f6f3ec}
-@keyframes pop2{from{opacity:0;transform:translateY(8px)}}
-@media (max-width:860px),(hover:none){.keys{display:none}}
-
-@media (max-width:860px){
-  .doors{grid-template-columns:1fr;grid-template-rows:none;height:auto}
-  .door{min-height:58svh}
-  .door .more{max-height:200px;opacity:1;margin-top:10px}
-  .d2 p.more{padding-block:6px;border-width:2px}
-  .ask{position:absolute;top:18px;transform:translateX(-50%)}
-  .d1 .no{top:78px}
-  .ask{animation:none}
-}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.screen span.l{width:auto}.marq span{padding-left:0}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahmed Mahmoud</title>
+  <meta name="description" content="Ahmed Mahmoud — founder and product builder in Calgary.">
+  <link rel="canonical" href="https://lab.zalastack.com/">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: #f4f2ed; color: #1b1b19; font-family: system-ui, sans-serif; }
+    main { min-height: 100vh; max-width: 1200px; margin: auto; padding: 3rem clamp(1.5rem, 5vw, 4rem); display: flex; flex-direction: column; justify-content: space-between; }
+    .label, footer { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: #65645f; }
+    section { padding: 7rem 0; }
+    h1 { margin: 0; font-size: clamp(3.5rem, 10vw, 9rem); line-height: .95; letter-spacing: -.07em; font-weight: 600; }
+    p { font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.6; color: #55554f; }
+    a { color: inherit; text-underline-offset: .3em; }
+    a:hover { color: #a34522; }
+  </style>
 </head>
 <body>
-<h1 class="sr">Ahmed Mahmoud: Calgary founder, communications professional and tech wizard</h1>
-<main class="doors">
-  <a class="door d1" href="/pro/">
-    <span class="no">01 · the portfolio</span>
-    <h2>Calm, clean,<br><em>professional.</em></h2>
-    <p>Founder of FirstShow. Communications professional and tech wizard in Calgary.</p>
-    <p class="more">Ventures, tools, experience and skills. Zero popups. Easy to send to your boss.</p>
-    <span class="go">Enter the portfolio →</span>
-  </a>
-  <a class="door d2" href="/mayhem/">
-    <span class="no">02 · the mayhem</span>
-    <span class="burst" aria-hidden="true">15+<br>popups<br>inside!!</span>
-    <h2>Full 2003<br>mode!!!</h2>
-    <p class="more">prize wheel. fake antivirus. a phone call with Steve. music u cannot stop.</p>
-    <span class="go">ENTER IF U DARE 🌀</span>
-    <span class="marq" aria-hidden="true"><span>*** WARNING: contains cookies, crumbs and ur webcam *** best viewed in Internet Explorer 6 *** u won a prize *** do not press the boring button ***</span></span>
-  </a>
-  <a class="door d3" href="/lab/">
-    <span class="no">03 · the lab</span>
-    <span class="top3" aria-hidden="true">
-      <span class="demo"><span class="lbl">tiny model · running live</span><span class="q" id="dq"></span><span class="a" id="da"></span></span>
-      <span class="chips"><span>🖼️ image sizer</span><span>💬 post preview</span><span>🔗 utm builder</span><span>✉️ signatures</span><span>🎤 run of show</span><span>📡 stream calc</span><span>🤝 sponsorships</span><span>🌲 open trails</span><span>🎮 neongrid</span></span>
-    </span>
-    <h2>The Lab<span>_</span></h2>
-    <p>Fifteen free tools and experiments. Ask it anything: a tiny model I trained runs right in your browser.</p>
-    <span class="go">Open the lab →</span>
-  </a>
-  <a class="door d4" href="/lab/#terminal">
-    <span class="no">04 · the terminal</span>
-    <span class="screen" aria-hidden="true">
-      <span class="l"><span class="p">$</span> whoami</span>
-      <span class="l">ahmed mahmoud. founder. tech wizard.</span>
-      <span class="l"><span class="p">$</span> ls ventures/</span>
-      <span class="l">firstshow  frame-yyc  bite5  wiredeo</span>
-      <span class="l"><span class="p">$</span> hire ahmed ▍</span>
-    </span>
-    <h2>~/terminal</h2>
-    <p>For the command-line crowd. Tab completes, ↑ for history, and it understands plain English. Press <kbd>~</kbd> anytime.</p>
-    <span class="go">./enter</span>
-  </a>
-</main>
-<p class="ask" aria-hidden="true"><span class="dot"></span>Pick your <i>Ahmed</i>.</p>
-<p class="keys" aria-hidden="true">press <b>1</b> <b>2</b> <b>3</b> <b>4</b> · <b>~</b> terminal</p>
-<footer class="about">
-  <p><b>Ahmed Mahmoud</b> is a founder, communications professional and tech wizard in Calgary, Alberta. He started <a href="https://firstshow.ca">FirstShow</a>, makes websites, brands, photo, video and live streams, and builds <a href="/lab/">free tools</a> for marketers and event teams. Open to any role, anywhere.</p>
-  <nav aria-label="Elsewhere"><a href="/pro/">Portfolio</a><a href="/lab/">The Lab</a><a href="https://www.linkedin.com/in/ahmed-m-82ba28169/">LinkedIn</a><a href="https://github.com/mizoz">GitHub</a></nav>
-</footer>
-<script>
-(function(){
-  var doors = document.querySelector('.doors'), pill = document.querySelector('.ask'), d1 = document.querySelector('.d1');
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, wide = matchMedia('(hover:hover) and (min-width:861px)');
-  // pill follows the seam where the four doors meet
-  var until = 0, running = false;
-  function seam(){
-    if (wide.matches) { var r = d1.getBoundingClientRect(); pill.style.setProperty('--sx', r.right + 'px'); pill.style.setProperty('--sy', r.bottom + 'px'); }
-    if (performance.now() < until) requestAnimationFrame(seam); else running = false;
-  }
-  function wake(){ until = performance.now() + 900; if (!running) { running = true; requestAnimationFrame(seam); } }
-  ['pointerover','pointerout','focusin','focusout'].forEach(function(ev){ doors.addEventListener(ev, wake); });
-  addEventListener('resize', wake); wake();
-  // step through a door
-  function enter(a, e){
-    if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1)) return;
-    if (e) e.preventDefault();
-    if (reduce || !wide.matches) { location.href = a.href; return; }
-    var n = [].indexOf.call(doors.children, a) + 1;
-    doors.classList.add('going', 'go-d' + n);
-    setTimeout(function(){ location.href = a.href; }, 520);
-  }
-  [].forEach.call(document.querySelectorAll('.door'), function(a){ a.addEventListener('click', function(e){ enter(a, e); }); });
-  addEventListener('pageshow', function(){ doors.className = 'doors'; });
-  addEventListener('keydown', function(e){
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
-    if (e.key === '~' || e.key === '`') { location.href = '/lab/#terminal'; return; }
-    var i = '1234'.indexOf(e.key); if (i > -1) enter(doors.children[i]);
-  });
-  // the lab door shows the real model at work (outputs measured from the shipped weights)
-  var DEMO = [["resize my pic for an ig story","Social Image Sizer",99],["upload speed for youtube 1080p","Stream Calculator",99],["plan a gala run of show","Run of Show Builder",100],["who is ahmed?","answers from verified facts",99],["utm link for my newsletter","UTM Builder",100],["is he open to remote work?","yes, anywhere",97],["price my sponsor packages","Sponsorship Builder",100],["play a game","NeonGrid",100]];
-  var dq = document.getElementById('dq'), da = document.getElementById('da'), di = 0;
-  function show(){
-    var d = DEMO[di++ % DEMO.length], n = 0;
-    da.classList.remove('on');
-    if (reduce) { dq.textContent = d[0]; da.innerHTML = '→ <b>' + d[1] + '</b> · ' + d[2] + '%'; da.classList.add('on'); return setTimeout(show, 3200); }
-    (function type(){
-      dq.innerHTML = d[0].slice(0, n).replace(/</g,'&lt;') + '<i></i>';
-      if (n++ < d[0].length) return setTimeout(type, 38 + Math.random() * 40);
-      setTimeout(function(){ da.innerHTML = '→ <b>' + d[1] + '</b> · ' + d[2] + '% · <1 ms'; da.classList.add('on'); }, 260);
-      setTimeout(show, 2600);
-    })();
-  }
-  show();
-  // terminal re-types when you come back to it
-  var scr = document.querySelector('.screen'), d4 = document.querySelector('.d4');
-  d4.addEventListener('mouseenter', function(){ [].forEach.call(scr.children, function(l){ l.style.animation = 'none'; void l.offsetWidth; l.style.animation = ''; }); });
-  // decorations lean toward the cursor
-  if (!reduce) [].forEach.call(document.querySelectorAll('.door'), function(d){
-    d.addEventListener('pointermove', function(e){ var r = d.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top; d.style.setProperty('--gx', x + 'px'); d.style.setProperty('--gy', y + 'px'); d.style.setProperty('--px', (x / r.width - .5).toFixed(3)); d.style.setProperty('--py', (y / r.height - .5).toFixed(3)); });
-    d.addEventListener('pointerleave', function(){ d.style.setProperty('--px', 0); d.style.setProperty('--py', 0); });
-  });
-})();
-</script>
+  <main>
+    <div class="label">Calgary, Canada</div>
+    <section>
+      <h1>Ahmed Mahmoud.</h1>
+      <p>Founder and product builder.</p>
+      <a href="https://github.com/mizoz">GitHub ↗</a>
+    </section>
+    <footer>© 2026 Ahmed Mahmoud</footer>
+  </main>
 </body>
 </html>
